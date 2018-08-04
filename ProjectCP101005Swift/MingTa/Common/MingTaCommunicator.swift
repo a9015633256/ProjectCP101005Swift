@@ -14,6 +14,7 @@ typealias downloadDoneHandler = (Error?, Data?) -> Void
 struct PropertyKeysForConnection {
     static let urlHomeworkServlet = "http://127.0.0.1:8080/iContact/HomeworkServlet"
     static let urlStudentServlet = "http://127.0.0.1:8080/iContact/StudentInfoServlet"
+    static let BoHanServlet = "http://127.0.0.1:8080/PleaseLoginHen/LoginHelp"
 }
 
 class CommunicatorMingTa{
