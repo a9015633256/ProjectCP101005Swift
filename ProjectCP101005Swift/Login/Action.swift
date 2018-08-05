@@ -13,3 +13,25 @@ struct Action: Codable {
     var name: String?
     var password: String?
 }
+
+struct GetClass: Codable  {
+    var action: String?
+    var name: String?
+}
+struct Register: Codable{
+    var action : String?
+    var account: String?
+    var password: String?
+    var name: String?
+    var phone: String?
+    var gender: Int?
+    var birthday: String?
+    var subject: String?
+}
+
+struct deleteClass: Codable{
+    var action: String?
+    var classname: String?
+    var teachername: String?
+    
+}

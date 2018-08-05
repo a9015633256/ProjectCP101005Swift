@@ -16,3 +16,5 @@ struct Account: Codable {
 struct IsUserValid: Codable{
     var isUserValid = false
 }
+
+

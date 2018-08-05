@@ -10,6 +10,9 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    let userDefault = UserDefaults.standard
+    
+    
     @IBOutlet weak var account: UITextField!
     
     @IBOutlet weak var password: UITextField!
@@ -67,12 +70,20 @@ class LoginViewController: UIViewController {
             }
             
             if output.isUserValid {
-                let loginsb = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(withIdentifier: "123")
+                let loginsb = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(withIdentifier: "classList") as! UINavigationController
+                
+                
 //                guard let controller = loginsb.instantiateViewController() else {
 //                    assertionFailure("aaaaa")
 //                    return
 //                }
                 self.present(loginsb, animated: true)
+                
+                self.userDefault.set(account, forKey: "account")
+                
+                
+                
+                
             }else{
                 let alert = UIAlertController(title: "錯誤", message: "錯誤", preferredStyle: .alert)
                 let action = UIAlertAction(title: "OK", style: .default)

@@ -17,10 +17,15 @@
 		24BC57CB20FD844600002DB0 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC57C920FD844600002DB0 /* UIImage+Resize.swift */; };
 		930FC19D210ACB5A00C27FC1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930FC19C210ACB5A00C27FC1 /* LoginViewController.swift */; };
 		930FC19F210ACB7100C27FC1 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 930FC19E210ACB7100C27FC1 /* LoginStoryboard.storyboard */; };
+		931B49252112E7A100A8CCB9 /* ClassSelecttViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931B49242112E7A100A8CCB9 /* ClassSelecttViewController.swift */; };
+		931B49272112F59800A8CCB9 /* CoolCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931B49262112F59800A8CCB9 /* CoolCellTableViewCell.swift */; };
 		9334CBBC2111560C00D7BE6F /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334CBBB2111560C00D7BE6F /* Common.swift */; };
 		9334CBBE2111563200D7BE6F /* Communicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334CBBD2111563200D7BE6F /* Communicator.swift */; };
 		9334CBC02111565F00D7BE6F /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334CBBF2111565F00D7BE6F /* Account.swift */; };
 		9334CBC22111566D00D7BE6F /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334CBC12111566D00D7BE6F /* Action.swift */; };
+		9334CBC7211182A200D7BE6F /* ClassList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334CBC6211182A200D7BE6F /* ClassList.swift */; };
+		9334CBCD2111A26F00D7BE6F /* Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334CBCC2111A26F00D7BE6F /* Corner.swift */; };
+		9334CBD32112AF0300D7BE6F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334CBD22112AF0300D7BE6F /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,10 +43,15 @@
 		24BC57C920FD844600002DB0 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		930FC19C210ACB5A00C27FC1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		930FC19E210ACB7100C27FC1 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		931B49242112E7A100A8CCB9 /* ClassSelecttViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassSelecttViewController.swift; sourceTree = "<group>"; };
+		931B49262112F59800A8CCB9 /* CoolCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolCellTableViewCell.swift; sourceTree = "<group>"; };
 		9334CBBB2111560C00D7BE6F /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		9334CBBD2111563200D7BE6F /* Communicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Communicator.swift; sourceTree = "<group>"; };
 		9334CBBF2111565F00D7BE6F /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		9334CBC12111566D00D7BE6F /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		9334CBC6211182A200D7BE6F /* ClassList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassList.swift; sourceTree = "<group>"; };
+		9334CBCC2111A26F00D7BE6F /* Corner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corner.swift; sourceTree = "<group>"; };
+		9334CBD22112AF0300D7BE6F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +84,7 @@
 		24BC57B120FD83DE00002DB0 /* ProjectCP101005Swift */ = {
 			isa = PBXGroup;
 			children = (
+				9334CBC52111825500D7BE6F /* ClassList */,
 				930FC19B210ACB1A00C27FC1 /* Login */,
 				24BC57CC20FD845200002DB0 /* New Group */,
 				24BC57C620FD842400002DB0 /* Reachability.h */,
@@ -111,12 +122,24 @@
 			children = (
 				930FC19C210ACB5A00C27FC1 /* LoginViewController.swift */,
 				930FC19E210ACB7100C27FC1 /* LoginStoryboard.storyboard */,
+				9334CBD22112AF0300D7BE6F /* RegisterViewController.swift */,
 				9334CBBB2111560C00D7BE6F /* Common.swift */,
 				9334CBBD2111563200D7BE6F /* Communicator.swift */,
 				9334CBBF2111565F00D7BE6F /* Account.swift */,
 				9334CBC12111566D00D7BE6F /* Action.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		9334CBC52111825500D7BE6F /* ClassList */ = {
+			isa = PBXGroup;
+			children = (
+				931B49262112F59800A8CCB9 /* CoolCellTableViewCell.swift */,
+				931B49242112E7A100A8CCB9 /* ClassSelecttViewController.swift */,
+				9334CBCC2111A26F00D7BE6F /* Corner.swift */,
+				9334CBC6211182A200D7BE6F /* ClassList.swift */,
+			);
+			path = ClassList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,9 +222,14 @@
 				24BC57C720FD842400002DB0 /* Reachability.m in Sources */,
 				24BC57CB20FD844600002DB0 /* UIImage+Resize.swift in Sources */,
 				9334CBC02111565F00D7BE6F /* Account.swift in Sources */,
+				9334CBD32112AF0300D7BE6F /* RegisterViewController.swift in Sources */,
+				9334CBC7211182A200D7BE6F /* ClassList.swift in Sources */,
+				9334CBCD2111A26F00D7BE6F /* Corner.swift in Sources */,
+				931B49252112E7A100A8CCB9 /* ClassSelecttViewController.swift in Sources */,
 				24BC57B320FD83DE00002DB0 /* AppDelegate.swift in Sources */,
 				9334CBBE2111563200D7BE6F /* Communicator.swift in Sources */,
 				9334CBBC2111560C00D7BE6F /* Common.swift in Sources */,
+				931B49272112F59800A8CCB9 /* CoolCellTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
