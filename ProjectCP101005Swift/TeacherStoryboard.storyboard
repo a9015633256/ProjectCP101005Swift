@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c17-WV-KnH">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="LYS-hU-aXs">
+            <objects>
+                <viewController storyboardIdentifier="ChooseClassTableViewController" id="c17-WV-KnH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r56-Y2-MgB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="請改連到班級選擇頁面" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0H6-Jy-Rw2">
+                                <rect key="frame" x="55" y="76" width="280" height="450"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dxy-UJ-Ht0">
+                                <rect key="frame" x="153" y="562" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="捷徑-班級"/>
+                                <connections>
+                                    <segue destination="BkI-KB-dsX" kind="show" id="xnq-ab-8b0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="15u-mY-mTZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ngF-M8-MYu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p2s-AY-aTN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4036" y="-21.139430284857571"/>
+        </scene>
+        <!--ExamSubjectTVC-->
+        <scene sceneID="yNz-9b-ESf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BoHan" referencedIdentifier="ExamSubjectTVC" id="Ty3-do-E7x" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="b0M-zn-mHs"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oBx-80-D9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2081" y="271"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="nOs-eF-tlQ">
+            <objects>
+                <viewController id="BUE-bO-0PL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jFn-BZ-l8d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="rTE-nh-k3i"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="yjH-IO-l7i"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DHY-Dl-vq2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1999" y="1146"/>
+        </scene>
+        <!--TeacherHomeworkTableViewController-->
+        <scene sceneID="LNH-RP-sHY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MingTaStoryboard" referencedIdentifier="TeacherHomeworkTableViewController" id="nlx-CB-nRW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Hmc-Uz-Wga"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K2B-ph-lec" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1999" y="-327"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="bKK-iD-fps">
+            <objects>
+                <viewController id="pta-Sh-JyC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uGT-y2-5Bh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="請改連到班級管理頁面" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAE-ij-w7z">
+                                <rect key="frame" x="58" y="108" width="240" height="450"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="tIO-DL-nl9"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="uLC-eW-B1w"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lsr-gM-bz3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1999.2" y="-908.09595202398805"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="BdO-ca-2a0">
+            <objects>
+                <tabBarController id="BkI-KB-dsX" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lt6-OO-Iax">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="pta-Sh-JyC" kind="relationship" relationship="viewControllers" id="8Vg-1G-RIA"/>
+                        <segue destination="nlx-CB-nRW" kind="relationship" relationship="viewControllers" id="Gpc-JP-zSY"/>
+                        <segue destination="BUE-bO-0PL" kind="relationship" relationship="viewControllers" id="1VZ-7g-Bgt"/>
+                        <segue destination="Ty3-do-E7x" kind="relationship" relationship="viewControllers" id="Yfx-Pe-VS5"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eXs-6g-wCU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2946" y="-16"/>
+        </scene>
+    </scenes>
+</document>

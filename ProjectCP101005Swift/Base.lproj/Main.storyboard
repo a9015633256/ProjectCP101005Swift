@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -227,6 +226,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m5U-gE-Af9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="77.599999999999994" y="3.1484257871064472"/>
+        </scene>
+        <!--StudentStoryboard-->
+        <scene sceneID="eFs-LF-0JG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StudentStoryboard" id="iGr-AW-hhu" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FT7-2C-Nvr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="897" y="-215"/>
+        </scene>
+        <!--TeacherStoryboard-->
+        <scene sceneID="BG5-Sd-sJH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TeacherStoryboard" id="3c8-vM-UIq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I4j-WP-GJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="897" y="131"/>
         </scene>
     </scenes>
 </document>
