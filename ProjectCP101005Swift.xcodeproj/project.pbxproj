@@ -66,6 +66,7 @@
 		C02BACF3211849E2002A8BF3 /* TeacherHomeworkInsertTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACE0211849E2002A8BF3 /* TeacherHomeworkInsertTableViewController.swift */; };
 		C02BACF6211849EA002A8BF3 /* StudentStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C02BACF4211849EA002A8BF3 /* StudentStoryboard.storyboard */; };
 		C02BACF7211849EA002A8BF3 /* TeacherStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C02BACF5211849EA002A8BF3 /* TeacherStoryboard.storyboard */; };
+		C03381CB2118537A00D55EAE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C03381CA2118537A00D55EAE /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +133,7 @@
 		C02BACE0211849E2002A8BF3 /* TeacherHomeworkInsertTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherHomeworkInsertTableViewController.swift; sourceTree = "<group>"; };
 		C02BACF4211849EA002A8BF3 /* StudentStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = StudentStoryboard.storyboard; path = "../../../../Library/Autosave Information/ProjectCP101005Swift/ProjectCP101005Swift/StudentStoryboard.storyboard"; sourceTree = "<group>"; };
 		C02BACF5211849EA002A8BF3 /* TeacherStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TeacherStoryboard.storyboard; path = "../../../../Library/Autosave Information/ProjectCP101005Swift/ProjectCP101005Swift/TeacherStoryboard.storyboard"; sourceTree = "<group>"; };
+		C03381CA2118537A00D55EAE /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			children = (
 				24BC57B120FD83DE00002DB0 /* ProjectCP101005Swift */,
 				24BC57B020FD83DE00002DB0 /* Products */,
+				C03381CA2118537A00D55EAE /* .gitignore */,
 			);
 			sourceTree = "<group>";
 		};
@@ -398,6 +401,7 @@
 				24BC57BA20FD83E100002DB0 /* Assets.xcassets in Resources */,
 				24BC57B820FD83DE00002DB0 /* Main.storyboard in Resources */,
 				930FC19F210ACB7100C27FC1 /* LoginStoryboard.storyboard in Resources */,
+				C03381CB2118537A00D55EAE /* .gitignore in Resources */,
 				C02BACEA211849E2002A8BF3 /* MingTaStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
