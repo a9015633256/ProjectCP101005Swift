@@ -7,24 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C61D77C2115E9B000C23EEC /* JoinClassTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61D7692115E9AF00C23EEC /* JoinClassTVC.swift */; };
-		0C61D77D2115E9B000C23EEC /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61D76A2115E9AF00C23EEC /* Cell.swift */; };
-		0C61D77E2115E9B000C23EEC /* CreateSubjectTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61D76B2115E9AF00C23EEC /* CreateSubjectTVC.swift */; };
-		0C61D77F2115E9B000C23EEC /* UpdateScoreTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61D76C2115E9AF00C23EEC /* UpdateScoreTVC.swift */; };
-		0C61D7802115E9B000C23EEC /* analysis.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C61D76D2115E9AF00C23EEC /* analysis.png */; };
-		0C61D7812115E9B000C23EEC /* ExamSubjectTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61D76E2115E9AF00C23EEC /* ExamSubjectTVC.swift */; };
-		0C61D7822115E9B000C23EEC /* LoginScoreTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61D76F2115E9AF00C23EEC /* LoginScoreTVC.swift */; };
-		0C61D7832115E9B000C23EEC /* BoHan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C61D7702115E9AF00C23EEC /* BoHan.storyboard */; };
-		0C61D7842115E9B000C23EEC /* ic_mode_edit_white_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C61D7712115E9AF00C23EEC /* ic_mode_edit_white_24dp.png */; };
-		0C61D7852115E9B000C23EEC /* ClassTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61D7722115E9AF00C23EEC /* ClassTVC.swift */; };
-		0C61D7862115E9B000C23EEC /* CreateClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61D7732115E9AF00C23EEC /* CreateClassViewController.swift */; };
-		0C61D7872115E9B000C23EEC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61D7742115E9AF00C23EEC /* FirstViewController.swift */; };
-		0C61D7882115E9B000C23EEC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61D7752115E9AF00C23EEC /* TabBarController.swift */; };
-		0C61D7892115E9B000C23EEC /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61D7762115E9B000C23EEC /* ClassCell.swift */; };
-		0C61D78A2115E9B000C23EEC /* add1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C61D7772115E9B000C23EEC /* add1.png */; };
-		0C61D78B2115E9B000C23EEC /* UpdateExamTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61D7782115E9B000C23EEC /* UpdateExamTVC.swift */; };
-		0C61D78C2115E9B000C23EEC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61D7792115E9B000C23EEC /* Color.swift */; };
-		0C61D78E2115E9B000C23EEC /* ClassJoin:Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61D77B2115E9B000C23EEC /* ClassJoin:Create.swift */; };
 		24BC57B320FD83DE00002DB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC57B220FD83DE00002DB0 /* AppDelegate.swift */; };
 		24BC57B520FD83DE00002DB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC57B420FD83DE00002DB0 /* ViewController.swift */; };
 		24BC57B820FD83DE00002DB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24BC57B620FD83DE00002DB0 /* Main.storyboard */; };
@@ -44,27 +26,49 @@
 		9334CBC7211182A200D7BE6F /* ClassList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334CBC6211182A200D7BE6F /* ClassList.swift */; };
 		9334CBCD2111A26F00D7BE6F /* Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334CBCC2111A26F00D7BE6F /* Corner.swift */; };
 		9334CBD32112AF0300D7BE6F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334CBD22112AF0300D7BE6F /* RegisterViewController.swift */; };
+		C02BACB6211849DD002A8BF3 /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACA2211849DD002A8BF3 /* ClassCell.swift */; };
+		C02BACB7211849DD002A8BF3 /* add1.png in Resources */ = {isa = PBXBuildFile; fileRef = C02BACA3211849DD002A8BF3 /* add1.png */; };
+		C02BACB8211849DD002A8BF3 /* ClassTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACA4211849DD002A8BF3 /* ClassTVC.swift */; };
+		C02BACB9211849DD002A8BF3 /* CreateClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACA5211849DD002A8BF3 /* CreateClassViewController.swift */; };
+		C02BACBA211849DD002A8BF3 /* CreateSubjectTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACA6211849DD002A8BF3 /* CreateSubjectTVC.swift */; };
+		C02BACBB211849DD002A8BF3 /* ClassJoin:Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACA7211849DD002A8BF3 /* ClassJoin:Create.swift */; };
+		C02BACBC211849DD002A8BF3 /* examSubject.txt in Resources */ = {isa = PBXBuildFile; fileRef = C02BACA8211849DD002A8BF3 /* examSubject.txt */; };
+		C02BACBD211849DD002A8BF3 /* BoHan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C02BACA9211849DD002A8BF3 /* BoHan.storyboard */; };
+		C02BACBE211849DD002A8BF3 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACAB211849DD002A8BF3 /* Cell.swift */; };
+		C02BACBF211849DD002A8BF3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACAC211849DD002A8BF3 /* FirstViewController.swift */; };
+		C02BACC0211849DD002A8BF3 /* LoginScoreTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACAD211849DD002A8BF3 /* LoginScoreTVC.swift */; };
+		C02BACC1211849DD002A8BF3 /* UpdateScoreTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACAE211849DD002A8BF3 /* UpdateScoreTVC.swift */; };
+		C02BACC2211849DD002A8BF3 /* ExamSubjectTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACAF211849DD002A8BF3 /* ExamSubjectTVC.swift */; };
+		C02BACC3211849DD002A8BF3 /* analysis.png in Resources */ = {isa = PBXBuildFile; fileRef = C02BACB0211849DD002A8BF3 /* analysis.png */; };
+		C02BACC4211849DD002A8BF3 /* UpdateExamTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACB1211849DD002A8BF3 /* UpdateExamTVC.swift */; };
+		C02BACC5211849DD002A8BF3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACB2211849DD002A8BF3 /* Color.swift */; };
+		C02BACC6211849DD002A8BF3 /* JoinClassTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACB3211849DD002A8BF3 /* JoinClassTVC.swift */; };
+		C02BACC7211849DD002A8BF3 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACB4211849DD002A8BF3 /* TabBarController.swift */; };
+		C02BACC8211849DD002A8BF3 /* ic_mode_edit_white_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = C02BACB5211849DD002A8BF3 /* ic_mode_edit_white_24dp.png */; };
+		C02BACE1211849E2002A8BF3 /* StudentInfoEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACCB211849E2002A8BF3 /* StudentInfoEditTableViewController.swift */; };
+		C02BACE2211849E2002A8BF3 /* StudentHomeworkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACCC211849E2002A8BF3 /* StudentHomeworkTableViewController.swift */; };
+		C02BACE3211849E2002A8BF3 /* StudentHomeworkDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACCD211849E2002A8BF3 /* StudentHomeworkDetailTableViewController.swift */; };
+		C02BACE4211849E2002A8BF3 /* StudentInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACCE211849E2002A8BF3 /* StudentInfoTableViewController.swift */; };
+		C02BACE5211849E2002A8BF3 /* MingTaCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACD0211849E2002A8BF3 /* MingTaCommon.swift */; };
+		C02BACE6211849E2002A8BF3 /* HomeworkSectionHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACD1211849E2002A8BF3 /* HomeworkSectionHeaderCell.swift */; };
+		C02BACE7211849E2002A8BF3 /* MingTaCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACD2211849E2002A8BF3 /* MingTaCommunicator.swift */; };
+		C02BACE8211849E2002A8BF3 /* HomeworkDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACD3211849E2002A8BF3 /* HomeworkDetailTableViewCell.swift */; };
+		C02BACE9211849E2002A8BF3 /* HomeworkCheckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACD4211849E2002A8BF3 /* HomeworkCheckTableViewCell.swift */; };
+		C02BACEA211849E2002A8BF3 /* MingTaStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C02BACD5211849E2002A8BF3 /* MingTaStoryboard.storyboard */; };
+		C02BACEB211849E2002A8BF3 /* Homework.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACD7211849E2002A8BF3 /* Homework.swift */; };
+		C02BACEC211849E2002A8BF3 /* HomeworkIsDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACD8211849E2002A8BF3 /* HomeworkIsDone.swift */; };
+		C02BACED211849E2002A8BF3 /* HomeworkCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACD9211849E2002A8BF3 /* HomeworkCheck.swift */; };
+		C02BACEE211849E2002A8BF3 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACDA211849E2002A8BF3 /* Student.swift */; };
+		C02BACEF211849E2002A8BF3 /* TeacherHomeworkUpdateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACDC211849E2002A8BF3 /* TeacherHomeworkUpdateTableViewController.swift */; };
+		C02BACF0211849E2002A8BF3 /* TeacherHomeworkCheckTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACDD211849E2002A8BF3 /* TeacherHomeworkCheckTableViewController.swift */; };
+		C02BACF1211849E2002A8BF3 /* TeacherHomeworkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACDE211849E2002A8BF3 /* TeacherHomeworkTableViewController.swift */; };
+		C02BACF2211849E2002A8BF3 /* TeacherHomeworkContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACDF211849E2002A8BF3 /* TeacherHomeworkContainerViewController.swift */; };
+		C02BACF3211849E2002A8BF3 /* TeacherHomeworkInsertTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BACE0211849E2002A8BF3 /* TeacherHomeworkInsertTableViewController.swift */; };
+		C02BACF6211849EA002A8BF3 /* StudentStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C02BACF4211849EA002A8BF3 /* StudentStoryboard.storyboard */; };
+		C02BACF7211849EA002A8BF3 /* TeacherStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C02BACF5211849EA002A8BF3 /* TeacherStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0C61D7692115E9AF00C23EEC /* JoinClassTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinClassTVC.swift; sourceTree = "<group>"; };
-		0C61D76A2115E9AF00C23EEC /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
-		0C61D76B2115E9AF00C23EEC /* CreateSubjectTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSubjectTVC.swift; sourceTree = "<group>"; };
-		0C61D76C2115E9AF00C23EEC /* UpdateScoreTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateScoreTVC.swift; sourceTree = "<group>"; };
-		0C61D76D2115E9AF00C23EEC /* analysis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = analysis.png; sourceTree = "<group>"; };
-		0C61D76E2115E9AF00C23EEC /* ExamSubjectTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamSubjectTVC.swift; sourceTree = "<group>"; };
-		0C61D76F2115E9AF00C23EEC /* LoginScoreTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScoreTVC.swift; sourceTree = "<group>"; };
-		0C61D7702115E9AF00C23EEC /* BoHan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BoHan.storyboard; sourceTree = "<group>"; };
-		0C61D7712115E9AF00C23EEC /* ic_mode_edit_white_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_mode_edit_white_24dp.png; sourceTree = "<group>"; };
-		0C61D7722115E9AF00C23EEC /* ClassTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassTVC.swift; sourceTree = "<group>"; };
-		0C61D7732115E9AF00C23EEC /* CreateClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateClassViewController.swift; sourceTree = "<group>"; };
-		0C61D7742115E9AF00C23EEC /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		0C61D7752115E9AF00C23EEC /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		0C61D7762115E9B000C23EEC /* ClassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
-		0C61D7772115E9B000C23EEC /* add1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add1.png; sourceTree = "<group>"; };
-		0C61D7782115E9B000C23EEC /* UpdateExamTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateExamTVC.swift; sourceTree = "<group>"; };
-		0C61D7792115E9B000C23EEC /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		0C61D77B2115E9B000C23EEC /* ClassJoin:Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ClassJoin:Create.swift"; sourceTree = "<group>"; };
 		24BC57AF20FD83DE00002DB0 /* ProjectCP101005Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectCP101005Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24BC57B220FD83DE00002DB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24BC57B420FD83DE00002DB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +92,46 @@
 		9334CBC6211182A200D7BE6F /* ClassList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassList.swift; sourceTree = "<group>"; };
 		9334CBCC2111A26F00D7BE6F /* Corner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corner.swift; sourceTree = "<group>"; };
 		9334CBD22112AF0300D7BE6F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C02BACA2211849DD002A8BF3 /* ClassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
+		C02BACA3211849DD002A8BF3 /* add1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add1.png; sourceTree = "<group>"; };
+		C02BACA4211849DD002A8BF3 /* ClassTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassTVC.swift; sourceTree = "<group>"; };
+		C02BACA5211849DD002A8BF3 /* CreateClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateClassViewController.swift; sourceTree = "<group>"; };
+		C02BACA6211849DD002A8BF3 /* CreateSubjectTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSubjectTVC.swift; sourceTree = "<group>"; };
+		C02BACA7211849DD002A8BF3 /* ClassJoin:Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ClassJoin:Create.swift"; sourceTree = "<group>"; };
+		C02BACA8211849DD002A8BF3 /* examSubject.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = examSubject.txt; sourceTree = "<group>"; };
+		C02BACA9211849DD002A8BF3 /* BoHan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BoHan.storyboard; sourceTree = "<group>"; };
+		C02BACAB211849DD002A8BF3 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		C02BACAC211849DD002A8BF3 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		C02BACAD211849DD002A8BF3 /* LoginScoreTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScoreTVC.swift; sourceTree = "<group>"; };
+		C02BACAE211849DD002A8BF3 /* UpdateScoreTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateScoreTVC.swift; sourceTree = "<group>"; };
+		C02BACAF211849DD002A8BF3 /* ExamSubjectTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamSubjectTVC.swift; sourceTree = "<group>"; };
+		C02BACB0211849DD002A8BF3 /* analysis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = analysis.png; sourceTree = "<group>"; };
+		C02BACB1211849DD002A8BF3 /* UpdateExamTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateExamTVC.swift; sourceTree = "<group>"; };
+		C02BACB2211849DD002A8BF3 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		C02BACB3211849DD002A8BF3 /* JoinClassTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinClassTVC.swift; sourceTree = "<group>"; };
+		C02BACB4211849DD002A8BF3 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		C02BACB5211849DD002A8BF3 /* ic_mode_edit_white_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_mode_edit_white_24dp.png; sourceTree = "<group>"; };
+		C02BACCB211849E2002A8BF3 /* StudentInfoEditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInfoEditTableViewController.swift; sourceTree = "<group>"; };
+		C02BACCC211849E2002A8BF3 /* StudentHomeworkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentHomeworkTableViewController.swift; sourceTree = "<group>"; };
+		C02BACCD211849E2002A8BF3 /* StudentHomeworkDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentHomeworkDetailTableViewController.swift; sourceTree = "<group>"; };
+		C02BACCE211849E2002A8BF3 /* StudentInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInfoTableViewController.swift; sourceTree = "<group>"; };
+		C02BACD0211849E2002A8BF3 /* MingTaCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MingTaCommon.swift; sourceTree = "<group>"; };
+		C02BACD1211849E2002A8BF3 /* HomeworkSectionHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkSectionHeaderCell.swift; sourceTree = "<group>"; };
+		C02BACD2211849E2002A8BF3 /* MingTaCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MingTaCommunicator.swift; sourceTree = "<group>"; };
+		C02BACD3211849E2002A8BF3 /* HomeworkDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkDetailTableViewCell.swift; sourceTree = "<group>"; };
+		C02BACD4211849E2002A8BF3 /* HomeworkCheckTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkCheckTableViewCell.swift; sourceTree = "<group>"; };
+		C02BACD5211849E2002A8BF3 /* MingTaStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MingTaStoryboard.storyboard; sourceTree = "<group>"; };
+		C02BACD7211849E2002A8BF3 /* Homework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Homework.swift; sourceTree = "<group>"; };
+		C02BACD8211849E2002A8BF3 /* HomeworkIsDone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkIsDone.swift; sourceTree = "<group>"; };
+		C02BACD9211849E2002A8BF3 /* HomeworkCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkCheck.swift; sourceTree = "<group>"; };
+		C02BACDA211849E2002A8BF3 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		C02BACDC211849E2002A8BF3 /* TeacherHomeworkUpdateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherHomeworkUpdateTableViewController.swift; sourceTree = "<group>"; };
+		C02BACDD211849E2002A8BF3 /* TeacherHomeworkCheckTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherHomeworkCheckTableViewController.swift; sourceTree = "<group>"; };
+		C02BACDE211849E2002A8BF3 /* TeacherHomeworkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherHomeworkTableViewController.swift; sourceTree = "<group>"; };
+		C02BACDF211849E2002A8BF3 /* TeacherHomeworkContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherHomeworkContainerViewController.swift; sourceTree = "<group>"; };
+		C02BACE0211849E2002A8BF3 /* TeacherHomeworkInsertTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherHomeworkInsertTableViewController.swift; sourceTree = "<group>"; };
+		C02BACF4211849EA002A8BF3 /* StudentStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = StudentStoryboard.storyboard; path = "../../../../Library/Autosave Information/ProjectCP101005Swift/ProjectCP101005Swift/StudentStoryboard.storyboard"; sourceTree = "<group>"; };
+		C02BACF5211849EA002A8BF3 /* TeacherStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TeacherStoryboard.storyboard; path = "../../../../Library/Autosave Information/ProjectCP101005Swift/ProjectCP101005Swift/TeacherStoryboard.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,47 +145,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0C61D7302115E91C00C23EEC /* BoHan */ = {
-			isa = PBXGroup;
-			children = (
-				0C61D7702115E9AF00C23EEC /* BoHan.storyboard */,
-				0C61D7902115EA5700C23EEC /* Exam */,
-				0C61D78F2115EA1100C23EEC /* Cass */,
-			);
-			path = BoHan;
-			sourceTree = "<group>";
-		};
-		0C61D78F2115EA1100C23EEC /* Cass */ = {
-			isa = PBXGroup;
-			children = (
-				0C61D7772115E9B000C23EEC /* add1.png */,
-				0C61D7762115E9B000C23EEC /* ClassCell.swift */,
-				0C61D77B2115E9B000C23EEC /* ClassJoin:Create.swift */,
-				0C61D7722115E9AF00C23EEC /* ClassTVC.swift */,
-				0C61D7732115E9AF00C23EEC /* CreateClassViewController.swift */,
-				0C61D76B2115E9AF00C23EEC /* CreateSubjectTVC.swift */,
-			);
-			path = Cass;
-			sourceTree = "<group>";
-		};
-		0C61D7902115EA5700C23EEC /* Exam */ = {
-			isa = PBXGroup;
-			children = (
-				0C61D76D2115E9AF00C23EEC /* analysis.png */,
-				0C61D76A2115E9AF00C23EEC /* Cell.swift */,
-				0C61D7792115E9B000C23EEC /* Color.swift */,
-				0C61D76E2115E9AF00C23EEC /* ExamSubjectTVC.swift */,
-				0C61D7742115E9AF00C23EEC /* FirstViewController.swift */,
-				0C61D7712115E9AF00C23EEC /* ic_mode_edit_white_24dp.png */,
-				0C61D7692115E9AF00C23EEC /* JoinClassTVC.swift */,
-				0C61D76F2115E9AF00C23EEC /* LoginScoreTVC.swift */,
-				0C61D7752115E9AF00C23EEC /* TabBarController.swift */,
-				0C61D7782115E9B000C23EEC /* UpdateExamTVC.swift */,
-				0C61D76C2115E9AF00C23EEC /* UpdateScoreTVC.swift */,
-			);
-			path = Exam;
-			sourceTree = "<group>";
-		};
 		24BC57A620FD83DE00002DB0 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +164,8 @@
 		24BC57B120FD83DE00002DB0 /* ProjectCP101005Swift */ = {
 			isa = PBXGroup;
 			children = (
+				C02BACC9211849E2002A8BF3 /* MingTa */,
+				C02BACA0211849DD002A8BF3 /* BoHan */,
 				9334CBC52111825500D7BE6F /* ClassList */,
 				930FC19B210ACB1A00C27FC1 /* Login */,
 				24BC57CC20FD845200002DB0 /* New Group */,
@@ -169,8 +174,8 @@
 				24BC57B220FD83DE00002DB0 /* AppDelegate.swift */,
 				24BC57B420FD83DE00002DB0 /* ViewController.swift */,
 				24BC57B620FD83DE00002DB0 /* Main.storyboard */,
-				C035AFC5211403D60094753E /* StudentStoryboard.storyboard */,
-				C093642C211408B20055276A /* TeacherStoryboard.storyboard */,
+				C02BACF4211849EA002A8BF3 /* StudentStoryboard.storyboard */,
+				C02BACF5211849EA002A8BF3 /* TeacherStoryboard.storyboard */,
 				24BC57B920FD83E100002DB0 /* Assets.xcassets */,
 				24BC57BB20FD83E100002DB0 /* LaunchScreen.storyboard */,
 				24BC57BE20FD83E100002DB0 /* Info.plist */,
@@ -219,6 +224,108 @@
 				9334CBC6211182A200D7BE6F /* ClassList.swift */,
 			);
 			path = ClassList;
+			sourceTree = "<group>";
+		};
+		C02BACA0211849DD002A8BF3 /* BoHan */ = {
+			isa = PBXGroup;
+			children = (
+				C02BACA1211849DD002A8BF3 /* Cass */,
+				C02BACA8211849DD002A8BF3 /* examSubject.txt */,
+				C02BACA9211849DD002A8BF3 /* BoHan.storyboard */,
+				C02BACAA211849DD002A8BF3 /* Exam */,
+			);
+			name = BoHan;
+			path = "../../../../Library/Autosave Information/ProjectCP101005Swift/ProjectCP101005Swift/BoHan";
+			sourceTree = "<group>";
+		};
+		C02BACA1211849DD002A8BF3 /* Cass */ = {
+			isa = PBXGroup;
+			children = (
+				C02BACA2211849DD002A8BF3 /* ClassCell.swift */,
+				C02BACA3211849DD002A8BF3 /* add1.png */,
+				C02BACA4211849DD002A8BF3 /* ClassTVC.swift */,
+				C02BACA5211849DD002A8BF3 /* CreateClassViewController.swift */,
+				C02BACA6211849DD002A8BF3 /* CreateSubjectTVC.swift */,
+				C02BACA7211849DD002A8BF3 /* ClassJoin:Create.swift */,
+			);
+			path = Cass;
+			sourceTree = "<group>";
+		};
+		C02BACAA211849DD002A8BF3 /* Exam */ = {
+			isa = PBXGroup;
+			children = (
+				C02BACAB211849DD002A8BF3 /* Cell.swift */,
+				C02BACAC211849DD002A8BF3 /* FirstViewController.swift */,
+				C02BACAD211849DD002A8BF3 /* LoginScoreTVC.swift */,
+				C02BACAE211849DD002A8BF3 /* UpdateScoreTVC.swift */,
+				C02BACAF211849DD002A8BF3 /* ExamSubjectTVC.swift */,
+				C02BACB0211849DD002A8BF3 /* analysis.png */,
+				C02BACB1211849DD002A8BF3 /* UpdateExamTVC.swift */,
+				C02BACB2211849DD002A8BF3 /* Color.swift */,
+				C02BACB3211849DD002A8BF3 /* JoinClassTVC.swift */,
+				C02BACB4211849DD002A8BF3 /* TabBarController.swift */,
+				C02BACB5211849DD002A8BF3 /* ic_mode_edit_white_24dp.png */,
+			);
+			path = Exam;
+			sourceTree = "<group>";
+		};
+		C02BACC9211849E2002A8BF3 /* MingTa */ = {
+			isa = PBXGroup;
+			children = (
+				C02BACCA211849E2002A8BF3 /* Student */,
+				C02BACCF211849E2002A8BF3 /* Common */,
+				C02BACD5211849E2002A8BF3 /* MingTaStoryboard.storyboard */,
+				C02BACD6211849E2002A8BF3 /* DataSwift */,
+				C02BACDB211849E2002A8BF3 /* Teacher */,
+			);
+			name = MingTa;
+			path = "../../../../Library/Autosave Information/ProjectCP101005Swift/ProjectCP101005Swift/MingTa";
+			sourceTree = "<group>";
+		};
+		C02BACCA211849E2002A8BF3 /* Student */ = {
+			isa = PBXGroup;
+			children = (
+				C02BACCB211849E2002A8BF3 /* StudentInfoEditTableViewController.swift */,
+				C02BACCC211849E2002A8BF3 /* StudentHomeworkTableViewController.swift */,
+				C02BACCD211849E2002A8BF3 /* StudentHomeworkDetailTableViewController.swift */,
+				C02BACCE211849E2002A8BF3 /* StudentInfoTableViewController.swift */,
+			);
+			path = Student;
+			sourceTree = "<group>";
+		};
+		C02BACCF211849E2002A8BF3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C02BACD0211849E2002A8BF3 /* MingTaCommon.swift */,
+				C02BACD1211849E2002A8BF3 /* HomeworkSectionHeaderCell.swift */,
+				C02BACD2211849E2002A8BF3 /* MingTaCommunicator.swift */,
+				C02BACD3211849E2002A8BF3 /* HomeworkDetailTableViewCell.swift */,
+				C02BACD4211849E2002A8BF3 /* HomeworkCheckTableViewCell.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C02BACD6211849E2002A8BF3 /* DataSwift */ = {
+			isa = PBXGroup;
+			children = (
+				C02BACD7211849E2002A8BF3 /* Homework.swift */,
+				C02BACD8211849E2002A8BF3 /* HomeworkIsDone.swift */,
+				C02BACD9211849E2002A8BF3 /* HomeworkCheck.swift */,
+				C02BACDA211849E2002A8BF3 /* Student.swift */,
+			);
+			path = DataSwift;
+			sourceTree = "<group>";
+		};
+		C02BACDB211849E2002A8BF3 /* Teacher */ = {
+			isa = PBXGroup;
+			children = (
+				C02BACDC211849E2002A8BF3 /* TeacherHomeworkUpdateTableViewController.swift */,
+				C02BACDD211849E2002A8BF3 /* TeacherHomeworkCheckTableViewController.swift */,
+				C02BACDE211849E2002A8BF3 /* TeacherHomeworkTableViewController.swift */,
+				C02BACDF211849E2002A8BF3 /* TeacherHomeworkContainerViewController.swift */,
+				C02BACE0211849E2002A8BF3 /* TeacherHomeworkInsertTableViewController.swift */,
+			);
+			path = Teacher;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,17 +387,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C61D7842115E9B000C23EEC /* ic_mode_edit_white_24dp.png in Resources */,
-				0C61D78A2115E9B000C23EEC /* add1.png in Resources */,
-				C035AF99211400750094753E /* MingTaStoryboard.storyboard in Resources */,
-				C093642D211408B20055276A /* TeacherStoryboard.storyboard in Resources */,
+				C02BACB7211849DD002A8BF3 /* add1.png in Resources */,
+				C02BACC3211849DD002A8BF3 /* analysis.png in Resources */,
 				24BC57BD20FD83E100002DB0 /* LaunchScreen.storyboard in Resources */,
-				0C61D7802115E9B000C23EEC /* analysis.png in Resources */,
+				C02BACBD211849DD002A8BF3 /* BoHan.storyboard in Resources */,
+				C02BACBC211849DD002A8BF3 /* examSubject.txt in Resources */,
+				C02BACC8211849DD002A8BF3 /* ic_mode_edit_white_24dp.png in Resources */,
+				C02BACF7211849EA002A8BF3 /* TeacherStoryboard.storyboard in Resources */,
+				C02BACF6211849EA002A8BF3 /* StudentStoryboard.storyboard in Resources */,
 				24BC57BA20FD83E100002DB0 /* Assets.xcassets in Resources */,
-				C035AFC6211403D60094753E /* StudentStoryboard.storyboard in Resources */,
 				24BC57B820FD83DE00002DB0 /* Main.storyboard in Resources */,
-				0C61D7832115E9B000C23EEC /* BoHan.storyboard in Resources */,
 				930FC19F210ACB7100C27FC1 /* LoginStoryboard.storyboard in Resources */,
+				C02BACEA211849E2002A8BF3 /* MingTaStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,48 +409,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C61D7892115E9B000C23EEC /* ClassCell.swift in Sources */,
-				C035AFA7211400DB0094753E /* HomeworkCheckTableViewCell.swift in Sources */,
-				C035AFBA211400F20094753E /* TeacherHomeworkContainerViewController.swift in Sources */,
-				C035AFAE211400E00094753E /* StudentHomeworkTableViewController.swift in Sources */,
-				C035AFC1211400F90094753E /* Homework.swift in Sources */,
-				C035AFA6211400DB0094753E /* MingTaCommunicator.swift in Sources */,
+				C02BACED211849E2002A8BF3 /* HomeworkCheck.swift in Sources */,
 				930FC19D210ACB5A00C27FC1 /* LoginViewController.swift in Sources */,
 				24BC57CA20FD844600002DB0 /* UIImageView+Download.swift in Sources */,
-				0C61D77E2115E9B000C23EEC /* CreateSubjectTVC.swift in Sources */,
-				0C61D7872115E9B000C23EEC /* FirstViewController.swift in Sources */,
-				C035AFAD211400E00094753E /* StudentInfoEditTableViewController.swift in Sources */,
+				C02BACE8211849E2002A8BF3 /* HomeworkDetailTableViewCell.swift in Sources */,
+				C02BACE7211849E2002A8BF3 /* MingTaCommunicator.swift in Sources */,
+				C02BACF3211849E2002A8BF3 /* TeacherHomeworkInsertTableViewController.swift in Sources */,
+				C02BACBB211849DD002A8BF3 /* ClassJoin:Create.swift in Sources */,
+				C02BACC0211849DD002A8BF3 /* LoginScoreTVC.swift in Sources */,
+				C02BACB8211849DD002A8BF3 /* ClassTVC.swift in Sources */,
+				C02BACE4211849E2002A8BF3 /* StudentInfoTableViewController.swift in Sources */,
 				24BC57B520FD83DE00002DB0 /* ViewController.swift in Sources */,
-				0C61D7852115E9B000C23EEC /* ClassTVC.swift in Sources */,
+				C02BACEE211849E2002A8BF3 /* Student.swift in Sources */,
+				C02BACC4211849DD002A8BF3 /* UpdateExamTVC.swift in Sources */,
+				C02BACBE211849DD002A8BF3 /* Cell.swift in Sources */,
+				C02BACBF211849DD002A8BF3 /* FirstViewController.swift in Sources */,
+				C02BACBA211849DD002A8BF3 /* CreateSubjectTVC.swift in Sources */,
+				C02BACE6211849E2002A8BF3 /* HomeworkSectionHeaderCell.swift in Sources */,
 				9334CBC22111566D00D7BE6F /* Action.swift in Sources */,
-				C035AFB7211400F20094753E /* TeacherHomeworkUpdateTableViewController.swift in Sources */,
-				C035AFB8211400F20094753E /* TeacherHomeworkCheckTableViewController.swift in Sources */,
+				C02BACB6211849DD002A8BF3 /* ClassCell.swift in Sources */,
+				C02BACC6211849DD002A8BF3 /* JoinClassTVC.swift in Sources */,
 				24BC57C720FD842400002DB0 /* Reachability.m in Sources */,
-				C035AFA5211400DB0094753E /* MingTaCommon.swift in Sources */,
-				C035AFA4211400DB0094753E /* HomeworkDetailTableViewCell.swift in Sources */,
-				C035AFC3211400F90094753E /* HomeworkCheck.swift in Sources */,
-				0C61D78C2115E9B000C23EEC /* Color.swift in Sources */,
-				0C61D77C2115E9B000C23EEC /* JoinClassTVC.swift in Sources */,
-				0C61D77D2115E9B000C23EEC /* Cell.swift in Sources */,
-				C035AFA2211400DB0094753E /* HomeworkSectionHeaderCell.swift in Sources */,
-				C035AFB0211400E00094753E /* StudentInfoTableViewController.swift in Sources */,
+				C02BACC5211849DD002A8BF3 /* Color.swift in Sources */,
 				24BC57CB20FD844600002DB0 /* UIImage+Resize.swift in Sources */,
 				9334CBC02111565F00D7BE6F /* Account.swift in Sources */,
 				9334CBD32112AF0300D7BE6F /* RegisterViewController.swift in Sources */,
+				C02BACEF211849E2002A8BF3 /* TeacherHomeworkUpdateTableViewController.swift in Sources */,
+				C02BACE2211849E2002A8BF3 /* StudentHomeworkTableViewController.swift in Sources */,
+				C02BACC7211849DD002A8BF3 /* TabBarController.swift in Sources */,
+				C02BACB9211849DD002A8BF3 /* CreateClassViewController.swift in Sources */,
+				C02BACE9211849E2002A8BF3 /* HomeworkCheckTableViewCell.swift in Sources */,
 				9334CBC7211182A200D7BE6F /* ClassList.swift in Sources */,
+				C02BACF0211849E2002A8BF3 /* TeacherHomeworkCheckTableViewController.swift in Sources */,
 				9334CBCD2111A26F00D7BE6F /* Corner.swift in Sources */,
+				C02BACE3211849E2002A8BF3 /* StudentHomeworkDetailTableViewController.swift in Sources */,
 				931B49252112E7A100A8CCB9 /* ClassSelecttViewController.swift in Sources */,
 				24BC57B320FD83DE00002DB0 /* AppDelegate.swift in Sources */,
-				0C61D7822115E9B000C23EEC /* LoginScoreTVC.swift in Sources */,
-				0C61D7882115E9B000C23EEC /* TabBarController.swift in Sources */,
-				0C61D7812115E9B000C23EEC /* ExamSubjectTVC.swift in Sources */,
-				C035AFB9211400F20094753E /* TeacherHomeworkTableViewController.swift in Sources */,
-				0C61D78B2115E9B000C23EEC /* UpdateExamTVC.swift in Sources */,
-				0C61D77F2115E9B000C23EEC /* UpdateScoreTVC.swift in Sources */,
+				C02BACC2211849DD002A8BF3 /* ExamSubjectTVC.swift in Sources */,
+				C02BACEB211849E2002A8BF3 /* Homework.swift in Sources */,
+				C02BACF1211849E2002A8BF3 /* TeacherHomeworkTableViewController.swift in Sources */,
+				C02BACC1211849DD002A8BF3 /* UpdateScoreTVC.swift in Sources */,
+				C02BACEC211849E2002A8BF3 /* HomeworkIsDone.swift in Sources */,
+				C02BACE5211849E2002A8BF3 /* MingTaCommon.swift in Sources */,
 				9334CBBE2111563200D7BE6F /* Communicator.swift in Sources */,
-				C035AFC4211400F90094753E /* Student.swift in Sources */,
 				9334CBBC2111560C00D7BE6F /* Common.swift in Sources */,
+				C02BACF2211849E2002A8BF3 /* TeacherHomeworkContainerViewController.swift in Sources */,
 				931B49272112F59800A8CCB9 /* CoolCellTableViewCell.swift in Sources */,
+				C02BACE1211849E2002A8BF3 /* StudentInfoEditTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
