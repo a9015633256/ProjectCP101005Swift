@@ -205,7 +205,7 @@ extension ClassSelecttViewController: UITableViewDataSource{
         let className = classJoin[indexPath.row].classes
         
         userDefaults.set(classID, forKey: "classId")
-        userDefaults.set(className, forKey: "c")
+        userDefaults.set(className, forKey: "className")
         
     }
     

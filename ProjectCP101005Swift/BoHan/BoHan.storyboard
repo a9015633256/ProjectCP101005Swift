@@ -448,14 +448,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="469.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5nv-1Q-MCx">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5nv-1Q-MCx">
                                                     <rect key="frame" x="16" y="11" width="343" height="470"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="470" id="hIL-hV-oiL"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="5nv-1Q-MCx" secondAttribute="trailing" constant="16" id="Cm8-7c-76b"/>
+                                                <constraint firstItem="5nv-1Q-MCx" firstAttribute="top" secondItem="0b1-65-76I" secondAttribute="top" constant="11" id="Omi-yL-qsl"/>
+                                                <constraint firstItem="5nv-1Q-MCx" firstAttribute="leading" secondItem="0b1-65-76I" secondAttribute="leading" constant="16" id="zor-HB-v43"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -626,14 +633,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="469.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wYa-yO-8Nx">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wYa-yO-8Nx">
                                                     <rect key="frame" x="16" y="11" width="343" height="470"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="470" id="mul-Hs-BKd"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wYa-yO-8Nx" firstAttribute="leading" secondItem="rxR-YT-PdA" secondAttribute="leading" constant="16" id="dGt-v9-HhN"/>
+                                                <constraint firstAttribute="trailing" secondItem="wYa-yO-8Nx" secondAttribute="trailing" constant="16" id="eed-Ly-FLr"/>
+                                                <constraint firstItem="wYa-yO-8Nx" firstAttribute="top" secondItem="rxR-YT-PdA" secondAttribute="top" constant="11" id="zeg-gL-BTF"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>

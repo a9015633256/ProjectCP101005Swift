@@ -230,8 +230,8 @@
 		C02F6EA421192E9D00A0A2BA /* BoHan */ = {
 			isa = PBXGroup;
 			children = (
-				C02F6EA521192E9D00A0A2BA /* Class */,
 				C02F6EAD21192E9D00A0A2BA /* BoHan.storyboard */,
+				C02F6EA521192E9D00A0A2BA /* Class */,
 				C02F6EAE21192E9D00A0A2BA /* Exam */,
 			);
 			path = BoHan;

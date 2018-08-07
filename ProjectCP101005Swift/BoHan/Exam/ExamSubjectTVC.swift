@@ -29,7 +29,7 @@ class ExamSubjectTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "back", style: .plain, target: self, action:#selector(back(_:)) )
+        
         
         guard let teacherAccountStr = UserDefaults.standard.value(forKey: "name")else{
             return
@@ -37,9 +37,10 @@ class ExamSubjectTVC: UITableViewController {
         guard let teacherAccount = teacherAccountStr as? String else{
             return
         }
-        guard let classNameStr = UserDefaults.standard.value(forKey: "c")else{
+        guard let classNameStr = UserDefaults.standard.value(forKey: "className") else{
             return
         }
+
         guard let className = classNameStr as? String else{
             return
         }
@@ -57,7 +58,6 @@ class ExamSubjectTVC: UITableViewController {
         }
         self.mainClass = ClassJoin(id: classID, classes: className, teacher: teacherAccount ,teacherID:teacherID)
         
-        print(mainClass)
        
     }
    
@@ -79,7 +79,9 @@ class ExamSubjectTVC: UITableViewController {
                 assertionFailure()
                 return
             }
-            let classID = self.mainClass.id
+            guard let classID = self.mainClass.id else{
+                return
+            }
             let dictionary: [String:Any] = ["action":"Exam","id": classID]
             
             

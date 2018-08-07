@@ -26,6 +26,9 @@ class Communicator{
                 assertionFailure("error :\(error)")
                 return
             }
+            
+            print(response)
+            
             guard let response = response as? HTTPURLResponse,(200...299).contains(response.statusCode) else {
                 assertionFailure("server error")
                 return
