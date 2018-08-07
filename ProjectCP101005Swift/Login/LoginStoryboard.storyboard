@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J1a-O9-biV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Class Selectt View Controller-->
         <scene sceneID="mpc-YK-eaC">
             <objects>
-                <viewController id="J1a-O9-biV" customClass="ClassSelecttViewController" customModule="ProjectCP101005Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="classList" id="J1a-O9-biV" customClass="ClassSelecttViewController" customModule="ProjectCP101005Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YZd-vf-7xi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,6 +126,7 @@
                                             <outlet property="id" destination="yGE-2J-I1q" id="rrx-AO-iQY"/>
                                             <outlet property="teachName" destination="DlO-wW-Blz" id="8KY-a3-vNm"/>
                                             <outlet property="view" destination="HZQ-op-fUq" id="L4P-K2-IKG"/>
+                                            <segue destination="nlz-go-3it" kind="show" id="QoL-4R-xR7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -159,23 +160,28 @@
             </objects>
             <point key="canvasLocation" x="2807.1999999999998" y="-1433.433283358321"/>
         </scene>
+        <!--TeacherStoryboard-->
+        <scene sceneID="Lfi-6w-djV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TeacherStoryboard" id="nlz-go-3it" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JRH-II-dI9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3441" y="-1575"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="zyb-dq-ekp">
             <objects>
-                <navigationController storyboardIdentifier="classList" automaticallyAdjustsScrollViewInsets="NO" id="3nJ-fR-CAe" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3nJ-fR-CAe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CuN-Qf-OaD">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="J1a-O9-biV" kind="relationship" relationship="rootViewController" id="nBN-jq-ogK"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbR-u4-ssO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1868" y="-1433.433283358321"/>
+            <point key="canvasLocation" x="1674" y="-1433"/>
         </scene>
     </scenes>
 </document>

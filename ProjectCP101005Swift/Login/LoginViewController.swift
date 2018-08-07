@@ -70,7 +70,7 @@ class LoginViewController: UIViewController {
             }
             
             if output.isUserValid {
-                let loginsb = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(withIdentifier: "classList") as! UINavigationController
+                let loginsb = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(withIdentifier: "classList")
                 
                 
 //                guard let controller = loginsb.instantiateViewController() else {
