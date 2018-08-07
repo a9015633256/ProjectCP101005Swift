@@ -28,7 +28,7 @@ class UpdateExamTVC: UITableViewController {
     let datePickerIndexPath = IndexPath(row: 0, section: 2)
     let textViewIndexPath = IndexPath(row: 0, section: 4)
     
-    var subject = [Subject]()
+    var subject = Subject()
     
     var checkDatePickerShown:Bool = false{
         didSet {
@@ -43,14 +43,7 @@ class UpdateExamTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let userData = UserDefaults.standard.data(forKey: "Subject") else{
-            return
-        }
-        guard let item = try? JSONDecoder().decode([Subject].self, from: userData)else{
-            return
-        }
-        self.subject = item
-
+   
         self.datePicker.datePickerMode = .date
         self.datePicker.locale = Locale(identifier: "zh_TW")
         self.contentTextView.layer.borderColor = UIColor.black.cgColor
@@ -133,8 +126,7 @@ class UpdateExamTVC: UITableViewController {
             assertionFailure()
             return
         }
-        for item in self.subject{
-        let examSubjectID = item.subjectid
+        let examSubjectID = self.subject.subjectid
         let dictionary: [String:Any] = ["action":"findByitem","item": examSubjectID]
         guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: []) else {
             assertionFailure()
@@ -161,7 +153,7 @@ class UpdateExamTVC: UITableViewController {
                 print("error: \(error)")
             }
         }
-    }
+    
     
 }
     
@@ -246,7 +238,8 @@ class UpdateExamTVC: UITableViewController {
             return
         }
         
-        let dictionary: [String:Any] = ["action":"update","ID":6,"Title":title,"Date":date,"Content":text]
+        let sujectID = self.subject.subjectid
+        let dictionary: [String:Any] = ["action":"update","ID":sujectID,"Title":title,"Date":date,"Content":text]
         guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: []) else {
             assertionFailure()
             return

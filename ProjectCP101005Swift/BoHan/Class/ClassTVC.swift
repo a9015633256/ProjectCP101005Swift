@@ -144,12 +144,7 @@ class ClassTVC: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Exam" {
-            if let indexPath = tableView.indexPathForSelectedRow{
-                let controller = segue.destination as! ExamSubjectTVC
-                controller.mainClass = self.mainClass[indexPath.row]
-            }
-        }
+        
     }
     
 

@@ -16,6 +16,7 @@ class Cell: UITableViewCell {
 
     weak var delegate:TableViewCellDelegate?
     
+    @IBOutlet weak var updateScore: UIButton!
     @IBOutlet weak var scoreBtn: UIButton!
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var subjectLabel: UILabel!

@@ -13,5 +13,5 @@ struct ClassJoin: Codable {
     var id : Int?
     var classes: String?
     var teacher: String?
-    
+    var teacherID:Int?
 }

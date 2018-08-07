@@ -19,7 +19,7 @@ class UpdateScoreTVC: UITableViewController,TableViewCellDelegate {
     @IBOutlet weak var className: UILabel!
     
     
-    var subject = [Subject]()
+    var subject = Subject()
     var mainSubject = [Exam]()
     var exam = [Exam]()
     var mainCell:Cell?
@@ -33,13 +33,7 @@ class UpdateScoreTVC: UITableViewController,TableViewCellDelegate {
             return
         }
         self.mainSubject = item
-        guard let user = UserDefaults.standard.data(forKey: "Subject") else{
-            return
-        }
-        guard let sum = try? JSONDecoder().decode([Subject].self, from: user)else{
-            return
-        }
-        self.subject = sum
+      
         
     }
 
@@ -122,6 +116,55 @@ class UpdateScoreTVC: UITableViewController,TableViewCellDelegate {
     }
     */
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.mainSubject.removeAll()
+        getScoreList()
+    }
+    
+    func getScoreList(){
+        guard let url = URL(string: PropertyKeysForConnection.BoHanServlet) else {
+            assertionFailure()
+            return
+        }
+        let examSubjectID = self.subject.subjectid
+        let dictionary: [String:Any] = ["action": "id","ExamSubjectID" : examSubjectID]
+        guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: []) else {
+            assertionFailure()
+            return
+        }
+        let communicator = CommunicatorMingTa(targetURL: url)
+        communicator.download(from: data) { (error, data) in
+            if let error = error {
+                print("error: \(error)")
+                return
+            }
+            guard let data = data else {
+                assertionFailure()
+                return
+            }
+            let jsonDecodee = JSONDecoder()
+            do {
+                let examsubject = try jsonDecodee.decode([Exam].self, from: data)
+                for sum in examsubject{
+                    self.mainSubject.append(sum)
+                }
+                
+                self.tableView.reloadData()
+            }
+            catch{
+                print("json parse fail: \(error)")
+                return
+            }
+        }
+        
+        
+    }
+    
+    
+    
+    
+    
     func updateScore() {
         guard let url = URL(string: PropertyKeysForConnection.BoHanServlet) else {
             assertionFailure()
@@ -129,9 +172,9 @@ class UpdateScoreTVC: UITableViewController,TableViewCellDelegate {
         }
         for item in self.mainSubject{
             let scoreID = item.AchievementID
-            let examsubjectid = self.subject[0].subjectid
+            let examsubjectid = self.subject.subjectid
             let examstudent = item.examstudent
-            let subject = self.subject[0].examsubjectid
+            let subject = self.subject.examsubjectid
             let studentid = item.studentid
             let name = item.name
             let classid = item.classid

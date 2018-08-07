@@ -44,21 +44,13 @@ class LoginScoreTVC: UITableViewController,UITextFieldDelegate,TableViewCellDele
     @IBOutlet weak var subjectTitle: UILabel!
     @IBOutlet weak var teacherName: UILabel!
     @IBOutlet weak var className: UILabel!
-    var subject = [Subject]()
+    var subject = Subject()
     var mainSubject = [Exam]()
     var exam = [Exam]()
     var mainCell:Cell?
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        guard let userData = UserDefaults.standard.data(forKey: "Subject") else{
-            return
-        }
-        guard let item = try? JSONDecoder().decode([Subject].self, from: userData)else{
-            return
-        }
-        self.subject = item
         getScoreList()
     }
 
@@ -163,7 +155,7 @@ class LoginScoreTVC: UITableViewController,UITextFieldDelegate,TableViewCellDele
             assertionFailure()
             return
         }
-        let examSubjectID = self.subject[0].subjectid
+        let examSubjectID = self.subject.subjectid
         let dictionary: [String:Any] = ["action": "id","ExamSubjectID" : examSubjectID]
         guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: []) else {
             assertionFailure()
@@ -209,9 +201,9 @@ class LoginScoreTVC: UITableViewController,UITextFieldDelegate,TableViewCellDele
         }
         for item in self.mainSubject{
             let scoreID = item.AchievementID
-            let examsubjectid = self.subject[0].subjectid
+            let examsubjectid = self.subject.subjectid
             let examstudent = item.examstudent
-            let subject = self.subject[0].examsubjectid
+            let subject = self.subject.examsubjectid
             let studentid = item.studentid
             let name = item.name
             let classid = item.classid
