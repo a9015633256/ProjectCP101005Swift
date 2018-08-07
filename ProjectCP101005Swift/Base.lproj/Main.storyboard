@@ -244,28 +244,12 @@
             <point key="canvasLocation" x="77.599999999999994" y="3.1484257871064472"/>
         </scene>
         <!--StudentStoryboard-->
-        <scene sceneID="eFs-LF-0JG">
-            <objects>
-                <viewControllerPlaceholder storyboardName="StudentStoryboard" id="iGr-AW-hhu" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FT7-2C-Nvr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="897" y="-215"/>
-        </scene>
-        <!--TeacherStoryboard-->
-        <scene sceneID="BG5-Sd-sJH">
-            <objects>
-                <viewControllerPlaceholder storyboardName="TeacherStoryboard" id="3c8-vM-UIq" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I4j-WP-GJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="897" y="131"/>
-        </scene>
-        <!--StudentStoryboard-->
         <scene sceneID="u9D-tz-8oY">
             <objects>
                 <viewControllerPlaceholder storyboardName="StudentStoryboard" id="JRx-6s-1PN" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m6f-cu-5ok" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="884" y="359"/>
+            <point key="canvasLocation" x="681" y="559"/>
         </scene>
         <!--TeacherStoryboard-->
         <scene sceneID="s3e-AX-scl">
@@ -273,7 +257,7 @@
                 <viewControllerPlaceholder storyboardName="TeacherStoryboard" id="xyR-yr-4pK" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oW1-Wc-Enj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1194" y="360"/>
+            <point key="canvasLocation" x="1380" y="559"/>
         </scene>
     </scenes>
 </document>
