@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UPy-iQ-b59">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rfn-F3-JTM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -674,7 +674,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fH9-pq-o5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2929" y="1485"/>
+            <point key="canvasLocation" x="3868" y="1484.7076461769116"/>
         </scene>
         <!--修改成績-->
         <scene sceneID="lcg-ja-my0">
@@ -877,7 +877,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Le2-dZ-Awn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3692" y="1485"/>
+            <point key="canvasLocation" x="4631.1999999999998" y="1484.7076461769116"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="i5v-td-Quo">
@@ -892,7 +892,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3v-Ri-hkG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4471" y="1148"/>
+            <point key="canvasLocation" x="5408.8000000000002" y="1147.3763118440781"/>
         </scene>
         <!--建立班級-->
         <scene sceneID="Nfe-9e-x9e">
@@ -903,13 +903,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="班級名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCD-WD-Olq">
-                                <rect key="frame" x="16" y="87" width="70" height="21"/>
+                                <rect key="frame" x="16" y="131" width="70" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="odd-42-Rrs">
-                                <rect key="frame" x="107" y="84" width="237" height="30"/>
+                                <rect key="frame" x="107" y="128" width="237" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -925,6 +925,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lhG-2A-AKk"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="lKH-Gc-hZ6"/>
                     <navigationItem key="navigationItem" title="建立班級" id="KcB-ML-vHm">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="3Fk-aO-wZO">
                             <connections>
@@ -938,7 +939,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QsX-CD-aBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2233" y="1485"/>
+            <point key="canvasLocation" x="3172" y="1484.7076461769116"/>
         </scene>
         <!--Join ClassTVC-->
         <scene sceneID="vsI-9b-BXw">
@@ -969,6 +970,16 @@
                                                         <action selector="addBtn:" destination="iiM-cE-QcW" eventType="touchUpInside" id="aQu-cU-EHr"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akV-lf-o0g">
+                                                    <rect key="frame" x="257" y="24" width="46" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button">
+                                                        <color key="titleColor" red="1" green="0.21046185997651612" blue="0.25074517606643276" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="R1j-Ro-PgD" kind="show" id="HXc-oY-rdI"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="zhx-9K-1rh" secondAttribute="bottom" id="HKN-Uf-KS6"/>
@@ -986,6 +997,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="EHK-M2-rpT"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cell" destination="7r0-Bk-nD5" id="jJf-ih-fqJ"/>
@@ -994,13 +1006,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JAS-v8-1cX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1118" y="1485"/>
+            <point key="canvasLocation" x="2056.8000000000002" y="1484.7076461769116"/>
         </scene>
-        <!--考試科目-->
+        <!--考試總覽-->
         <scene sceneID="3Op-kA-GwZ">
             <objects>
                 <navigationController storyboardIdentifier="ExamSubjectTVC" automaticallyAdjustsScrollViewInsets="NO" id="UPy-iQ-b59" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="考試科目" id="PRg-me-uNX"/>
+                    <tabBarItem key="tabBarItem" title="考試總覽" image="test1.png" id="PRg-me-uNX"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f4N-RN-WOs">
@@ -1016,11 +1028,31 @@
             </objects>
             <point key="canvasLocation" x="1119" y="654"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="jiH-tY-rM5">
+            <objects>
+                <navigationController storyboardIdentifier="test" automaticallyAdjustsScrollViewInsets="NO" id="Rfn-F3-JTM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="3zo-Ye-aNM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3CQ-QN-6gl">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iiM-cE-QcW" kind="relationship" relationship="rootViewController" id="bMG-KT-krr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yql-Ct-I9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1117.5999999999999" y="1484.7076461769116"/>
+        </scene>
     </scenes>
     <resources>
         <image name="add1.png" width="64" height="64"/>
         <image name="analysis.png" width="64" height="64"/>
         <image name="ic_mode_edit_white_24dp.png" width="48" height="48"/>
+        <image name="test1.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="75Q-mX-PP3"/>

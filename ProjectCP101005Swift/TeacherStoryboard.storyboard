@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BkI-KB-dsX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BkI-KB-dsX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -48,6 +48,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBx-80-D9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2081" y="271"/>
+        </scene>
+        <!--test-->
+        <scene sceneID="J21-lO-gm5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BoHan" referencedIdentifier="test" id="Kk0-Vg-W0m" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="gYa-i9-a16"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ru-l7-1gf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2089" y="318"/>
         </scene>
         <!--Item-->
         <scene sceneID="nOs-eF-tlQ">
@@ -113,7 +123,7 @@
                         <segue destination="pta-Sh-JyC" kind="relationship" relationship="viewControllers" id="8Vg-1G-RIA"/>
                         <segue destination="nlx-CB-nRW" kind="relationship" relationship="viewControllers" id="Gpc-JP-zSY"/>
                         <segue destination="BUE-bO-0PL" kind="relationship" relationship="viewControllers" id="1VZ-7g-Bgt"/>
-                        <segue destination="Ty3-do-E7x" kind="relationship" relationship="viewControllers" id="Yfx-Pe-VS5"/>
+                        <segue destination="Kk0-Vg-W0m" kind="relationship" relationship="viewControllers" id="z5F-n5-b5e"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXs-6g-wCU" userLabel="First Responder" sceneMemberID="firstResponder"/>

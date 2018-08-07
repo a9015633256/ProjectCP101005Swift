@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C9720F1211960BF0050ED97 /* test1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C9720F0211960BE0050ED97 /* test1.png */; };
 		24BC57B320FD83DE00002DB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC57B220FD83DE00002DB0 /* AppDelegate.swift */; };
 		24BC57B520FD83DE00002DB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC57B420FD83DE00002DB0 /* ViewController.swift */; };
 		24BC57B820FD83DE00002DB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24BC57B620FD83DE00002DB0 /* Main.storyboard */; };
@@ -69,6 +70,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C9720F0211960BE0050ED97 /* test1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test1.png; sourceTree = "<group>"; };
 		24BC57AF20FD83DE00002DB0 /* ProjectCP101005Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectCP101005Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24BC57B220FD83DE00002DB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24BC57B420FD83DE00002DB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				C02F6EB621192E9D00A0A2BA /* Color.swift */,
 				C02F6EB721192E9D00A0A2BA /* JoinClassTVC.swift */,
 				C02F6EB821192E9D00A0A2BA /* TabBarController.swift */,
+				0C9720F0211960BE0050ED97 /* test1.png */,
 				C02F6EB421192E9D00A0A2BA /* analysis.png */,
 				C02F6EB921192E9D00A0A2BA /* ic_mode_edit_white_24dp.png */,
 			);
@@ -391,6 +394,7 @@
 				C02F6EA121192E8200A0A2BA /* StudentStoryboard.storyboard in Resources */,
 				24BC57B820FD83DE00002DB0 /* Main.storyboard in Resources */,
 				C02F6EBB21192E9E00A0A2BA /* add1.png in Resources */,
+				0C9720F1211960BF0050ED97 /* test1.png in Resources */,
 				C02F6EEE21192EA400A0A2BA /* MingTaStoryboard.storyboard in Resources */,
 				C02F6EC721192E9E00A0A2BA /* analysis.png in Resources */,
 				C02F6ECC21192E9E00A0A2BA /* ic_mode_edit_white_24dp.png in Resources */,
