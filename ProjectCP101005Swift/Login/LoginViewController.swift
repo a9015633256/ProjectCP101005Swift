@@ -64,6 +64,9 @@ class LoginViewController: UIViewController {
                 assertionFailure("get data fail")
                 return
             }
+            
+            
+            
             guard let output = try? JSONDecoder().decode(IsUserValid.self, from: result) else {
                 assertionFailure("get output fail")
                 return
@@ -79,10 +82,12 @@ class LoginViewController: UIViewController {
 //                }
                 self.present(loginsb, animated: true)
                 
-                self.userDefault.set(account, forKey: "account")
+                let teacherID = output.id
+                let subjectID = output.subject
                 
-                
-                
+                self.userDefault.set(account, forKey: "name")
+                self.userDefault.set(teacherID, forKey: "teacherId")
+                self.userDefault.set(subjectID, forKey: "subjectId")
                 
             }else{
                 let alert = UIAlertController(title: "錯誤", message: "錯誤", preferredStyle: .alert)

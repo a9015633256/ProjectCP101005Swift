@@ -197,6 +197,18 @@ extension ClassSelecttViewController: UITableViewDataSource{
         }
     }
     
+    //資料存入偏好設定
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let userDefaults = UserDefaults.standard
+        let classID = classJoin[indexPath.row].id
+        let className = classJoin[indexPath.row].classes
+        
+        userDefaults.set(classID, forKey: "classId")
+        userDefaults.set(className, forKey: "c")
+        
+    }
+    
     
 }
 

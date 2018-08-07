@@ -15,6 +15,10 @@ struct Account: Codable {
 
 struct IsUserValid: Codable{
     var isUserValid = false
+    var id = 0
+    var subject = 0
+    
+    
 }
 
 
