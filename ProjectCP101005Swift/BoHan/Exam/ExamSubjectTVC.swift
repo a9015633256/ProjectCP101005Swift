@@ -172,20 +172,23 @@ class ExamSubjectTVC: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            self.subject.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
 
             guard let url = URL(string: PropertyKeysForConnection.BoHanServlet) else {
                 assertionFailure()
                 return
             }
-            let subject = self.subject[0].subjectid
+            let subject = self.subject[indexPath.row].subjectid
+            
 
             let dictionary: [String:Any] = ["action":"deleteSubject","subject": subject]
             guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: []) else {
                 assertionFailure()
                 return
             }
+            self.subject.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+
+
             let communicator = CommunicatorMingTa(targetURL: url)
             communicator.download(from: data) { (error, data) in
                 if let error = error {
