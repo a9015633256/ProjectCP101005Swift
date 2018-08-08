@@ -33,6 +33,7 @@ class JoinClassTVC: UITableViewController {
         self.cell.layer.cornerRadius = 30
         self.cell.layer.borderColor = UIColor.blue.cgColor
         self.cell.backgroundColor = custom.color
+        tableView.separatorInset = UIEdgeInsetsMake(0.0,   cell.bounds.size.width, 0.0, 0.0)
         self.joinBtn.tintColor = UIColor.red
         self.joinBtn.frame.size.height = cell.frame.size.height
         self.joinBtn.frame.size.width = 100
@@ -154,6 +155,10 @@ class JoinClassTVC: UITableViewController {
             self.classNameLabel.text = "班級名稱: " + classDetail.name!
             }catch{
                 print("error: \(error)")
+                let alert = UIAlertController(title: "錯誤", message: "查無此代碼\n請重新查詢", preferredStyle: .alert)
+                let action = UIAlertAction(title: "確認", style: .default)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
             }
         }
         
