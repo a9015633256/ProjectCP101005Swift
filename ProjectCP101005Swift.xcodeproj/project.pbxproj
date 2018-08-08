@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C8BA7A6211A8A2F006BC87E /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8BA7A5211A8A2F006BC87E /* PopOverViewController.swift */; };
 		0C9720F1211960BF0050ED97 /* test1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C9720F0211960BE0050ED97 /* test1.png */; };
-		0C9720F721197FD90050ED97 /* popOver.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C9720F621197FD80050ED97 /* popOver.png */; };
 		0CC02E102119964000091EB9 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CC02E0F2119963F00091EB9 /* search.png */; };
 		24BC57B320FD83DE00002DB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC57B220FD83DE00002DB0 /* AppDelegate.swift */; };
 		24BC57B520FD83DE00002DB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC57B420FD83DE00002DB0 /* ViewController.swift */; };
@@ -72,8 +72,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C8BA7A5211A8A2F006BC87E /* PopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
+		0C8BA7A7211A92BA006BC87E /* popOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popOver.png; sourceTree = "<group>"; };
 		0C9720F0211960BE0050ED97 /* test1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test1.png; sourceTree = "<group>"; };
-		0C9720F621197FD80050ED97 /* popOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = popOver.png; path = ../../../../popOver.png; sourceTree = "<group>"; };
 		0CC02E0F2119963F00091EB9 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		24BC57AF20FD83DE00002DB0 /* ProjectCP101005Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectCP101005Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24BC57B220FD83DE00002DB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +185,7 @@
 				C02F6EA021192E8100A0A2BA /* StudentStoryboard.storyboard */,
 				C02F6EA221192E8E00A0A2BA /* TeacherStoryboard.storyboard */,
 				24BC57B920FD83E100002DB0 /* Assets.xcassets */,
+				0C8BA7A7211A92BA006BC87E /* popOver.png */,
 				24BC57BB20FD83E100002DB0 /* LaunchScreen.storyboard */,
 				24BC57BE20FD83E100002DB0 /* Info.plist */,
 				24BC57C420FD842300002DB0 /* ProjectCP101005Swift-Bridging-Header.h */,
@@ -218,6 +220,7 @@
 				9334CBBD2111563200D7BE6F /* Communicator.swift */,
 				9334CBBF2111565F00D7BE6F /* Account.swift */,
 				9334CBC12111566D00D7BE6F /* Action.swift */,
+				0C8BA7A5211A8A2F006BC87E /* PopOverViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -272,7 +275,6 @@
 				0C9720F0211960BE0050ED97 /* test1.png */,
 				C02F6EB421192E9D00A0A2BA /* analysis.png */,
 				C02F6EB921192E9D00A0A2BA /* ic_mode_edit_white_24dp.png */,
-				0C9720F621197FD80050ED97 /* popOver.png */,
 			);
 			path = Exam;
 			sourceTree = "<group>";
@@ -405,7 +407,6 @@
 				C02F6EC721192E9E00A0A2BA /* analysis.png in Resources */,
 				C02F6ECC21192E9E00A0A2BA /* ic_mode_edit_white_24dp.png in Resources */,
 				0CC02E102119964000091EB9 /* search.png in Resources */,
-				0C9720F721197FD90050ED97 /* popOver.png in Resources */,
 				930FC19F210ACB7100C27FC1 /* LoginStoryboard.storyboard in Resources */,
 				C03381CB2118537A00D55EAE /* .gitignore in Resources */,
 				C02F6EC121192E9E00A0A2BA /* BoHan.storyboard in Resources */,
@@ -451,6 +452,7 @@
 				C02F6EE621192EA400A0A2BA /* StudentHomeworkTableViewController.swift in Sources */,
 				C02F6EC921192E9E00A0A2BA /* Color.swift in Sources */,
 				C02F6EEA21192EA400A0A2BA /* HomeworkSectionHeaderCell.swift in Sources */,
+				0C8BA7A6211A8A2F006BC87E /* PopOverViewController.swift in Sources */,
 				C02F6EF121192EA400A0A2BA /* HomeworkCheck.swift in Sources */,
 				24BC57B320FD83DE00002DB0 /* AppDelegate.swift in Sources */,
 				C02F6EE721192EA400A0A2BA /* StudentHomeworkDetailTableViewController.swift in Sources */,

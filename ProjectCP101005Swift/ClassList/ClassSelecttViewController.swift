@@ -68,7 +68,10 @@ class ClassSelecttViewController: UIViewController,UIPopoverPresentationControll
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        getMainClass()
+    }
 
     /*
     // MARK: - Navigation
@@ -129,7 +132,9 @@ class ClassSelecttViewController: UIViewController,UIPopoverPresentationControll
         if segue.identifier == "ShowPopOver"{
             let controller = segue.destination.popoverPresentationController
             controller?.delegate = self
+            
         }
+        
     }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
