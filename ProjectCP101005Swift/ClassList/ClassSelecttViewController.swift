@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ClassSelecttViewController: UIViewController {
+class ClassSelecttViewController: UIViewController,UIPopoverPresentationControllerDelegate {
     
     let communicator = Communicator()
     
@@ -22,6 +22,18 @@ class ClassSelecttViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "ShowPopOver"{
+                let controller = segue.destination
+                let delegate = self as! UIPopoverPresentationControllerDelegate
+                controller.popoverPresentationController?.delegate = delegate
+            }
+            func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle{
+                return UIModalPresentationStyle.none
+            }
+            
+        }
         
         classTableview.delegate = self
         classTableview.dataSource = self
@@ -48,7 +60,6 @@ class ClassSelecttViewController: UIViewController {
             }
             self.classJoin = output
             
-            print("\(self.classJoin)")
             self.classTableview.reloadData()
         }
     }
@@ -57,7 +68,10 @@ class ClassSelecttViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        getMainClass()
+    }
 
     /*
     // MARK: - Navigation
@@ -114,6 +128,21 @@ class ClassSelecttViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowPopOver"{
+            let controller = segue.destination.popoverPresentationController
+            controller?.delegate = self
+            
+        }
+        
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.none
+    }
+    
+    
+    
     func getJoinClass() {
         let action = GetClass(action: "getJoin", name: teacherName)
         let encoder = JSONEncoder()
@@ -139,6 +168,9 @@ class ClassSelecttViewController: UIViewController {
         
     }
 }
+
+
+
 
 extension ClassSelecttViewController: UITableViewDataSource{
     
@@ -209,7 +241,7 @@ extension ClassSelecttViewController: UITableViewDataSource{
         
     }
     
-    
+   
 }
 
 extension ClassSelecttViewController: UITableViewDelegate{

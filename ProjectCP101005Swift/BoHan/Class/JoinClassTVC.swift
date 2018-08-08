@@ -7,23 +7,48 @@
 //
 
 import UIKit
-struct custom {
+struct custom:Codable,CustomStringConvertible {
+    var description: String{
+        return "classid:\(id),teacherid:\(teacherid),className:\(name)"
+    }
+
+    var id:Int?
+    var teacherid:Int?
+    var name:String?
      static let color = UIColor(red: 30.0/255.0, green: 144.0/255.0, blue: 245.0/255.0, alpha: 1.0)
 }
 
 class JoinClassTVC: UITableViewController {
 
+    @IBOutlet weak var classNameLabel: UILabel!
+    @IBOutlet weak var serachTextField: UITextField!
     @IBOutlet weak var joinBtn: UIButton!
     @IBOutlet weak var cell: UITableViewCell!
+    
+    var classID: Int?
+    var teacherID: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.cell.layer.cornerRadius = 30
         self.cell.layer.borderColor = UIColor.blue.cgColor
         self.cell.backgroundColor = custom.color
+        tableView.separatorInset = UIEdgeInsetsMake(0.0,   cell.bounds.size.width, 0.0, 0.0)
         self.joinBtn.tintColor = UIColor.red
         self.joinBtn.frame.size.height = cell.frame.size.height
-        self.joinBtn.frame.size.width = 100.0
+        self.joinBtn.frame.size.width = 100
+        
+        
+       
+        guard let teacherIDInt = UserDefaults.standard.value(forKey: "teacherId")else{
+            return
+        }
+        guard let teacherID = teacherIDInt as? Int else{
+            return
+        }
+       self.teacherID = teacherID
+        
+        
     }
     
     
@@ -99,11 +124,15 @@ class JoinClassTVC: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    func joinClass() {
+    @IBAction func searchClass(_ sender: UIButton) {
         guard let url = URL(string: PropertyKeysForConnection.BoHanServlet) else {
             return
         }
-        let dictionary: [String:Any] = ["action":"Join","ClassId":4,"TeacherId":2]
+        guard let classID = Int(self.serachTextField.text!) else {
+            return
+        }
+        self.classID = classID
+        let dictionary: [String:Any] = ["action":"findByClass","id": classID]
         guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: []) else {
             assertionFailure()
             return
@@ -114,19 +143,50 @@ class JoinClassTVC: UITableViewController {
                 print("error: \(error)")
                 return
             }
-            guard let data = data else {
-                assertionFailure()
+            guard let data = data else{
                 return
             }
-            
             let jsonDecoder = JSONDecoder()
-            do {
-                let join = try jsonDecoder.decode(Class.self, from: data)
+            do{
                 
-                
+            let classDetail = try jsonDecoder.decode(custom.self, from: data)
+            self.cell.isHidden = false
+               
+            self.classNameLabel.text = "班級名稱: " + classDetail.name!
             }catch{
-                
+                print("error: \(error)")
+                let alert = UIAlertController(title: "錯誤", message: "查無此代碼\n請重新查詢", preferredStyle: .alert)
+                let action = UIAlertAction(title: "確認", style: .default)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
             }
+        }
+        
+    }
+    func joinClass() {
+        guard let url = URL(string: PropertyKeysForConnection.BoHanServlet) else {
+            return
+        }
+        guard let teacherID = self.teacherID else {
+            return
+        }
+        guard let classID = self.classID else {
+            return
+        }
+        let dictionary: [String:Any] = ["action":"Join","ClassId":classID,"TeacherId":teacherID]
+        guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: []) else {
+            assertionFailure()
+            return
+        }
+        let communicator = CommunicatorMingTa(targetURL: url)
+        communicator.download(from: data) { (error, data) in
+            if let error = error {
+                print("error: \(error)")
+                return
+            }
+           
+            
+            
         }
     }
     
@@ -134,7 +194,9 @@ class JoinClassTVC: UITableViewController {
     @IBAction func addBtn(_ sender: UIButton) {
         joinClass()
         let alert = UIAlertController(title: "完成", message: "新增成功", preferredStyle: .alert)
-        let action = UIAlertAction(title: "確認", style: .default)
+        let action = UIAlertAction(title: "確認", style: .default) { (status) in
+            self.navigationController?.popViewController(animated: true)
+        }
         alert.addAction(action)
         present(alert, animated: true)
         sender.isEnabled = false

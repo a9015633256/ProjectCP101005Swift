@@ -10,14 +10,20 @@ import UIKit
 class CreateClassViewController: UIViewController {
     
   
-    var createClass = Class()
+    var account:String?
 
     @IBOutlet weak var classNameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
+        guard let teacherAccountStr = UserDefaults.standard.value(forKey: "name")else{
+            return
+        }
+        guard let teacherAccount = teacherAccountStr as? String else{
+            return
+        }
+      self.account = teacherAccount
     }
     
 
@@ -50,9 +56,11 @@ class CreateClassViewController: UIViewController {
             present(alert, animated: true)
             return
         }
+        guard let teacherAccount = self.account else {
+            return
+        }
         
-        
-        let dictionary: [String:Any] = ["action":"insertClass","ClassName": text,"ClassTeacher":"cp111@gg.com"]
+        let dictionary: [String:Any] = ["action":"insertClass","ClassName": text,"ClassTeacher":teacherAccount]
         
         
         guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: []) else {
@@ -67,19 +75,7 @@ class CreateClassViewController: UIViewController {
                 print("error: \(error)")
                 return
             }
-            guard let data = data else {
-                assertionFailure()
-                return
-            }
-            let jsonDecoder = JSONDecoder()
-            do {
-                let create = try jsonDecoder.decode(Class.self, from: data)
-                self.classNameTextField.text = create.name
-                print(create.classID)
-            }catch{
-                print("json parse failed: \(error)")
-                return
-            }
+            
         }
     }
     
