@@ -1173,13 +1173,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="考試科目" id="hy2-mZ-X8a">
-                        <barButtonItem key="leftBarButtonItem" title="back" image="back_arrow_blue_with_text" style="done" id="McT-Qe-bAF">
-                            <connections>
-                                <action selector="backBtnPressed:" destination="jFH-66-Wx4" id="1m0-Jq-ZAd"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="考試科目" id="hy2-mZ-X8a"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFS-DT-dSq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1337,7 +1331,7 @@
             </objects>
             <point key="canvasLocation" x="2928.8000000000002" y="-881.10944527736137"/>
         </scene>
-        <!--登入成績-->
+        <!--查看成績-->
         <scene sceneID="wUZ-9K-pY2">
             <objects>
                 <tableViewController id="Qkb-AB-dec" customClass="StudentExamQueryScore" customModule="ProjectCP101005Swift" customModuleProvider="target" sceneMemberID="viewController">
@@ -1514,7 +1508,7 @@
                             <outlet property="delegate" destination="Qkb-AB-dec" id="eJW-Hb-pqq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="登入成績" id="Dpq-Gm-2uu"/>
+                    <navigationItem key="navigationItem" title="查看成績" id="Dpq-Gm-2uu"/>
                     <connections>
                         <outlet property="className" destination="wap-Mc-8bj" id="VMP-4b-kVw"/>
                         <outlet property="subjectTitle" destination="MNS-VC-3Yh" id="g5u-jY-1Ii"/>
