@@ -34,7 +34,6 @@
 		C02F6EBD21192E9E00A0A2BA /* CreateClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F6EA921192E9D00A0A2BA /* CreateClassViewController.swift */; };
 		C02F6EBE21192E9E00A0A2BA /* CreateSubjectTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F6EAA21192E9D00A0A2BA /* CreateSubjectTVC.swift */; };
 		C02F6EBF21192E9E00A0A2BA /* ClassJoin:Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F6EAB21192E9D00A0A2BA /* ClassJoin:Create.swift */; };
-		C02F6EC021192E9E00A0A2BA /* examSubject.txt in Resources */ = {isa = PBXBuildFile; fileRef = C02F6EAC21192E9D00A0A2BA /* examSubject.txt */; };
 		C02F6EC121192E9E00A0A2BA /* BoHan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C02F6EAD21192E9D00A0A2BA /* BoHan.storyboard */; };
 		C02F6EC221192E9E00A0A2BA /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F6EAF21192E9D00A0A2BA /* Cell.swift */; };
 		C02F6EC321192E9E00A0A2BA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F6EB021192E9D00A0A2BA /* FirstViewController.swift */; };
@@ -107,7 +106,6 @@
 		C02F6EA921192E9D00A0A2BA /* CreateClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateClassViewController.swift; sourceTree = "<group>"; };
 		C02F6EAA21192E9D00A0A2BA /* CreateSubjectTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSubjectTVC.swift; sourceTree = "<group>"; };
 		C02F6EAB21192E9D00A0A2BA /* ClassJoin:Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ClassJoin:Create.swift"; sourceTree = "<group>"; };
-		C02F6EAC21192E9D00A0A2BA /* examSubject.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = examSubject.txt; sourceTree = "<group>"; };
 		C02F6EAD21192E9D00A0A2BA /* BoHan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BoHan.storyboard; sourceTree = "<group>"; };
 		C02F6EAF21192E9D00A0A2BA /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		C02F6EB021192E9D00A0A2BA /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -252,40 +250,39 @@
 		C02F6EA421192E9D00A0A2BA /* BoHan */ = {
 			isa = PBXGroup;
 			children = (
-				C02F6EA521192E9D00A0A2BA /* Cass */,
-				C02F6EAC21192E9D00A0A2BA /* examSubject.txt */,
 				C02F6EAD21192E9D00A0A2BA /* BoHan.storyboard */,
+				C02F6EA521192E9D00A0A2BA /* Class */,
 				C02F6EAE21192E9D00A0A2BA /* Exam */,
 			);
 			path = BoHan;
 			sourceTree = "<group>";
 		};
-		C02F6EA521192E9D00A0A2BA /* Cass */ = {
+		C02F6EA521192E9D00A0A2BA /* Class */ = {
 			isa = PBXGroup;
 			children = (
 				C02F6EA621192E9D00A0A2BA /* ClassCell.swift */,
-				C02F6EA721192E9D00A0A2BA /* add1.png */,
 				C02F6EA821192E9D00A0A2BA /* ClassTVC.swift */,
 				C02F6EA921192E9D00A0A2BA /* CreateClassViewController.swift */,
-				C02F6EAA21192E9D00A0A2BA /* CreateSubjectTVC.swift */,
 				C02F6EAB21192E9D00A0A2BA /* ClassJoin:Create.swift */,
+				C02F6EA721192E9D00A0A2BA /* add1.png */,
 			);
-			path = Cass;
+			path = Class;
 			sourceTree = "<group>";
 		};
 		C02F6EAE21192E9D00A0A2BA /* Exam */ = {
 			isa = PBXGroup;
 			children = (
+				C02F6EAA21192E9D00A0A2BA /* CreateSubjectTVC.swift */,
 				C02F6EAF21192E9D00A0A2BA /* Cell.swift */,
 				C02F6EB021192E9D00A0A2BA /* FirstViewController.swift */,
 				C02F6EB121192E9D00A0A2BA /* LoginScoreTVC.swift */,
 				C02F6EB221192E9D00A0A2BA /* UpdateScoreTVC.swift */,
 				C02F6EB321192E9D00A0A2BA /* ExamSubjectTVC.swift */,
-				C02F6EB421192E9D00A0A2BA /* analysis.png */,
 				C02F6EB521192E9D00A0A2BA /* UpdateExamTVC.swift */,
 				C02F6EB621192E9D00A0A2BA /* Color.swift */,
 				C02F6EB721192E9D00A0A2BA /* JoinClassTVC.swift */,
 				C02F6EB821192E9D00A0A2BA /* TabBarController.swift */,
+				C02F6EB421192E9D00A0A2BA /* analysis.png */,
 				C02F6EB921192E9D00A0A2BA /* ic_mode_edit_white_24dp.png */,
 			);
 			path = Exam;
@@ -432,7 +429,6 @@
 				C02F6EA321192E8E00A0A2BA /* TeacherStoryboard.storyboard in Resources */,
 				24BC57BA20FD83E100002DB0 /* Assets.xcassets in Resources */,
 				C02F6EA121192E8200A0A2BA /* StudentStoryboard.storyboard in Resources */,
-				C02F6EC021192E9E00A0A2BA /* examSubject.txt in Resources */,
 				24BC57B820FD83DE00002DB0 /* Main.storyboard in Resources */,
 				C02F6EBB21192E9E00A0A2BA /* add1.png in Resources */,
 				C02F6EEE21192EA400A0A2BA /* MingTaStoryboard.storyboard in Resources */,

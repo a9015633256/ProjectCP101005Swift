@@ -24,17 +24,41 @@ class ExamSubjectTVC: UITableViewController {
 
     
     var subject = [Subject]()
-    var mainClass = Classes()
+    var mainClass = ClassJoin()
     var name:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "back", style: .plain, target: self, action:#selector(back(_:)) )
         
-     
+        
+        guard let teacherAccountStr = UserDefaults.standard.value(forKey: "name")else{
+            return
+        }
+        guard let teacherAccount = teacherAccountStr as? String else{
+            return
+        }
+        guard let classNameStr = UserDefaults.standard.value(forKey: "className") else{
+            return
+        }
+
+        guard let className = classNameStr as? String else{
+            return
+        }
+        guard let teacherIDInt = UserDefaults.standard.value(forKey: "teacherId")else{
+            return
+        }
+        guard let teacherID = teacherIDInt as? Int else{
+            return
+        }
+        guard let classIDInt = UserDefaults.standard.value(forKey: "classId")else{
+            return
+        }
+        guard let classID = classIDInt as? Int else{
+            return
+        }
+        self.mainClass = ClassJoin(id: classID, classes: className, teacher: teacherAccount ,teacherID:teacherID)
+        
        
-       
-        print(self.mainClass)
     }
    
     @objc func back(_ sender:Any){
@@ -55,7 +79,9 @@ class ExamSubjectTVC: UITableViewController {
                 assertionFailure()
                 return
             }
-            let classID = self.mainClass.id
+            guard let classID = self.mainClass.id else{
+                return
+            }
             let dictionary: [String:Any] = ["action":"Exam","id": classID]
             
             
@@ -117,7 +143,8 @@ class ExamSubjectTVC: UITableViewController {
         cell.scoreBtn.layer.cornerRadius = 10
         cell.cellView.layer.cornerRadius = 10
         cell.cellView.backgroundColor = Color.DeepSkyBlue
-        
+        cell.scoreBtn.tag = indexPath.row
+        cell.updateScore.tag = indexPath.row
         tableView.separatorInset = UIEdgeInsetsMake(0.0, cell.bounds.size.width, 0.0, 0.0)
 
         return cell
@@ -181,7 +208,26 @@ class ExamSubjectTVC: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-       
+        if segue.identifier == "UpdateScore"{
+            guard let indexPath = sender as? UIButton else{
+                return
+            }
+            let contoller = segue.destination as? UpdateScoreTVC
+            contoller?.subject = self.subject[indexPath.tag]
+        }
+        else if segue.identifier == "LoginScore"{
+            guard let indexPath = sender as? UIButton else{
+                return
+            }
+            let contoller = segue.destination as? LoginScoreTVC
+            contoller?.subject = self.subject[indexPath.tag]
+        }
+        else if segue.identifier == "UpdateSubject"{
+            if let indexPath = tableView.indexPathForSelectedRow{
+            let contoller = segue.destination as? UpdateExamTVC
+                contoller?.subject = self.subject[indexPath.row]
+            }
+        }
     }
    }
 
