@@ -1,35 +1,18 @@
 //
-//  ExamSubjectTableViewController.swift
+//  StudentExamTVC.swift
 //  ProjectCP101005Swift
 //
-//  Created by Bohan on 2018/7/17.
+//  Created by Bohan on 2018/8/8.
 //  Copyright © 2018年 楊文興. All rights reserved.
 //
 
 import UIKit
-struct Subject:Codable,CustomStringConvertible {
-    var description: String{
-        return "classid:\(classid),subjectid:\(subjectid),teacherid:\(teacherid),examsubjectid:\(examsubjectid),examtitle:\(examtitle)"
-    }
-    
-    var classid:Int = 0
-    var subjectid:Int = 0
-    var teacherid:Int = 0
-    var examsubjectid:Int = 0
-    var examtitle:String = ""
-}
 
-
-class ExamSubjectTVC: UITableViewController {
-
-    
+class StudentExamTVC: UITableViewController {
     var subject = [Subject]()
     var mainClass = ClassJoin()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
         guard let teacherAccountStr = UserDefaults.standard.value(forKey: "name")else{
             return
         }
@@ -39,7 +22,7 @@ class ExamSubjectTVC: UITableViewController {
         guard let classNameStr = UserDefaults.standard.value(forKey: "className") else{
             return
         }
-
+        
         guard let className = classNameStr as? String else{
             return
         }
@@ -57,66 +40,57 @@ class ExamSubjectTVC: UITableViewController {
         }
         self.mainClass = ClassJoin(id: classID, classes: className, teacher: teacherAccount ,teacherID:teacherID)
         
-       
         
     }
-   
-    
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.subject.removeAll()
         getSubject()
-        
     }
-    
-
     func getSubject()  {
-            guard let url = URL(string: PropertyKeysForConnection.BoHanServlet) else {
+        guard let url = URL(string: PropertyKeysForConnection.BoHanServlet) else {
+            assertionFailure()
+            return
+        }
+        guard let classID = self.mainClass.id else{
+            return
+        }
+        let dictionary: [String:Any] = ["action":"Exam","id": classID]
+        
+        
+        guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: []) else {
+            assertionFailure()
+            return
+        }
+        
+        
+        let communicator = CommunicatorMingTa(targetURL: url)
+        communicator.download(from: data) { (error, data) in
+            if let error = error {
+                print("error: \(error)")
+                return
+            }
+            guard let data = data else {
                 assertionFailure()
                 return
             }
-            guard let classID = self.mainClass.id else{
-                return
-            }
-            let dictionary: [String:Any] = ["action":"Exam","id": classID]
-            
-            
-            guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: []) else {
-                assertionFailure()
-                return
-            }
-            
-            
-            let communicator = CommunicatorMingTa(targetURL: url)
-            communicator.download(from: data) { (error, data) in
-                if let error = error {
-                    print("error: \(error)")
-                    return
+            let jsonDecoder = JSONDecoder()
+            do {
+                let subject = try jsonDecoder.decode([Subject].self, from: data)
+                for item in subject {
+                    self.subject.append(item)
                 }
-                guard let data = data else {
-                    assertionFailure()
-                    return
+                if let encoded = try? JSONEncoder().encode(self.subject){
+                    UserDefaults.standard.set(encoded, forKey: "Subject")
                 }
-                let jsonDecoder = JSONDecoder()
-                do {
-                    let subject = try jsonDecoder.decode([Subject].self, from: data)
-                    for item in subject {
-                        self.subject.append(item)
-                    }
-                    if let encoded = try? JSONEncoder().encode(self.subject){
-                        UserDefaults.standard.set(encoded, forKey: "Subject")
-                    }
-                    self.tableView.reloadData()
-                }catch{
-                    print("json parse failed: \(error)")
-                    return
+                self.tableView.reloadData()
+            }catch{
+                print("json parse failed: \(error)")
+                return
                 
             }
         }
     }
-    
     @IBAction func backBtnPressed(_ sender: UIBarButtonItem) {
         let transition: CATransition = CATransition()
         transition.duration = 0.5
@@ -127,7 +101,11 @@ class ExamSubjectTVC: UITableViewController {
         
         dismiss(animated: false, completion: nil)
     }
-    
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 
     // MARK: - Table view data source
 
@@ -137,28 +115,30 @@ class ExamSubjectTVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return subject.count
+        // #warning Incomplete implementation, return the number of rows
+        return self.subject.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! Cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StudentExamCell
         let examSubject = subject[indexPath.row]
         let title = examSubject.examtitle
+        cell.tag = indexPath.row
         cell.subjectLabel.text = "考試科目: " + title
         cell.scoreBtn.backgroundColor = Color.LightSlateBlue
         cell.scoreBtn.layer.cornerRadius = 10
         cell.cellView.layer.cornerRadius = 10
         cell.cellView.backgroundColor = Color.DeepSkyBlue
         cell.scoreBtn.tag = indexPath.row
-        cell.updateScore.tag = indexPath.row
         tableView.separatorInset = UIEdgeInsetsMake(0.0, cell.bounds.size.width, 0.0, 0.0)
+
+
 
         return cell
     }
     
-    
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -167,37 +147,17 @@ class ExamSubjectTVC: UITableViewController {
     }
     */
 
-    
+    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-
-            guard let url = URL(string: PropertyKeysForConnection.BoHanServlet) else {
-                assertionFailure()
-                return
-            }
-            let subject = self.subject[indexPath.row].subjectid
-            
-
-            let dictionary: [String:Any] = ["action":"deleteSubject","subject": subject]
-            guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: []) else {
-                assertionFailure()
-                return
-            }
-            self.subject.remove(at: indexPath.row)
+            // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
-
-
-            let communicator = CommunicatorMingTa(targetURL: url)
-            communicator.download(from: data) { (error, data) in
-                if let error = error {
-                    print("error: \(error)")
-                    return
-                }
-            }
-        }
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }    
     }
-
+    */
 
     /*
     // Override to support rearranging the table view.
@@ -214,33 +174,29 @@ class ExamSubjectTVC: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        if segue.identifier == "UpdateScore"{
-            guard let indexPath = sender as? UIButton else{
-                return
-            }
-            let contoller = segue.destination as? UpdateScoreTVC
-            contoller?.subject = self.subject[indexPath.tag]
-        }
-        else if segue.identifier == "LoginScore"{
-            guard let indexPath = sender as? UIButton else{
-                return
-            }
-            let contoller = segue.destination as? LoginScoreTVC
-            contoller?.subject = self.subject[indexPath.tag]
-        }
-        else if segue.identifier == "UpdateSubject"{
+        if segue.identifier == "QueryExam"{
             if let indexPath = tableView.indexPathForSelectedRow{
-            let contoller = segue.destination as? UpdateExamTVC
-                contoller?.subject = self.subject[indexPath.row]
+            let contoller = segue.destination as? StudentExamQuery
+            contoller?.subject = self.subject[indexPath.row]
             }
+        }
+        else if segue.identifier == "QueryExamScore"{
+            guard let indexPath = sender as? UIButton else{
+                return
+            }
+            let contoller = segue.destination as? StudentExamQueryScore
+            contoller?.subject = self.subject[indexPath.tag]
         }
     }
-   }
 
-
-
+}
