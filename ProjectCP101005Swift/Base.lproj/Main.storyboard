@@ -63,6 +63,14 @@
                                     <segue destination="xyR-yr-4pK" kind="presentation" id="ICz-Na-scc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZL-Ez-AkL">
+                                <rect key="frame" x="164" y="626" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="LQk-Ml-oYT" kind="presentation" id="Sfc-4G-cMD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="BFL-v0-xU1"/>
@@ -242,6 +250,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m5U-gE-Af9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="77.599999999999994" y="3.1484257871064472"/>
+        </scene>
+        <!--TeacherSingleExamChartsTableViewController-->
+        <scene sceneID="X3H-Ke-ChW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MingTaStoryboard" referencedIdentifier="TeacherSingleExamChartsTableViewController" id="LQk-Ml-oYT" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qZw-uR-F8I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1009" y="478"/>
         </scene>
         <!--StudentStoryboard-->
         <scene sceneID="u9D-tz-8oY">
