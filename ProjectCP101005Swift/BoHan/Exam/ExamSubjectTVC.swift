@@ -230,7 +230,7 @@ class ExamSubjectTVC: UITableViewController {
             guard let indexPath = sender as? UIButton else{
                 return
             }
-            let contoller = segue.destination as? LoginScoreTVC
+            let contoller = segue.destination as? UpdateScoreTVC
             contoller?.subject = self.subject[indexPath.tag]
         }
         else if segue.identifier == "UpdateSubject"{

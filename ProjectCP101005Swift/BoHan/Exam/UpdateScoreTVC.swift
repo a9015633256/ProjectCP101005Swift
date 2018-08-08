@@ -225,7 +225,7 @@ class UpdateScoreTVC: UITableViewController,TableViewCellDelegate {
     
     @IBAction func updateScore(_ sender: UIBarButtonItem) {
         updateScore()
-        let alert = UIAlertController(title: "完成", message: "修改成功", preferredStyle: .alert)
+        let alert = UIAlertController(title: "完成", message: "新增成功", preferredStyle: .alert)
         let action = UIAlertAction(title: "確認", style: .default) { (status) in
             self.navigationController?.popViewController(animated: true)
         }

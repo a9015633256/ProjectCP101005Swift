@@ -39,7 +39,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <segue destination="SnY-P5-Fbl" kind="show" identifier="LoginScore" id="GLP-BF-76f"/>
+                                                <segue destination="Kdb-Uu-yXX" kind="show" identifier="LoginScore" id="C2H-nF-xdo"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkA-g4-4oI">
@@ -189,9 +189,6 @@
                                         <constraint firstAttribute="height" constant="30" id="eZt-fX-3r8"/>
                                     </constraints>
                                     <state key="normal" image="analysis.png"/>
-                                    <connections>
-                                        <segue destination="eMR-7a-toT" kind="show" id="S5b-k1-JSQ"/>
-                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分析圖" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Six-We-xyt">
                                     <rect key="frame" x="294" y="20" width="52" height="21"/>
@@ -264,7 +261,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                             <connections>
-                                                <action selector="changeValue:" destination="l4f-6o-3c8" eventType="editingDidEnd" id="6mh-uD-O58"/>
+                                                <action selector="changeValue:" destination="l4f-6o-3c8" eventType="editingChanged" id="dov-2s-0gM"/>
                                             </connections>
                                         </textField>
                                     </subviews>
@@ -311,7 +308,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFV-hJ-AjT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3642" y="654"/>
+            <point key="canvasLocation" x="4700" y="364"/>
         </scene>
         <!--建立考試-->
         <scene sceneID="4uS-lg-AfW">
@@ -802,7 +799,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="58" id="j7S-Fl-mYm" customClass="Cell" customModule="ProjectCP101005Swift" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="58" id="j7S-Fl-mYm" customClass="Cell" customModule="ProjectCP101005Swift" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="163" width="375" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j7S-Fl-mYm" id="cs1-lO-fPs">
@@ -836,7 +833,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                             <connections>
-                                                <action selector="changeValue2:" destination="j7S-Fl-mYm" eventType="editingDidEnd" id="hm8-l8-Z3J"/>
+                                                <action selector="changeValue2:" destination="j7S-Fl-mYm" eventType="editingChanged" id="tt1-A6-Gyl"/>
                                             </connections>
                                         </textField>
                                     </subviews>
@@ -869,8 +866,8 @@
                             <outlet property="delegate" destination="Kdb-Uu-yXX" id="HGk-GS-RFj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="修改成績" id="qXp-DY-6BD">
-                        <barButtonItem key="rightBarButtonItem" title="修改" id="SPG-Jh-T2g">
+                    <navigationItem key="navigationItem" title="登入成績" id="qXp-DY-6BD">
+                        <barButtonItem key="rightBarButtonItem" title="新增" id="SPG-Jh-T2g">
                             <connections>
                                 <action selector="updateScore:" destination="Kdb-Uu-yXX" id="2ap-AL-PZD"/>
                             </connections>
@@ -1549,6 +1546,6 @@
         <image name="search.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="S5b-k1-JSQ"/>
+        <segue reference="C2H-nF-xdo"/>
     </inferredMetricsTieBreakers>
 </document>
