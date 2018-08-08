@@ -29,6 +29,7 @@
 		9334CBC7211182A200D7BE6F /* ClassList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334CBC6211182A200D7BE6F /* ClassList.swift */; };
 		9334CBCD2111A26F00D7BE6F /* Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334CBCC2111A26F00D7BE6F /* Corner.swift */; };
 		9334CBD32112AF0300D7BE6F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334CBD22112AF0300D7BE6F /* RegisterViewController.swift */; };
+		A47F048428F1E138F79899FC /* Pods_ProjectCP101005Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33819323E9A5797F55409475 /* Pods_ProjectCP101005Swift.framework */; };
 		C02F6EA121192E8200A0A2BA /* StudentStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C02F6EA021192E8100A0A2BA /* StudentStoryboard.storyboard */; };
 		C02F6EA321192E8E00A0A2BA /* TeacherStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C02F6EA221192E8E00A0A2BA /* TeacherStoryboard.storyboard */; };
 		C02F6EBA21192E9E00A0A2BA /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F6EA621192E9D00A0A2BA /* ClassCell.swift */; };
@@ -71,7 +72,7 @@
 		C03381CB2118537A00D55EAE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C03381CA2118537A00D55EAE /* .gitignore */; };
 		C0AA28CF211941B6003121A7 /* TeacherSingleExamChartsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AA28CE211941B6003121A7 /* TeacherSingleExamChartsTableViewController.swift */; };
 		C0AA28D121195029003121A7 /* ChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AA28D021195029003121A7 /* ChartFormatter.swift */; };
-		ED5777041903CCCB7BF8690B /* Pods_ProjectCP101005Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205619BDFBEE626D071B1047 /* Pods_ProjectCP101005Swift.framework */; };
+		ED5777041903CCCB7BF8690B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		24BC57C620FD842400002DB0 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		24BC57C820FD844600002DB0 /* UIImageView+Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
 		24BC57C920FD844600002DB0 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
+		33819323E9A5797F55409475 /* Pods_ProjectCP101005Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectCP101005Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F80C8E07714162F375169D /* Pods-ProjectCP101005Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectCP101005Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectCP101005Swift/Pods-ProjectCP101005Swift.release.xcconfig"; sourceTree = "<group>"; };
 		930FC19C210ACB5A00C27FC1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		930FC19E210ACB7100C27FC1 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
@@ -153,7 +155,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED5777041903CCCB7BF8690B /* Pods_ProjectCP101005Swift.framework in Frameworks */,
+				ED5777041903CCCB7BF8690B /* BuildFile in Frameworks */,
+				A47F048428F1E138F79899FC /* Pods_ProjectCP101005Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +372,7 @@
 		EE55AC52C6D0A06D487EA4A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				205619BDFBEE626D071B1047 /* Pods_ProjectCP101005Swift.framework */,
+				33819323E9A5797F55409475 /* Pods_ProjectCP101005Swift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
