@@ -107,13 +107,18 @@ class StudentInfoTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        guard let controller = segue.destination as? StudentInfoEditTableViewController else {
-            assertionFailure()
-            return
+        if let controller = segue.destination as? StudentInfoEditTableViewController {
+            
+            controller.student = self.student
+            controller.photo = self.photo
         }
         
-        controller.student = self.student
-        controller.photo = self.photo
+        if segue.identifier == "ShowPopOver" {
+            let controller = segue.destination.popoverPresentationController
+            controller?.delegate = self
+            
+        }
+        
         
     }
     
@@ -207,7 +212,15 @@ class StudentInfoTableViewController: UITableViewController {
         
     }
     
+}
+
+extension StudentInfoTableViewController: UIPopoverPresentationControllerDelegate{
     
-    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.none
+    }
     
 }
+
+
+

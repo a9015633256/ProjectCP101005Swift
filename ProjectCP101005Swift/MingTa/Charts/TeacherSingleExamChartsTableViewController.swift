@@ -213,12 +213,6 @@ class TeacherSingleExamChartsTableViewController: UITableViewController {
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             jsonDeconder.dateDecodingStrategy = .formatted(dateFormatter)
             
-            print(data)
-            
-            let a = String(data: data, encoding: .utf8)
-
-            print(a)
-            
             do{
                 try self.scoreList = jsonDeconder.decode([Int].self, from: data)
                 

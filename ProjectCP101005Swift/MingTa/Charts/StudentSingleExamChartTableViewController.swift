@@ -18,7 +18,8 @@ class StudentSingleExamChartTableViewController: UITableViewController {
     var scoreCList = [Int]()
     var scoreDList = [Int]()
     var scoreEList = [Int]()
-    var examID = 0
+    var examID = 6 //fake
+    var studentID = 0
     
     @IBOutlet weak var examNameLabel: UILabel!
     @IBOutlet weak var barChart: BarChartView!
@@ -31,6 +32,10 @@ class StudentSingleExamChartTableViewController: UITableViewController {
     @IBOutlet weak var averageScoreLabel: UILabel!
     @IBOutlet weak var highestScoreLabel: UILabel!
     @IBOutlet weak var lowestScoreLabel: UILabel!
+    @IBOutlet weak var studentScoreLabel: UILabel!
+    @IBOutlet weak var rankingLabel: UILabel!
+    @IBOutlet weak var prValueLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +45,8 @@ class StudentSingleExamChartTableViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        getDataFromPreference() //先用假資料
         
         configureView()
     }
@@ -119,59 +126,21 @@ class StudentSingleExamChartTableViewController: UITableViewController {
      */
     
     // MARK: - ConfigureView
+    func getDataFromPreference(){
+        let userDefaults = UserDefaults.standard
+        studentID = userDefaults.integer(forKey: "studentId")
+        
+        //fake
+        studentID = 2
+        
+    }
+    
     func configureView(){
         
         //取得分數資料
         getDataFromDB()
         
-        var highestScore = 0
-        var lowestScore = 100
-        var totalScore = 0
         
-        scoreAPlusList.removeAll()
-        scoreAList.removeAll()
-        scoreBList.removeAll()
-        scoreCList.removeAll()
-        scoreDList.removeAll()
-        scoreEList.removeAll()
-        
-        for score in scoreList {
-            totalScore += score
-            if score > highestScore {
-                highestScore = score
-            }
-            if score < lowestScore {
-                lowestScore = score
-            }
-            
-            if score == 100 {
-                scoreAPlusList.append(score)
-            } else if score >= 90 {
-                scoreAList.append(score)
-            } else if score >= 80 {
-                scoreBList.append(score)
-            } else if score >= 70 {
-                scoreCList.append(score)
-            } else if score >= 60 {
-                scoreDList.append(score)
-            } else {
-                scoreEList.append(score)
-            }
-            
-        }
-        
-        aPlusCountLabel.text = String(scoreAPlusList.count) + "人"
-        aCountLabel.text = String(scoreAList.count) + "人"
-        bCountLabel.text = String(scoreBList.count) + "人"
-        cCountLabel.text = String(scoreCList.count) + "人"
-        dCountLabel.text = String(scoreDList.count) + "人"
-        eCountLabel.text = String(scoreEList.count) + "人"
-        let average = Double(totalScore) / Double(scoreList.count)
-        averageScoreLabel.text = String(format: "%.2f", average) + "分"
-        highestScoreLabel.text = String(highestScore) + "分"
-        lowestScoreLabel.text = String(lowestScore) + "分"
-        
-        updateCharts()
     }
     
     // MARK: - Charts
@@ -230,7 +199,7 @@ class StudentSingleExamChartTableViewController: UITableViewController {
         }
         
         //get data from DB
-        guard let url = URL(string: PropertyKeysForConnection.urlHomeworkServlet) else {
+        guard let url = URL(string: PropertyKeysForConnection.urlExamServlet) else {
             assertionFailure()
             return
         }
@@ -247,6 +216,7 @@ class StudentSingleExamChartTableViewController: UITableViewController {
             
             if let error = error {
                 print("\(#function) error: \(error)")
+                assertionFailure()
                 return
             }
             
@@ -263,6 +233,7 @@ class StudentSingleExamChartTableViewController: UITableViewController {
             do{
                 try self.scoreList = jsonDeconder.decode([Int].self, from: data)
                 
+                self.getStudentScoreFromDB()
             } catch {
                 assertionFailure("json parse fail: \(error)")
                 return
@@ -272,5 +243,112 @@ class StudentSingleExamChartTableViewController: UITableViewController {
         
     }
     
+    func getStudentScoreFromDB(){
+        
+        guard studentID != 0 else{
+            assertionFailure("studentID not found")
+            return
+        }
+        
+        //get data from DB
+        guard let url = URL(string: PropertyKeysForConnection.urlExamServlet) else {
+            assertionFailure()
+            return
+        }
+        
+        let dictionary: [String: Any] = ["action": "findStudentAchievementByStudentIdAndExamId", "examId": examID, "studentId": studentID]
+        guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: [])
+            else {
+                assertionFailure("fail to create JsonObject")
+                return
+        }
+        
+        let communicator = CommunicatorMingTa(targetURL: url)
+        communicator.download(from: data) { (error, data) in
+            
+            if let error = error {
+                print("\(#function) error: \(error)")
+                assertionFailure()
+                return
+            }
+            
+            guard let data = data else {
+                assertionFailure()
+                return
+            }
+            
+            
+            guard let studentScoreString = String(data: data, encoding: .utf8), let studentScore = Int(studentScoreString) else {
+                assertionFailure("fail to cast studentScore to int")
+                return
+            }
+            
+            //configureView
+                var highestScore = 0
+                var lowestScore = 100
+                var totalScore = 0
+                var ranking = 1
+                var prCount = 0
+                
+                self.scoreAPlusList.removeAll()
+                self.scoreAList.removeAll()
+                self.scoreBList.removeAll()
+                self.scoreCList.removeAll()
+                self.scoreDList.removeAll()
+                self.scoreEList.removeAll()
+                
+                for score in self.scoreList {
+                    totalScore += score
+                    if score > highestScore {
+                        highestScore = score
+                    }
+                    if score < lowestScore {
+                        lowestScore = score
+                    }
+                    if score > studentScore {
+                        ranking += 1
+                    }
+                    if score < studentScore {
+                        prCount += 1
+                    }
+                    
+                    if score == 100 {
+                        self.scoreAPlusList.append(score)
+                    } else if score >= 90 {
+                        self.scoreAList.append(score)
+                    } else if score >= 80 {
+                        self.scoreBList.append(score)
+                    } else if score >= 70 {
+                        self.scoreCList.append(score)
+                    } else if score >= 60 {
+                        self.scoreDList.append(score)
+                    } else {
+                        self.scoreEList.append(score)
+                    }
+                    
+                }
+                
+                self.aPlusCountLabel.text = String(self.scoreAPlusList.count) + "人"
+                self.aCountLabel.text = String(self.scoreAList.count) + "人"
+                self.bCountLabel.text = String(self.scoreBList.count) + "人"
+                self.cCountLabel.text = String(self.scoreCList.count) + "人"
+                self.dCountLabel.text = String(self.scoreDList.count) + "人"
+                self.eCountLabel.text = String(self.scoreEList.count) + "人"
+                let average = Double(totalScore) / Double(self.scoreList.count)
+                self.averageScoreLabel.text = String(format: "%.2f", average) + "分"
+                self.highestScoreLabel.text = String(highestScore) + "分"
+                self.lowestScoreLabel.text = String(lowestScore) + "分"
+                self.studentScoreLabel.text = String(studentScore) + "分"
+            self.rankingLabel.text = "第" + String(ranking) + "名"
+            let pr:Int = Int(Double(prCount) / Double(self.scoreList.count) * 100 )
+            
+            self.prValueLabel.text = String(pr) + "%"
+                
+                self.updateCharts()
+            
+            
+        }
+        
     
+    }
 }

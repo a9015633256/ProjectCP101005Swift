@@ -193,6 +193,12 @@ class StudentHomeworkTableViewController: UITableViewController {
                 controller.homework = sectionDataList[indexPath.section].cellDataList[indexPath.row-1]
             }
         }
+        
+        if segue.identifier == "ShowPopOver"{
+            let controller = segue.destination.popoverPresentationController
+            controller?.delegate = self
+        }
+        
     }
     
     func configureView() {
@@ -295,7 +301,12 @@ class StudentHomeworkTableViewController: UITableViewController {
     
 }
 
-
+extension StudentHomeworkTableViewController: UIPopoverPresentationControllerDelegate{
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.none
+        
+    }
+}
 
 
 
