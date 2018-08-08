@@ -1,15 +1,15 @@
 //
-//  TeacherSingleExamChartsTableViewController.swift
+//  StudentSingleExamChartTableViewController.swift
 //  ProjectCP101005Swift
 //
-//  Created by Ming-Ta Yang on 2018/8/7.
+//  Created by Ming-Ta Yang on 2018/8/8.
 //  Copyright © 2018年 楊文興. All rights reserved.
 //
 
 import UIKit
 import Charts
 
-class TeacherSingleExamChartsTableViewController: UITableViewController {
+class StudentSingleExamChartTableViewController: UITableViewController {
     
     var scoreList = [Int]()
     var scoreAPlusList = [Int]()
@@ -34,89 +34,89 @@ class TeacherSingleExamChartsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         configureView()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     /*
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+     // MARK: - Table view data source
+     
+     override func numberOfSections(in tableView: UITableView) -> Int {
+     // #warning Incomplete implementation, return the number of sections
+     return 0
+     }
+     
+     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     // #warning Incomplete implementation, return the number of rows
+     return 0
+     }
      */
-
+    
     /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
+     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+     
+     // Configure the cell...
+     
+     return cell
+     }
+     */
+    
     /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
+     // Override to support conditional editing of the table view.
+     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+     // Return false if you do not want the specified item to be editable.
+     return true
+     }
+     */
+    
     /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
+     // Override to support editing the table view.
+     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+     if editingStyle == .delete {
+     // Delete the row from the data source
+     tableView.deleteRows(at: [indexPath], with: .fade)
+     } else if editingStyle == .insert {
+     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+     }
+     }
+     */
+    
     /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
+     // Override to support rearranging the table view.
+     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+     
+     }
+     */
+    
     /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
+     // Override to support conditional rearranging of the table view.
+     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+     // Return false if you do not want the item to be re-orderable.
+     return true
+     }
+     */
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
     // MARK: - ConfigureView
     func configureView(){
@@ -124,7 +124,54 @@ class TeacherSingleExamChartsTableViewController: UITableViewController {
         //取得分數資料
         getDataFromDB()
         
+        var highestScore = 0
+        var lowestScore = 100
+        var totalScore = 0
         
+        scoreAPlusList.removeAll()
+        scoreAList.removeAll()
+        scoreBList.removeAll()
+        scoreCList.removeAll()
+        scoreDList.removeAll()
+        scoreEList.removeAll()
+        
+        for score in scoreList {
+            totalScore += score
+            if score > highestScore {
+                highestScore = score
+            }
+            if score < lowestScore {
+                lowestScore = score
+            }
+            
+            if score == 100 {
+                scoreAPlusList.append(score)
+            } else if score >= 90 {
+                scoreAList.append(score)
+            } else if score >= 80 {
+                scoreBList.append(score)
+            } else if score >= 70 {
+                scoreCList.append(score)
+            } else if score >= 60 {
+                scoreDList.append(score)
+            } else {
+                scoreEList.append(score)
+            }
+            
+        }
+        
+        aPlusCountLabel.text = String(scoreAPlusList.count) + "人"
+        aCountLabel.text = String(scoreAList.count) + "人"
+        bCountLabel.text = String(scoreBList.count) + "人"
+        cCountLabel.text = String(scoreCList.count) + "人"
+        dCountLabel.text = String(scoreDList.count) + "人"
+        eCountLabel.text = String(scoreEList.count) + "人"
+        let average = Double(totalScore) / Double(scoreList.count)
+        averageScoreLabel.text = String(format: "%.2f", average) + "分"
+        highestScoreLabel.text = String(highestScore) + "分"
+        lowestScoreLabel.text = String(lowestScore) + "分"
+        
+        updateCharts()
     }
     
     // MARK: - Charts
@@ -183,7 +230,7 @@ class TeacherSingleExamChartsTableViewController: UITableViewController {
         }
         
         //get data from DB
-        guard let url = URL(string: PropertyKeysForConnection.urlExamServlet) else {
+        guard let url = URL(string: PropertyKeysForConnection.urlHomeworkServlet) else {
             assertionFailure()
             return
         }
@@ -213,64 +260,9 @@ class TeacherSingleExamChartsTableViewController: UITableViewController {
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             jsonDeconder.dateDecodingStrategy = .formatted(dateFormatter)
             
-            print(data)
-            
-            let a = String(data: data, encoding: .utf8)
-
-            print(a)
-            
             do{
                 try self.scoreList = jsonDeconder.decode([Int].self, from: data)
                 
-                var highestScore = 0
-                var lowestScore = 100
-                var totalScore = 0
-                
-                self.scoreAPlusList.removeAll()
-                self.scoreAList.removeAll()
-                self.scoreBList.removeAll()
-                self.scoreCList.removeAll()
-                self.scoreDList.removeAll()
-                self.scoreEList.removeAll()
-                
-                for score in self.scoreList {
-                    totalScore += score
-                    if score > highestScore {
-                        highestScore = score
-                    }
-                    if score < lowestScore {
-                        lowestScore = score
-                    }
-                    
-                    if score == 100 {
-                        self.scoreAPlusList.append(score)
-                    } else if score >= 90 {
-                       self.scoreAList.append(score)
-                    } else if score >= 80 {
-                        self.scoreBList.append(score)
-                    } else if score >= 70 {
-                        self.scoreCList.append(score)
-                    } else if score >= 60 {
-                        self.scoreDList.append(score)
-                    } else {
-                        self.scoreEList.append(score)
-                    }
-                    
-                }
-                
-                self.aPlusCountLabel.text = String(self.scoreAPlusList.count) + "人"
-                self.aCountLabel.text = String(self.scoreAList.count) + "人"
-                self.bCountLabel.text = String(self.scoreBList.count) + "人"
-                self.cCountLabel.text = String(self.scoreCList.count) + "人"
-                self.dCountLabel.text = String(self.scoreDList.count) + "人"
-                self.eCountLabel.text = String(self.scoreEList.count) + "人"
-                let average = Double(totalScore) / Double(self.scoreList.count)
-                self.averageScoreLabel.text = String(format: "%.2f", average) + "分"
-                self.highestScoreLabel.text = String(highestScore) + "分"
-                self.lowestScoreLabel.text = String(lowestScore) + "分"
-                
-                self.updateCharts()
-
             } catch {
                 assertionFailure("json parse fail: \(error)")
                 return
@@ -280,5 +272,5 @@ class TeacherSingleExamChartsTableViewController: UITableViewController {
         
     }
     
-
+    
 }

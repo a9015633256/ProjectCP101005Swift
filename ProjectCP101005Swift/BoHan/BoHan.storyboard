@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UPy-iQ-b59">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UPy-iQ-b59">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -183,7 +183,7 @@
                                     </constraints>
                                     <state key="normal" image="analysis.png"/>
                                     <connections>
-                                        <segue destination="eMR-7a-toT" kind="show" id="S5b-k1-JSQ"/>
+                                        <segue destination="wei-jf-EfA" kind="show" id="ydo-0M-Peq"/>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分析圖" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Six-We-xyt">
@@ -305,6 +305,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFV-hJ-AjT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3620" y="654"/>
+        </scene>
+        <!--TeacherSingleExamChartsTableViewController-->
+        <scene sceneID="rA3-ba-AgM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MingTaStoryboard" referencedIdentifier="TeacherSingleExamChartsTableViewController" id="wei-jf-EfA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ROw-vw-mv3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4538" y="1061"/>
         </scene>
         <!--建立考試-->
         <scene sceneID="4uS-lg-AfW">
@@ -755,7 +763,7 @@
                                     </constraints>
                                     <state key="normal" image="analysis.png"/>
                                     <connections>
-                                        <segue destination="eMR-7a-toT" kind="show" id="75Q-mX-PP3"/>
+                                        <segue destination="wei-jf-EfA" kind="show" id="pTh-Fc-7T8"/>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1KG-EW-VOp">
@@ -878,21 +886,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Le2-dZ-Awn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3692" y="1485"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="i5v-td-Quo">
-            <objects>
-                <viewController id="eMR-7a-toT" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="RtQ-tW-Zeh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="3hA-bF-bH2"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q3v-Ri-hkG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4471" y="1148"/>
         </scene>
         <!--建立班級-->
         <scene sceneID="Nfe-9e-x9e">
@@ -1023,6 +1016,6 @@
         <image name="ic_mode_edit_white_24dp.png" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="75Q-mX-PP3"/>
+        <segue reference="ydo-0M-Peq"/>
     </inferredMetricsTieBreakers>
 </document>
