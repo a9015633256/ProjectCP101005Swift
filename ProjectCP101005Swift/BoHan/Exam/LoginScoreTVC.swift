@@ -9,6 +9,7 @@
 import UIKit
     
 
+
 struct Exam:Codable,CustomStringConvertible {
 
     
@@ -34,7 +35,7 @@ struct Exam:Codable,CustomStringConvertible {
 
 
 
-class LoginScoreTVC: UITableViewController,UITextFieldDelegate,TableViewCellDelegate{
+class LoginScoreTVC: UITableViewController,TableViewCellDelegate{
     func change(cell: Cell,score:Int) {
         mainSubject[cell.tag].score = score
     }
@@ -79,7 +80,7 @@ class LoginScoreTVC: UITableViewController,UITextFieldDelegate,TableViewCellDele
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! Cell
         // Configure the cell...
-        let row = mainSubject[indexPath.row]
+        let row = self.mainSubject[indexPath.row]
         cell.tag = indexPath.row
         cell.studentIDLabel.text = row.studentid
         cell.studentNameLabel.text = row.name
@@ -237,18 +238,12 @@ class LoginScoreTVC: UITableViewController,UITextFieldDelegate,TableViewCellDele
                 return
             }
         
-        guard let Score = self.mainCell?.scoreTextField.text,Score.isEmpty == false else{
-            let alert = UIAlertController(title: "錯誤", message: "不允許輸入空白", preferredStyle: .alert)
-            let action = UIAlertAction(title: "確認", style: .default) { (result) in
-                self.navigationController?.popViewController(animated: true)
-            }
-            alert.addAction(action)
+        guard let Score = self.mainCell?.scoreTextField.text else{
             return
         }
        
        
         let scoreID = self.exam.last?.AchievementID ?? 0
-        print(exam[0].AchievementID,exam[1].AchievementID)
         let dictionary: [String:Any] = ["action": "insertAchievement","AchievementID":scoreID,"score":Score,"scores": jsonString]
         
         guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: []) else {
