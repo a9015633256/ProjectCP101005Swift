@@ -67,9 +67,13 @@
 		C02F6EF621192EA400A0A2BA /* TeacherHomeworkContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F6EE321192EA400A0A2BA /* TeacherHomeworkContainerViewController.swift */; };
 		C02F6EF721192EA400A0A2BA /* TeacherHomeworkInsertTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F6EE421192EA400A0A2BA /* TeacherHomeworkInsertTableViewController.swift */; };
 		C03381CB2118537A00D55EAE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C03381CA2118537A00D55EAE /* .gitignore */; };
+		C0AA28CF211941B6003121A7 /* TeacherSingleExamChartsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AA28CE211941B6003121A7 /* TeacherSingleExamChartsTableViewController.swift */; };
+		C0AA28D121195029003121A7 /* ChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AA28D021195029003121A7 /* ChartFormatter.swift */; };
+		ED5777041903CCCB7BF8690B /* Pods_ProjectCP101005Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205619BDFBEE626D071B1047 /* Pods_ProjectCP101005Swift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		205619BDFBEE626D071B1047 /* Pods_ProjectCP101005Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectCP101005Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24BC57AF20FD83DE00002DB0 /* ProjectCP101005Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectCP101005Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24BC57B220FD83DE00002DB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24BC57B420FD83DE00002DB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +86,7 @@
 		24BC57C620FD842400002DB0 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		24BC57C820FD844600002DB0 /* UIImageView+Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
 		24BC57C920FD844600002DB0 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
+		78F80C8E07714162F375169D /* Pods-ProjectCP101005Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectCP101005Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectCP101005Swift/Pods-ProjectCP101005Swift.release.xcconfig"; sourceTree = "<group>"; };
 		930FC19C210ACB5A00C27FC1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		930FC19E210ACB7100C27FC1 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		931B49242112E7A100A8CCB9 /* ClassSelecttViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassSelecttViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +98,7 @@
 		9334CBC6211182A200D7BE6F /* ClassList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassList.swift; sourceTree = "<group>"; };
 		9334CBCC2111A26F00D7BE6F /* Corner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corner.swift; sourceTree = "<group>"; };
 		9334CBD22112AF0300D7BE6F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		9F62F00E7848F86CAF2667AF /* Pods-ProjectCP101005Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectCP101005Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectCP101005Swift/Pods-ProjectCP101005Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		C02F6EA021192E8100A0A2BA /* StudentStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StudentStoryboard.storyboard; sourceTree = "<group>"; };
 		C02F6EA221192E8E00A0A2BA /* TeacherStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TeacherStoryboard.storyboard; sourceTree = "<group>"; };
 		C02F6EA621192E9D00A0A2BA /* ClassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
@@ -134,6 +140,8 @@
 		C02F6EE321192EA400A0A2BA /* TeacherHomeworkContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherHomeworkContainerViewController.swift; sourceTree = "<group>"; };
 		C02F6EE421192EA400A0A2BA /* TeacherHomeworkInsertTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherHomeworkInsertTableViewController.swift; sourceTree = "<group>"; };
 		C03381CA2118537A00D55EAE /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		C0AA28CE211941B6003121A7 /* TeacherSingleExamChartsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherSingleExamChartsTableViewController.swift; sourceTree = "<group>"; };
+		C0AA28D021195029003121A7 /* ChartFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED5777041903CCCB7BF8690B /* Pods_ProjectCP101005Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +162,8 @@
 				24BC57B120FD83DE00002DB0 /* ProjectCP101005Swift */,
 				24BC57B020FD83DE00002DB0 /* Products */,
 				C03381CA2118537A00D55EAE /* .gitignore */,
+				A98DB822298BBECB923B34B5 /* Pods */,
+				EE55AC52C6D0A06D487EA4A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -229,6 +240,15 @@
 			path = ClassList;
 			sourceTree = "<group>";
 		};
+		A98DB822298BBECB923B34B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F62F00E7848F86CAF2667AF /* Pods-ProjectCP101005Swift.debug.xcconfig */,
+				78F80C8E07714162F375169D /* Pods-ProjectCP101005Swift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C02F6EA421192E9D00A0A2BA /* BoHan */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +294,7 @@
 		C02F6ECD21192EA400A0A2BA /* MingTa */ = {
 			isa = PBXGroup;
 			children = (
+				C0AA28CD21194189003121A7 /* Charts */,
 				C02F6ECE21192EA400A0A2BA /* Student */,
 				C02F6ED321192EA400A0A2BA /* Common */,
 				C02F6ED921192EA400A0A2BA /* MingTaStoryboard.storyboard */,
@@ -329,6 +350,23 @@
 			path = Teacher;
 			sourceTree = "<group>";
 		};
+		C0AA28CD21194189003121A7 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				C0AA28CE211941B6003121A7 /* TeacherSingleExamChartsTableViewController.swift */,
+				C0AA28D021195029003121A7 /* ChartFormatter.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		EE55AC52C6D0A06D487EA4A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				205619BDFBEE626D071B1047 /* Pods_ProjectCP101005Swift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -336,9 +374,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24BC57C120FD83E100002DB0 /* Build configuration list for PBXNativeTarget "ProjectCP101005Swift" */;
 			buildPhases = (
+				602F3BF6E6821A983384CAA6 /* [CP] Check Pods Manifest.lock */,
 				24BC57AB20FD83DE00002DB0 /* Sources */,
 				24BC57AC20FD83DE00002DB0 /* Frameworks */,
 				24BC57AD20FD83DE00002DB0 /* Resources */,
+				939486C1B03D355898DF63F4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -406,6 +446,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		602F3BF6E6821A983384CAA6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProjectCP101005Swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		939486C1B03D355898DF63F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ProjectCP101005Swift/Pods-ProjectCP101005Swift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjectCP101005Swift/Pods-ProjectCP101005Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		24BC57AB20FD83DE00002DB0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -427,6 +506,7 @@
 				C02F6EF321192EA400A0A2BA /* TeacherHomeworkUpdateTableViewController.swift in Sources */,
 				C02F6EBC21192E9E00A0A2BA /* ClassTVC.swift in Sources */,
 				24BC57C720FD842400002DB0 /* Reachability.m in Sources */,
+				C0AA28CF211941B6003121A7 /* TeacherSingleExamChartsTableViewController.swift in Sources */,
 				24BC57CB20FD844600002DB0 /* UIImage+Resize.swift in Sources */,
 				C02F6EE521192EA400A0A2BA /* StudentInfoEditTableViewController.swift in Sources */,
 				9334CBC02111565F00D7BE6F /* Account.swift in Sources */,
@@ -442,6 +522,7 @@
 				C02F6EEC21192EA400A0A2BA /* HomeworkDetailTableViewCell.swift in Sources */,
 				C02F6EE621192EA400A0A2BA /* StudentHomeworkTableViewController.swift in Sources */,
 				C02F6EC921192E9E00A0A2BA /* Color.swift in Sources */,
+				C0AA28D121195029003121A7 /* ChartFormatter.swift in Sources */,
 				C02F6EEA21192EA400A0A2BA /* HomeworkSectionHeaderCell.swift in Sources */,
 				C02F6EF121192EA400A0A2BA /* HomeworkCheck.swift in Sources */,
 				24BC57B320FD83DE00002DB0 /* AppDelegate.swift in Sources */,
@@ -599,6 +680,7 @@
 		};
 		24BC57C220FD83E100002DB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F62F00E7848F86CAF2667AF /* Pods-ProjectCP101005Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -620,6 +702,7 @@
 		};
 		24BC57C320FD83E100002DB0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78F80C8E07714162F375169D /* Pods-ProjectCP101005Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
