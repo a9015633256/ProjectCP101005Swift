@@ -62,9 +62,7 @@ class ExamSubjectTVC: UITableViewController {
         
     }
    
-    @objc func back(_ sender:Any){
-        navigationController?.popViewController(animated: true)
-    }
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -120,6 +118,16 @@ class ExamSubjectTVC: UITableViewController {
         }
     }
     
+    @IBAction func backBtnPressed(_ sender: UIBarButtonItem) {
+        let transition: CATransition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.type = kCATransitionReveal
+        transition.subtype = kCATransitionFromLeft
+        self.view.window!.layer.add(transition, forKey: nil)
+        
+        dismiss(animated: false, completion: nil)
+    }
     
 
     // MARK: - Table view data source

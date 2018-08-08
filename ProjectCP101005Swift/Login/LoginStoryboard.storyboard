@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="115" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="75s-9E-dkg">
-                                <rect key="frame" x="0.0" y="93" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -126,7 +126,7 @@
                                             <outlet property="id" destination="yGE-2J-I1q" id="rrx-AO-iQY"/>
                                             <outlet property="teachName" destination="DlO-wW-Blz" id="8KY-a3-vNm"/>
                                             <outlet property="view" destination="HZQ-op-fUq" id="L4P-K2-IKG"/>
-                                            <segue destination="nlz-go-3it" kind="show" id="QoL-4R-xR7"/>
+                                            <segue destination="nlz-go-3it" kind="presentation" id="QoL-4R-xR7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -135,22 +135,33 @@
                                     <outlet property="delegate" destination="J1a-O9-biV" id="FUz-yY-1pL"/>
                                 </connections>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CgU-hX-2P0">
-                                <rect key="frame" x="0.0" y="64" width="375" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="導師班"/>
-                                    <segment title="科任班"/>
-                                </segments>
-                                <connections>
-                                    <action selector="classSelect:" destination="J1a-O9-biV" eventType="valueChanged" id="nKK-Lm-fSw"/>
-                                </connections>
-                            </segmentedControl>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bvH-L9-7ds">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="dUZ-56-0kA">
+                                        <nil key="title"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5c8-qp-U9a"/>
                     </view>
-                    <navigationItem key="navigationItem" id="0PU-M9-5y9">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="VaD-rX-4rm">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="CgU-hX-2P0">
+                            <rect key="frame" x="133" y="7.5" width="109" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="導師班"/>
+                                <segment title="科任班"/>
+                            </segments>
+                            <connections>
+                                <action selector="classSelect:" destination="J1a-O9-biV" eventType="valueChanged" id="nKK-Lm-fSw"/>
+                            </connections>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" image="popOver.png" id="QQX-BD-kjB">
                             <connections>
                                 <segue destination="Nnm-jy-PNy" kind="popoverPresentation" identifier="ShowPopOver" popoverAnchorBarButtonItem="QQX-BD-kjB" id="kpi-cA-TXI">
@@ -159,6 +170,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="classSelectSG" destination="CgU-hX-2P0" id="6ol-15-J6O"/>
                         <outlet property="classTableview" destination="75s-9E-dkg" id="Enk-ik-TJd"/>
@@ -173,78 +185,49 @@
             <objects>
                 <viewController id="Nnm-jy-PNy" customClass="PopOverViewController" customModule="ProjectCP101005Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Kz-rC-OWo">
-                        <rect key="frame" x="0.0" y="0.0" width="90" height="150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="90" height="120"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Z4-nw-mhK">
-                                <rect key="frame" x="5" y="10" width="80" height="120"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Z4-nw-mhK">
+                                <rect key="frame" x="14" y="5" width="62" height="110"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnt-oF-bsJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="62" height="30"/>
                                         <state key="normal" title="建立班級"/>
                                         <connections>
                                             <action selector="createClass:" destination="Nnm-jy-PNy" eventType="touchUpInside" id="bnF-a6-gKb"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHe-7e-ti8">
-                                        <rect key="frame" x="0.0" y="30" width="80" height="30"/>
+                                        <rect key="frame" x="0.0" y="40" width="62" height="30"/>
                                         <state key="normal" title="加入班級"/>
                                         <connections>
                                             <action selector="joinClass:" destination="Nnm-jy-PNy" eventType="touchUpInside" id="XEM-LP-OvA"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dya-s0-0rx">
-                                        <rect key="frame" x="0.0" y="60" width="80" height="30"/>
-                                        <state key="normal" title="刪除班級"/>
-                                        <connections>
-                                            <action selector="deleteClass:" destination="Nnm-jy-PNy" eventType="touchUpInside" id="qgi-xL-IL2"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FsH-ly-yNW">
-                                        <rect key="frame" x="0.0" y="90" width="80" height="30"/>
+                                        <rect key="frame" x="0.0" y="80" width="62" height="30"/>
                                         <state key="normal" title="登出"/>
                                         <connections>
                                             <action selector="logOut:" destination="Nnm-jy-PNy" eventType="touchUpInside" id="qDm-EL-jgM"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="yaV-i6-8j9"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7Z4-nw-mhK" firstAttribute="top" secondItem="Xbf-10-MOn" secondAttribute="top" constant="10" id="1MW-XY-w8c"/>
-                            <constraint firstItem="Xbf-10-MOn" firstAttribute="bottom" secondItem="7Z4-nw-mhK" secondAttribute="bottom" constant="20" id="Cuz-v3-gDP"/>
-                            <constraint firstItem="7Z4-nw-mhK" firstAttribute="leading" secondItem="Xbf-10-MOn" secondAttribute="leading" constant="5" id="nfM-Yd-Mfp"/>
-                            <constraint firstItem="Xbf-10-MOn" firstAttribute="trailing" secondItem="7Z4-nw-mhK" secondAttribute="trailing" constant="5" id="rTQ-ED-w83"/>
-                            <constraint firstItem="7Z4-nw-mhK" firstAttribute="centerX" secondItem="2Kz-rC-OWo" secondAttribute="centerX" id="uGn-n6-WaS"/>
+                            <constraint firstItem="7Z4-nw-mhK" firstAttribute="centerY" secondItem="2Kz-rC-OWo" secondAttribute="centerY" id="bsa-32-2OL"/>
+                            <constraint firstItem="7Z4-nw-mhK" firstAttribute="centerX" secondItem="2Kz-rC-OWo" secondAttribute="centerX" id="cjs-w1-Bu3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xbf-10-MOn"/>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="90" height="150"/>
-                    <size key="freeformSize" width="90" height="150"/>
+                    <size key="freeformSize" width="90" height="120"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1RY-5d-aB9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3314" y="-1760"/>
-        </scene>
-        <!--joinClass-->
-        <scene sceneID="WZp-02-kel">
-            <objects>
-                <viewControllerPlaceholder storyboardName="BoHan" referencedIdentifier="joinClass" id="fGs-v7-p3n" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kB8-mn-zDy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3689" y="-1775"/>
-        </scene>
-        <!--createClass-->
-        <scene sceneID="lnZ-8f-REG">
-            <objects>
-                <viewControllerPlaceholder storyboardName="BoHan" referencedIdentifier="createClass" id="8AB-cU-4WK" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o6A-34-E23" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3703" y="-1818"/>
         </scene>
         <!--TeacherStoryboard-->
         <scene sceneID="Lfi-6w-djV">
@@ -265,7 +248,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="J1a-O9-biV" kind="relationship" relationship="rootViewController" id="RSP-5v-ie0"/>
+                        <segue destination="J1a-O9-biV" kind="relationship" relationship="rootViewController" id="ejs-ie-ld5"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbR-u4-ssO" userLabel="First Responder" sceneMemberID="firstResponder"/>

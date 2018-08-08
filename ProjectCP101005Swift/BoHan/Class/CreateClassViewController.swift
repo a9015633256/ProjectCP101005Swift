@@ -10,7 +10,6 @@ import UIKit
 class CreateClassViewController: UIViewController {
     
   
-    var createClass = Class()
     var account:String?
 
     @IBOutlet weak var classNameTextField: UITextField!

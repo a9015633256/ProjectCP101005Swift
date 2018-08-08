@@ -92,13 +92,20 @@
                             <outlet property="delegate" destination="XQJ-Iz-iRx" id="I4y-0n-Yag"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="考試科目" id="4Zm-t4-LMy">
+                        <barButtonItem key="leftBarButtonItem" title="返回班級選擇" image="back_arrow_blue_with_text" style="done" id="eKJ-2X-2Ih">
+                            <connections>
+                                <action selector="backBtnPressed:" destination="XQJ-Iz-iRx" id="CWE-dZ-QaR"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Q7d-6I-9O3">
                             <connections>
                                 <segue destination="FoI-66-aXb" kind="show" id="UEX-pU-oKU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sVz-IA-5qV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -938,7 +945,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QsX-CD-aBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2164" y="2223"/>
+            <point key="canvasLocation" x="1838" y="2223"/>
         </scene>
         <!--加入班級-->
         <scene sceneID="vsI-9b-BXw">
@@ -1043,7 +1050,7 @@
         <scene sceneID="3Op-kA-GwZ">
             <objects>
                 <navigationController storyboardIdentifier="ExamSubjectTVC" automaticallyAdjustsScrollViewInsets="NO" id="UPy-iQ-b59" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="考試總覽" image="test1.png" id="PRg-me-uNX"/>
+                    <tabBarItem key="tabBarItem" title="考試總覽" image="exam.png" id="PRg-me-uNX"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f4N-RN-WOs">
@@ -1081,7 +1088,6 @@
         <!--Item-->
         <scene sceneID="ueI-8V-mWS">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c2b-TC-oms" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oK7-X8-Epy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="lKH-Gc-hZ6"/>
                     <toolbarItems/>
@@ -1094,6 +1100,7 @@
                         <segue destination="R1j-Ro-PgD" kind="relationship" relationship="rootViewController" id="Af1-yL-I4a"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c2b-TC-oms" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1118" y="2224"/>
         </scene>
@@ -1101,9 +1108,10 @@
     <resources>
         <image name="add1.png" width="64" height="64"/>
         <image name="analysis.png" width="64" height="64"/>
+        <image name="back_arrow_blue_with_text" width="125" height="23"/>
+        <image name="exam.png" width="24" height="24"/>
         <image name="ic_mode_edit_white_24dp.png" width="48" height="48"/>
         <image name="search.png" width="32" height="32"/>
-        <image name="test1.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="75Q-mX-PP3"/>

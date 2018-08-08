@@ -179,7 +179,9 @@ class JoinClassTVC: UITableViewController {
                 print("error: \(error)")
                 return
             }
-          
+           
+            
+            
         }
     }
     
