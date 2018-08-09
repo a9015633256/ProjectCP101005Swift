@@ -948,7 +948,7 @@
         <scene sceneID="vsI-9b-BXw">
             <objects>
                 <tableViewController storyboardIdentifier="joinClass" id="iiM-cE-QcW" customClass="JoinClassTVC" customModule="ProjectCP101005Swift" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="c95-LW-qWc">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="c95-LW-qWc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -984,26 +984,22 @@
                         <sections>
                             <tableViewSection id="Ofa-Lo-cH7">
                                 <cells>
-                                    <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="7r0-Bk-nD5">
-                                        <rect key="frame" x="0.0" y="50" width="375" height="80"/>
+                                    <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="70" id="7r0-Bk-nD5">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7r0-Bk-nD5" id="sGh-MO-Qfj">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhx-9K-1rh">
-                                                    <rect key="frame" x="311" y="10" width="64" height="64"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="64" id="gAk-Sr-Se4"/>
-                                                        <constraint firstAttribute="height" constant="64" id="siP-cz-DY6"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="311" y="3" width="64" height="64"/>
                                                     <state key="normal" image="add1.png"/>
                                                     <connections>
                                                         <action selector="addBtn:" destination="iiM-cE-QcW" eventType="touchUpInside" id="aQu-cU-EHr"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ft6-wc-RIi">
-                                                    <rect key="frame" x="16" y="27" width="221" height="30"/>
+                                                    <rect key="frame" x="16" y="27" width="221" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="221" id="sRx-ZJ-DVP"/>
                                                     </constraints>
@@ -1013,11 +1009,11 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="zhx-9K-1rh" secondAttribute="trailing" id="CYm-jI-3hU"/>
+                                                <constraint firstItem="zhx-9K-1rh" firstAttribute="centerY" secondItem="sGh-MO-Qfj" secondAttribute="centerY" id="Db6-Z3-OBo"/>
                                                 <constraint firstItem="Ft6-wc-RIi" firstAttribute="top" secondItem="sGh-MO-Qfj" secondAttribute="topMargin" constant="16" id="EK2-Wc-ZoB"/>
-                                                <constraint firstItem="zhx-9K-1rh" firstAttribute="top" secondItem="sGh-MO-Qfj" secondAttribute="top" constant="10" id="HkN-lp-GDE"/>
                                                 <constraint firstItem="Ft6-wc-RIi" firstAttribute="leading" secondItem="sGh-MO-Qfj" secondAttribute="leadingMargin" id="ISa-Hg-nqW"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Ft6-wc-RIi" secondAttribute="bottom" constant="12" id="WOl-wa-f2C"/>
+                                                <constraint firstAttribute="trailing" secondItem="zhx-9K-1rh" secondAttribute="trailing" id="t5k-9k-1Hg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
