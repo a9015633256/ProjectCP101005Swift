@@ -13,20 +13,22 @@ class ClassSelecttViewController: UIViewController,UIPopoverPresentationControll
     let communicator = Communicator()
     
     var classJoin = [ClassJoin]()
-    let teacherName = UserDefaults.standard.string(forKey: "account")
+   
    
     @IBOutlet weak var classSelectSG: UISegmentedControl!
     
     @IBOutlet weak var classTableview: UITableView!
     
-    
+    var teacherName:String?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.teacherName = UserDefaults.standard.string(forKey: "account")
         
         func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "ShowPopOver"{
                 let controller = segue.destination
-                let delegate = self as! UIPopoverPresentationControllerDelegate
+                let delegate = self as UIPopoverPresentationControllerDelegate
                 controller.popoverPresentationController?.delegate = delegate
             }
             func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle{
@@ -34,34 +36,11 @@ class ClassSelecttViewController: UIViewController,UIPopoverPresentationControll
             }
             
         }
-        
         classTableview.delegate = self
         classTableview.dataSource = self
-        
+        getMainClass()
         
         // Do any additional setup after loading the view.
-        
-        
-        let action = GetClass(action: "getAll", name: teacherName)
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = .init()
-        guard let uploadData = try? encoder.encode(action) else {
-            assertionFailure("JSON encode Fail")
-            return
-        }
-        communicator.dopost(url: LOGIN_URL, data: uploadData) { (error, result) in
-            guard let result = result else {
-                assertionFailure("get data fail")
-                return
-            }
-            guard let output = try? JSONDecoder().decode([ClassJoin].self, from: result) else {
-                assertionFailure("get output fail")
-                return
-            }
-            self.classJoin = output
-            
-            self.classTableview.reloadData()
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -235,7 +214,6 @@ extension ClassSelecttViewController: UITableViewDataSource{
         let userDefaults = UserDefaults.standard
         let classID = classJoin[indexPath.row].id
         let className = classJoin[indexPath.row].classes
-        
         userDefaults.set(classID, forKey: "classId")
         userDefaults.set(className, forKey: "className")
         
