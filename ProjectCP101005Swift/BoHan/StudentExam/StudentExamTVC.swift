@@ -8,11 +8,27 @@
 
 import UIKit
 
+class DataList {
+    var isOpen:Bool?
+    var title = Int()
+    var sectionData = [Subject]()
+    
+    init(isOpen: Bool,title: Int, sectionData:[Subject] ) {
+        self.isOpen = isOpen
+        self.title = title
+        self.sectionData = sectionData
+        
+    }
+}
 class StudentExamTVC: UITableViewController {
-    var subject = [Subject]()
+    
     var mainClass = ClassJoin()
+    var tableViewData = [DataList]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         guard let teacherAccountStr = UserDefaults.standard.value(forKey: "account")else{
             return
         }
@@ -44,10 +60,11 @@ class StudentExamTVC: UITableViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.subject.removeAll()
+        self.tableViewData.removeAll()
         getSubject()
     }
     func getSubject()  {
+        var examSubjectID = [Int]()
         guard let url = URL(string: PropertyKeysForConnection.BoHanServlet) else {
             assertionFailure()
             return
@@ -78,20 +95,35 @@ class StudentExamTVC: UITableViewController {
             do {
                 let subject = try jsonDecoder.decode([Subject].self, from: data)
                 for item in subject {
-                    self.subject.append(item)
+                  let examSubjectId = item.examsubjectid
+                    
+                    if examSubjectID.contains(examSubjectId){
+                        var sectionData = self.tableViewData.filter({ (sections) -> Bool in
+                            if sections.title == examSubjectId{
+                                return true
+                            }else{
+                                return false
+                            }
+                        })
+                        sectionData[0].sectionData.append(item)
+                    }
+                    else{
+                       examSubjectID.append(examSubjectId)
+                        self.tableViewData.append(DataList(isOpen: false, title: examSubjectId, sectionData: [item]))
+                    }
                 }
-                if let encoded = try? JSONEncoder().encode(self.subject){
-                    UserDefaults.standard.set(encoded, forKey: "Subject")
-                }
+                
                 self.tableView.reloadData()
             }catch{
                 print("json parse failed: \(error)")
                 return
                 
-            }
-        }
+                }
+                
+            
+        
     }
-   
+}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -101,32 +133,85 @@ class StudentExamTVC: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+       
+//        return 1
+        return tableViewData.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return self.subject.count
+        if tableViewData[section].isOpen == true{
+            return tableViewData[section].sectionData.count + 1
+        }else{
+            return 1
+        }
+//        return self.subject.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StudentExamCell
-        let examSubject = subject[indexPath.row]
-        let title = examSubject.examtitle
-        cell.tag = indexPath.row
-        cell.subjectLabel.text = "考試科目: " + title
-        cell.scoreBtn.backgroundColor = Color.LightSlateBlue
-        cell.scoreBtn.layer.cornerRadius = 10
-        cell.cellView.layer.cornerRadius = 10
-        cell.cellView.backgroundColor = Color.DeepSkyBlue
-        cell.scoreBtn.tag = indexPath.row
-        tableView.separatorInset = UIEdgeInsetsMake(0.0, cell.bounds.size.width, 0.0, 0.0)
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StudentExamCell
+//        let examSubject = subject[indexPath.row]
+//        let title = examSubject.examtitle
+//        cell.tag = indexPath.row
+//        cell.subjectLabel.text = "考試科目: " + title
+//        cell.scoreBtn.backgroundColor = Color.LightSlateBlue
+//        cell.scoreBtn.layer.cornerRadius = 10
+//        cell.cellView.layer.cornerRadius = 10
+//        cell.cellView.backgroundColor = Color.DeepSkyBlue
+//        cell.scoreBtn.tag = indexPath.row
+//        tableView.separatorInset = UIEdgeInsetsMake(0.0, cell.bounds.size.width, 0.0, 0.0)
+        
+        if indexPath.row == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "titleCell") as? StudentExamCell else{return UITableViewCell()}
+            
+            switch tableViewData[indexPath.section].title{
+            case 6:
+                cell.subjectTit.text = "JAVA"
+            case 7:
+                cell.subjectTit.text = "Android_Studio"
+            case 8:
+                cell.subjectTit.text = "Math"
+            case 9:
+                cell.subjectTit.text = "English"
+            case 10:
+                cell.subjectTit.text = "Chinese"
+            default:
+                cell.subjectTit.text = ""
+            }
+            cell.titleView.backgroundColor = Color.SteelBlue1
+            cell.titleView.layer.cornerRadius = 15
+            cell.titleView.layer.shadowColor = UIColor.gray.cgColor
+            cell.tag = indexPath.row
+            return cell
+        }else{
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? StudentExamCell else{return UITableViewCell()}
+            let examList = tableViewData[indexPath.section].sectionData
+            let exam = examList[indexPath.row - 1]
+            cell.tag = indexPath.row - 1
+            cell.scoreBtn.backgroundColor = Color.LightSlateBlue
+            cell.scoreBtn.layer.cornerRadius = 15
+            cell.cellView.layer.cornerRadius = 15
+            cell.cellView.backgroundColor = Color.DeepSkyBlue
+            cell.scoreBtn.tag = indexPath.row
+            cell.indexPath = indexPath
+            tableView.separatorInset = UIEdgeInsetsMake(0.0, cell.bounds.size.width, 0.0, 0.0)
+            cell.subjectLabel.text = "考試科目" + exam.examtitle
+            return cell
+        }
+      
 
-
-
-        return cell
+//        return cell
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableViewData[indexPath.section].isOpen == true{
+            tableViewData[indexPath.section].isOpen = false
+            let sections = IndexSet.init(integer: indexPath.section)
+            tableView.reloadSections(sections, with: .none)
+        }else{
+            tableViewData[indexPath.section].isOpen = true
+            let sections = IndexSet.init(integer: indexPath.section)
+            tableView.reloadSections(sections, with: .none)
+        }
     }
     
 
@@ -178,15 +263,18 @@ class StudentExamTVC: UITableViewController {
         if segue.identifier == "QueryExam"{
             if let indexPath = tableView.indexPathForSelectedRow{
             let contoller = segue.destination as? StudentExamQuery
-            contoller?.subject = self.subject[indexPath.row]
+            contoller?.subject = self.tableViewData[indexPath.section].sectionData[indexPath.row - 1]
             }
         }
         else if segue.identifier == "QueryExamScore"{
-            guard let indexPath = sender as? UIButton else{
+            guard let button = sender as? UIButton else{
+                return
+            }
+            guard let cell = button.superview?.superview as? StudentExamCell,let indexPath = tableView.indexPath(for: cell) else{
                 return
             }
             let contoller = segue.destination as? StudentExamQueryScore
-            contoller?.subject = self.subject[indexPath.tag]
+            contoller?.subject = self.tableViewData[indexPath.section].sectionData[indexPath.row - 1]
         }
     }
 
