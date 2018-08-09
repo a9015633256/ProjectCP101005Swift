@@ -254,8 +254,14 @@ class CreateSubjectTVC: UITableViewController,UITextViewDelegate {
         
         
         let exam = ExamSubject(subjectt: "\(subjectID)", teacherr: "\(teacherID)", classidd: "\(classID)", title: title, context: text, date: date)
-        
-        let dictionary: [String:Any] = ["action": "Add","Subject" : "{\(exam)}"]
+        let jsonEncoder = JSONEncoder()
+        guard let jsonStr = try? jsonEncoder.encode(exam) else {
+            return
+        }
+        guard let examData = String(data: jsonStr, encoding: .utf8) else {
+            return
+        }
+        let dictionary: [String:Any] = ["action": "Add","Subject" : examData]
         guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: []) else {
             assertionFailure()
             return
