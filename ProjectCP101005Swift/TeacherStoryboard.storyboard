@@ -63,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DHY-Dl-vq2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1999" y="1146"/>
+            <point key="canvasLocation" x="-1868" y="712"/>
         </scene>
         <!--TeacherHomeworkTableViewController-->
         <scene sceneID="LNH-RP-sHY">
@@ -73,32 +73,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K2B-ph-lec" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1999" y="-327"/>
+            <point key="canvasLocation" x="-2030" y="-169"/>
         </scene>
-        <!--Item 1-->
-        <scene sceneID="bKK-iD-fps">
+        <!--TeacherAccountClassDetail-->
+        <scene sceneID="KWI-HA-FrF">
             <objects>
-                <viewController id="pta-Sh-JyC" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uGT-y2-5Bh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="請改連到班級管理頁面" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAE-ij-w7z">
-                                <rect key="frame" x="58" y="108" width="240" height="450"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="tIO-DL-nl9"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="uLC-eW-B1w"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Lsr-gM-bz3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="mainSwitchView" storyboardName="TeacherAccountClassDetail" id="6Zu-fO-MIA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="1" title="ClassManagment" id="YsT-TC-fWP"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KRv-If-PwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1999.2" y="-908.09595202398805"/>
+            <point key="canvasLocation" x="-2032" y="-304"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BdO-ca-2a0">
@@ -110,10 +95,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="pta-Sh-JyC" kind="relationship" relationship="viewControllers" id="8Vg-1G-RIA"/>
-                        <segue destination="nlx-CB-nRW" kind="relationship" relationship="viewControllers" id="Gpc-JP-zSY"/>
-                        <segue destination="Ty3-do-E7x" kind="relationship" relationship="viewControllers" id="m61-yj-MXb"/>
-                        <segue destination="BUE-bO-0PL" kind="relationship" relationship="viewControllers" id="1VZ-7g-Bgt"/>
+                        <segue destination="6Zu-fO-MIA" kind="relationship" relationship="viewControllers" id="g2T-ff-xZe"/>
+                        <segue destination="nlx-CB-nRW" kind="relationship" relationship="viewControllers" id="paH-cg-KgO"/>
+                        <segue destination="Ty3-do-E7x" kind="relationship" relationship="viewControllers" id="2GI-af-2f7"/>
+                        <segue destination="BUE-bO-0PL" kind="relationship" relationship="viewControllers" id="Wex-RW-AJr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXs-6g-wCU" userLabel="First Responder" sceneMemberID="firstResponder"/>
