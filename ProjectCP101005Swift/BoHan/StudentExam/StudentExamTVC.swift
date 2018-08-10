@@ -22,12 +22,18 @@ class DataList {
 }
 class StudentExamTVC: UITableViewController {
     
+    
     var mainClass = ClassJoin()
     var tableViewData = [DataList]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshExam), for: UIControlEvents.valueChanged)
+        self.refreshControl = refreshControl
         
         guard let teacherAccountStr = UserDefaults.standard.value(forKey: "account")else{
             return
@@ -57,7 +63,24 @@ class StudentExamTVC: UITableViewController {
         self.mainClass = ClassJoin(id: classID, classes: className, teacher: teacherAccount ,teacherID:teacherID)
         
         
+        
+        
     }
+    
+    
+    @objc
+    func refreshExam(){
+     
+     self.refreshControl?.beginRefreshing()
+     tableViewData.removeAll()
+     getSubject()
+     self.refreshControl?.endRefreshing()
+    }
+    
+    
+  
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.tableViewData.removeAll()
@@ -256,6 +279,7 @@ class StudentExamTVC: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "QueryExam"{
             if let indexPath = tableView.indexPathForSelectedRow{
