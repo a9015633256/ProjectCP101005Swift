@@ -49,6 +49,11 @@
                         <viewLayoutGuide key="safeArea" id="Ldv-aD-Z3e"/>
                     </view>
                     <navigationItem key="navigationItem" id="gtd-Rd-4L6">
+                        <barButtonItem key="leftBarButtonItem" image="back_arrow_blue_with_text" id="eCi-hz-1D8">
+                            <connections>
+                                <action selector="backBtnPressed:" destination="LK1-A4-xq7" id="LeW-gG-JpE"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="mUA-Jz-qha">
                             <connections>
                                 <action selector="setObjects:" destination="LK1-A4-xq7" id="KCo-WG-h8y"/>
@@ -1188,7 +1193,6 @@
         <!--Item-->
         <scene sceneID="mjV-Rh-ncB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CpO-tB-U7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hK2-TS-3cr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="njY-ST-pvT"/>
                     <toolbarItems/>
@@ -1201,11 +1205,13 @@
                         <segue destination="LK1-A4-xq7" kind="relationship" relationship="rootViewController" id="QYs-OO-MRZ"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CpO-tB-U7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5608.8000000000002" y="226.23688155922042"/>
         </scene>
     </scenes>
     <resources>
         <image name="ImageNotFound.png" width="231" height="210"/>
+        <image name="back_arrow_blue_with_text" width="125" height="23"/>
     </resources>
 </document>

@@ -119,9 +119,6 @@ class StudentExamTVC: UITableViewController {
                 return
                 
                 }
-                
-            
-        
     }
 }
 

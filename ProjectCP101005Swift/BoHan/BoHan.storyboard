@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--考試科目-->
+        <!--考試總覽-->
         <scene sceneID="0bc-IY-j1N">
             <objects>
                 <tableViewController id="XQJ-Iz-iRx" customClass="ExamSubjectTVC" customModule="ProjectCP101005Swift" customModuleProvider="target" sceneMemberID="viewController">
@@ -93,7 +93,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="考試科目" id="4Zm-t4-LMy">
+                    <navigationItem key="navigationItem" title="考試總覽" id="4Zm-t4-LMy">
                         <barButtonItem key="leftBarButtonItem" title="返回班級選擇" image="back_arrow_blue_with_text" style="done" id="eKJ-2X-2Ih">
                             <connections>
                                 <action selector="backBtnPressed:" destination="XQJ-Iz-iRx" id="CWE-dZ-QaR"/>
@@ -1097,7 +1097,7 @@
             </objects>
             <point key="canvasLocation" x="1118" y="2224"/>
         </scene>
-        <!--考試科目-->
+        <!--考試總覽-->
         <scene sceneID="gkZ-XX-9gA">
             <objects>
                 <tableViewController id="jFH-66-Wx4" customClass="StudentExamTVC" customModule="ProjectCP101005Swift" customModuleProvider="target" sceneMemberID="viewController">
@@ -1209,7 +1209,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="考試科目" id="hy2-mZ-X8a"/>
+                    <navigationItem key="navigationItem" title="考試總覽" id="hy2-mZ-X8a"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFS-DT-dSq" userLabel="First Responder" sceneMemberID="firstResponder"/>

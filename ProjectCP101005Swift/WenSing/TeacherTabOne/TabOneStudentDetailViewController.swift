@@ -35,7 +35,7 @@ class TabOneStudentDetailViewController: UIViewController {
         findStudentsById(studentId: studentId!)
         getFriendImage(studentID: studentId!)
 //        studentClassLable.text = studentDetail.Student_Class 好像不需要顯示
-        studentClassLable.text = UserDefaults.standard.string(forKey: "class") ?? "nil"
+        studentClassLable.text = UserDefaults.standard.string(forKey: "className") ?? "nil"
         
         
         // Do any additional setup after loading the view.
@@ -117,18 +117,17 @@ class TabOneStudentDetailViewController: UIViewController {
             guard let image = UIImage.init(data: result) else {
                 return
             }
-            
+        
             //Thread 1: Fatal error: Index out of range
             self.studentImageDictionary[studentID] = image
             print("圖片\(result)")
-            
-            
 //            self.studnetImage.image =
         }
         
     }
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+        
 
     }
     
