@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 class TeacherHomeworkCheckTableViewController: UITableViewController {
     
@@ -14,6 +15,8 @@ class TeacherHomeworkCheckTableViewController: UITableViewController {
 
     var homeworkCheckList = [HomeworkCheck]()
     var homeworkCheckListToUpdate = [HomeworkCheck]()
+    
+    @IBOutlet weak var pieChartView: PieChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -179,56 +182,12 @@ class TeacherHomeworkCheckTableViewController: UITableViewController {
                 return
             }
             
-            //把資料按照日期分類
-//            let calendar = Calendar.current
-//            var titles = [String]()
-//            self.sectionDataList.removeAll()
-//            for homeworkIsDone in homeworkIsDoneList {
-//
-//                guard let date = homeworkIsDone.date else {
-//                    print("homeworkIsDone.date is nil : \(homeworkIsDone)")
-//                    continue
-//                }
-//
-//                var dateComponents = calendar.dateComponents([.year, .month, .day], from: date)
-//
-//                guard let originalYear = dateComponents.year else{
-//                    print("Fail to get originalYear")
-//                    continue
-//                }
-//                dateComponents.year = originalYear - 1911
-//
-//                guard let chineseDate = calendar.date(from: dateComponents) else {
-//                    print("Fail to form chinese date")
-//                    return
-//                }
-//
-//                let dateFormatter = DateFormatter()
-//                dateFormatter.dateFormat = "yyy年M月d日"
-//                let title = dateFormatter.string(from: chineseDate)
-//
-//                if titles.contains(title){
-//                    var sectionData = self.sectionDataList.filter({ (sectionData) -> Bool in
-//                        if sectionData.title == title{
-//                            return true
-//                        } else {
-//                            return false
-//                        }
-//                    })
-//
-//                    sectionData[0].cellDataList.append(homeworkIsDone)
-//
-//                } else {
-//                    titles.append(title)
-//                    self.sectionDataList.append(sectionData(isOpen: false, title: title, cellDataList: [homeworkIsDone]))
-//                }
-//
-//            }
-            
             self.homeworkCheckList = homeworkCheckList
             
             //show data  on tableview
             self.tableView.reloadData()
+            
+            self.setupChart()
         }
         
         
@@ -314,10 +273,53 @@ class TeacherHomeworkCheckTableViewController: UITableViewController {
     }
     
     
-    // MARK: - Others
-    
+    // MARK: - Charts
+    func setupChart(){
+        
+//        pieChartView.legend.enabled = false
+//        pieChartView.animate(xAxisDuration: 1000)
+//        pieChartView.animate(yAxisDuration: 1000)
+        
+        let pieEntries = getChartEntries()
+        let pieChartDataSet = PieChartDataSet(values: pieEntries, label: "繳交情況")
+        pieChartDataSet.valueTextColor = UIColor.white
+        pieChartDataSet.sliceSpace = 2
+        let red = #colorLiteral(red: 0.8784313725, green: 0.1882352941, blue: 0.1882352941, alpha: 1)
+        let green = #colorLiteral(red: 0.2705882353, green: 0.8784313725, blue: 0.07450980392, alpha: 1)
+        var colors = [UIColor]()
+        colors.append(red)
+        colors.append(green)
+        pieChartDataSet.colors = colors
+        
+        let pieChartData = PieChartData(dataSet: pieChartDataSet)
+        pieChartView.data = pieChartData
+        pieChartView.notifyDataSetChanged()
+        
+    }
   
-    
-    
+    func getChartEntries() -> [PieChartDataEntry]{
+        
+        //sort data
+        var undoneCount = 0
+        var doneCount = 0
+        
+        for homeworkCheck in homeworkCheckList {
+            if let isDone = homeworkCheck.isHomeworkDone, isDone{
+                doneCount += 1
+            }else {
+                undoneCount += 1
+            }
+        }
+        
+        //set entries
+        var entries = [PieChartDataEntry]()
+        entries.append(PieChartDataEntry(value: Double(doneCount), label: "已繳交"))
+        entries.append(PieChartDataEntry(value: Double(undoneCount) , label: "未繳交"))
+        print(doneCount)
+        print(undoneCount)
+        
+        return entries
+        
+    }
     
 }
