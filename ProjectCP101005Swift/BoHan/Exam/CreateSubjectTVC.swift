@@ -233,14 +233,35 @@ class CreateSubjectTVC: UITableViewController,UITextViewDelegate {
         guard let date = self.dateLabel.text else{
             return
         }
-        let subjectid = self.subject[0].examsubjectid
-        let teacherid = self.subject[0].teacherid
-        let classid = self.subject[0].classid
+        guard let subjectId = UserDefaults.standard.value(forKey: "subjectId") else {
+            return
+        }
+        guard let subjectID = subjectId as? Int else {
+            return
+        }
+        guard let teacherId = UserDefaults.standard.value(forKey: "teacherId") else {
+            return
+        }
+        guard let teacherID = teacherId as? Int else {
+            return
+        }
+        guard let classIDInt = UserDefaults.standard.value(forKey: "classId")else{
+            return
+        }
+        guard let classID = classIDInt as? Int else{
+            return
+        }
         
         
-        let exam = ExamSubject(subjectt: "\(subjectid)", teacherr: "\(teacherid)", classidd: "\(classid)", title: "\(title)", context: "\(text)", date: "\(date)")
-        
-        let dictionary: [String:Any] = ["action": "Add","Subject" : "{\(exam)}"]
+        let exam = ExamSubject(subjectt: "\(subjectID)", teacherr: "\(teacherID)", classidd: "\(classID)", title: title, context: text, date: date)
+        let jsonEncoder = JSONEncoder()
+        guard let jsonStr = try? jsonEncoder.encode(exam) else {
+            return
+        }
+        guard let examData = String(data: jsonStr, encoding: .utf8) else {
+            return
+        }
+        let dictionary: [String:Any] = ["action": "Add","Subject" : examData]
         guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: []) else {
             assertionFailure()
             return

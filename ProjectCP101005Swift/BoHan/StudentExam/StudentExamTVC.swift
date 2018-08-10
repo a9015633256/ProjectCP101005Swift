@@ -13,7 +13,7 @@ class StudentExamTVC: UITableViewController {
     var mainClass = ClassJoin()
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let teacherAccountStr = UserDefaults.standard.value(forKey: "name")else{
+        guard let teacherAccountStr = UserDefaults.standard.value(forKey: "account")else{
             return
         }
         guard let teacherAccount = teacherAccountStr as? String else{
