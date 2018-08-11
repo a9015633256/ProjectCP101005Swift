@@ -67,32 +67,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K2B-ph-lec" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1999" y="-327"/>
+            <point key="canvasLocation" x="-2030" y="-169"/>
         </scene>
-        <!--Item 1-->
-        <scene sceneID="bKK-iD-fps">
+        <!--TeacherAccountClassDetail-->
+        <scene sceneID="KWI-HA-FrF">
             <objects>
-                <viewController id="pta-Sh-JyC" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uGT-y2-5Bh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="請改連到班級管理頁面" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAE-ij-w7z">
-                                <rect key="frame" x="58" y="108" width="240" height="450"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="tIO-DL-nl9"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="uLC-eW-B1w"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Lsr-gM-bz3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="mainSwitchView" storyboardName="TeacherAccountClassDetail" id="6Zu-fO-MIA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="1" title="ClassManagment" id="YsT-TC-fWP"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KRv-If-PwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1999.2" y="-908.09595202398805"/>
+            <point key="canvasLocation" x="-2032" y="-304"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BdO-ca-2a0">

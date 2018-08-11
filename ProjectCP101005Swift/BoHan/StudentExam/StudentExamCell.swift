@@ -10,6 +10,7 @@ import UIKit
 
 class StudentExamCell: UITableViewCell {
 
+    var indexPath:IndexPath?
     @IBOutlet weak var scoreBtn: UIButton!
     @IBOutlet weak var subjectLabel: UILabel!
    
@@ -20,6 +21,9 @@ class StudentExamCell: UITableViewCell {
     
     @IBOutlet weak var Score: UILabel!
     
+    @IBOutlet weak var titleView: UIView!
+    
+    @IBOutlet weak var subjectTit: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
