@@ -20,5 +20,10 @@ struct IsUserValid: Codable{
     
     
 }
+struct IsUserValidStudents: Codable {
+    var isUserValid = false
+    var id = ""
+    var classid = ""
+}
 
 
