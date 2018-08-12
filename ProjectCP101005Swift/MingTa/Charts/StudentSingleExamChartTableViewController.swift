@@ -18,7 +18,7 @@ class StudentSingleExamChartTableViewController: UITableViewController {
     var scoreCList = [Int]()
     var scoreDList = [Int]()
     var scoreEList = [Int]()
-    var examID = 6 //fake
+    var examID = 0
     var studentID = 0
     
     @IBOutlet weak var examNameLabel: UILabel!

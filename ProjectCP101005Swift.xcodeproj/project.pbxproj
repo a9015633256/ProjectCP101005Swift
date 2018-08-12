@@ -34,7 +34,6 @@
 		24BFE546211D397300EF891F /* TeacherAccountSearchTeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE52E211D397200EF891F /* TeacherAccountSearchTeacherViewController.swift */; };
 		24BFE547211D397300EF891F /* TeacherAccountTabTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE52F211D397200EF891F /* TeacherAccountTabTwoTableViewCell.swift */; };
 		24BFE548211D397300EF891F /* TeacherAccountSearcheTeacherViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE530211D397200EF891F /* TeacherAccountSearcheTeacherViewControllerTableViewCell.swift */; };
-		24BFE549211D397300EF891F /* TabTwoTeacherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE531211D397200EF891F /* TabTwoTeacherDetailViewController.swift */; };
 		24BFE54A211D397300EF891F /* TeacherReplaceFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE532211D397200EF891F /* TeacherReplaceFileViewController.swift */; };
 		24BFE54B211D397300EF891F /* CommunicatorWenSing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE534211D397200EF891F /* CommunicatorWenSing.swift */; };
 		24BFE54C211D397300EF891F /* UIImageCropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE535211D397200EF891F /* UIImageCropper.swift */; };
@@ -100,6 +99,7 @@
 		C0AA28D121195029003121A7 /* ChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AA28D021195029003121A7 /* ChartFormatter.swift */; };
 		C0D221C2211AC26D00046434 /* StudentSingleExamChartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D221C1211AC26D00046434 /* StudentSingleExamChartTableViewController.swift */; };
 		C0D221C4211AD6BB00046434 /* StudentPopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D221C3211AD6BB00046434 /* StudentPopOverViewController.swift */; };
+		C0E8779E21201D4400A0749B /* TabTwoTeacherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE531211D397200EF891F /* TabTwoTeacherDetailViewController.swift */; };
 		ED5777041903CCCB7BF8690B /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
@@ -627,6 +627,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0E8779E21201D4400A0749B /* TabTwoTeacherDetailViewController.swift in Sources */,
 				C02F6EBA21192E9E00A0A2BA /* ClassCell.swift in Sources */,
 				930FC19D210ACB5A00C27FC1 /* LoginViewController.swift in Sources */,
 				C02F6EF521192EA400A0A2BA /* TeacherHomeworkTableViewController.swift in Sources */,

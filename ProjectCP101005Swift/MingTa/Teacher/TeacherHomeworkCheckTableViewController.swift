@@ -290,6 +290,7 @@ class TeacherHomeworkCheckTableViewController: UITableViewController {
         colors.append(green)
         colors.append(red)
         pieChartDataSet.colors = colors
+        pieChartDataSet.valueFormatter = PeopleCountValueFormatter()
         
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
         pieChartView.data = pieChartData
