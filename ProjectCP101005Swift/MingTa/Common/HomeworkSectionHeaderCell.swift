@@ -10,7 +10,10 @@ import UIKit
 
 class HomeworkSectionHeaderCell: UITableViewCell {
     
+    
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var markImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

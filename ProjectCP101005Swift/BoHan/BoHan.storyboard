@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v4O-44-GJB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v4O-44-GJB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -308,7 +308,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFV-hJ-AjT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4700" y="364"/>
+            <point key="canvasLocation" x="7066" y="-461"/>
         </scene>
         <!--建立考試-->
         <scene sceneID="4uS-lg-AfW">
@@ -678,7 +678,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fH9-pq-o5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2841" y="1485"/>
+            <point key="canvasLocation" x="2841" y="1421"/>
         </scene>
         <!--修改成績-->
         <scene sceneID="lcg-ja-my0">
@@ -759,7 +759,7 @@
                                     </constraints>
                                     <state key="normal" image="analysis.png"/>
                                     <connections>
-                                        <segue destination="eMR-7a-toT" kind="show" id="75Q-mX-PP3"/>
+                                        <segue destination="kWc-3m-ytT" kind="show" id="pvG-vd-JaM"/>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1KG-EW-VOp">
@@ -881,22 +881,15 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Le2-dZ-Awn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3620" y="1485"/>
+            <point key="canvasLocation" x="3706" y="654"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="i5v-td-Quo">
+        <!--TeacherSingleExamChartsTableViewController-->
+        <scene sceneID="6WD-v4-Fwu">
             <objects>
-                <viewController id="eMR-7a-toT" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="RtQ-tW-Zeh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="3hA-bF-bH2"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q3v-Ri-hkG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="MingTaStoryboard" referencedIdentifier="TeacherSingleExamChartsTableViewController" id="kWc-3m-ytT" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gl1-PP-FL3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5408.8000000000002" y="1147.3763118440781"/>
+            <point key="canvasLocation" x="4652" y="597"/>
         </scene>
         <!--建立班級-->
         <scene sceneID="Nfe-9e-x9e">
@@ -961,7 +954,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="搜尋班級" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYL-Qm-hcR">
                                     <rect key="frame" x="17" y="12" width="70" height="21"/>
@@ -1009,11 +1002,11 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="zhx-9K-1rh" firstAttribute="centerY" secondItem="sGh-MO-Qfj" secondAttribute="centerY" id="Db6-Z3-OBo"/>
                                                 <constraint firstItem="Ft6-wc-RIi" firstAttribute="top" secondItem="sGh-MO-Qfj" secondAttribute="topMargin" constant="16" id="EK2-Wc-ZoB"/>
                                                 <constraint firstItem="Ft6-wc-RIi" firstAttribute="leading" secondItem="sGh-MO-Qfj" secondAttribute="leadingMargin" id="ISa-Hg-nqW"/>
+                                                <constraint firstItem="zhx-9K-1rh" firstAttribute="centerY" secondItem="sGh-MO-Qfj" secondAttribute="centerY" id="OgK-ua-yyo"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Ft6-wc-RIi" secondAttribute="bottom" constant="12" id="WOl-wa-f2C"/>
-                                                <constraint firstAttribute="trailing" secondItem="zhx-9K-1rh" secondAttribute="trailing" id="t5k-9k-1Hg"/>
+                                                <constraint firstAttribute="trailing" secondItem="zhx-9K-1rh" secondAttribute="trailing" id="sRb-Hw-xGX"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1438,6 +1431,12 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分析圖" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbH-Ro-XY8">
+                                    <rect key="frame" x="294" y="20" width="52" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7YD-B5-k1U">
                                     <rect key="frame" x="256" y="19" width="30" height="30"/>
                                     <constraints>
@@ -1445,13 +1444,10 @@
                                         <constraint firstAttribute="width" constant="30" id="VX0-BA-rNL"/>
                                     </constraints>
                                     <state key="normal" image="analysis.png"/>
+                                    <connections>
+                                        <segue destination="NYp-GC-65A" kind="show" id="2gW-bb-3V2"/>
+                                    </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分析圖" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbH-Ro-XY8">
-                                    <rect key="frame" x="294" y="20" width="52" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                             </subviews>
                             <color key="backgroundColor" red="0.85386285829999997" green="1" blue="0.95474098429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
@@ -1554,6 +1550,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="blE-TP-LD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2928.8000000000002" y="-55.322338830584712"/>
+        </scene>
+        <!--StudentSingleExamChartsTableViewController-->
+        <scene sceneID="5Be-3M-exp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MingTaStoryboard" referencedIdentifier="StudentSingleExamChartsTableViewController" id="NYp-GC-65A" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XZr-rl-aOm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4012" y="-78"/>
         </scene>
         <!--考試總覽-->
         <scene sceneID="O2p-cn-fmK">

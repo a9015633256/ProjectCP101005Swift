@@ -36,12 +36,12 @@ class PopOverViewController: UIViewController {
    
     
     @IBAction func logOut(_ sender: UIButton) {
-        let alert = UIAlertController(title: "登出", message: "確認是否要登出\n所有未儲存的資料將會流失", preferredStyle: .alert)
-        let yes = UIAlertAction(title: "是", style: .default) { (pop) in
+        let alert = UIAlertController(title: "登出", message: "確定要登出嗎?\n所有未儲存的資訊將會流失!", preferredStyle: .alert)
+        let yes = UIAlertAction(title: "登出", style: .default) { (pop) in
             self.presentingViewController?.dismiss(animated: true, completion: nil)
             self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
         }
-        let no = UIAlertAction(title: "否", style: .cancel) { (pop) in
+        let no = UIAlertAction(title: "取消", style: .cancel) { (pop) in
             self.presentingViewController?.dismiss(animated: true, completion: nil)
         }
         alert.addAction(yes)
