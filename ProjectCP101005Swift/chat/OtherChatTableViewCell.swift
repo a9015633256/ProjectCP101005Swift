@@ -1,19 +1,18 @@
 //
-//  ChatSelectTableViewCell.swift
+//  OtherChatTableViewCell.swift
 //  ProjectCP101005Swift
 //
-//  Created by 林沂諺 on 2018/8/10.
+//  Created by 林沂諺 on 2018/8/12.
 //  Copyright © 2018年 楊文興. All rights reserved.
 //
 
 import UIKit
 
-class ChatSelectTableViewCell: UITableViewCell {
+class OtherChatTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var receiveName: UILabel!
     
-    
-    @IBOutlet weak var receiverTitle: UILabel!
-    @IBOutlet weak var receiverName: UILabel!
-    
+    @IBOutlet weak var receiverMessage: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,6 +23,5 @@ class ChatSelectTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 
 }

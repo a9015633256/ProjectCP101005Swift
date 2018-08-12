@@ -45,11 +45,16 @@ class CommonWebSocketClient: WebSocketDelegate {
     
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
         //..
-        print(text)
+
+        print("收到訊息:\(text)")
+        NotificationCenter.default.post(name: Notification.Name.init("GetMessage"), object: nil, userInfo: ["JsonString": text])
+        
     }
     
     func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
         //...
+        
+        print("data: 我是資料\(data)")
     }
     
     

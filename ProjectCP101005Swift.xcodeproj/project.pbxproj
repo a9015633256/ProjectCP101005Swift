@@ -22,7 +22,6 @@
 		24BC57C720FD842400002DB0 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BC57C520FD842400002DB0 /* Reachability.m */; };
 		24BC57CA20FD844600002DB0 /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC57C820FD844600002DB0 /* UIImageView+Download.swift */; };
 		24BC57CB20FD844600002DB0 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC57C920FD844600002DB0 /* UIImage+Resize.swift */; };
-		24BFE53D211D397200EF891F /* TeacherAccountTabOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE524211D397200EF891F /* TeacherAccountTabOneTableViewCell.swift */; };
 		24BFE53E211D397200EF891F /* TeacherAccountAddStudnetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE525211D397200EF891F /* TeacherAccountAddStudnetViewController.swift */; };
 		24BFE53F211D397300EF891F /* TeacherAccountTabOneAddStudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE526211D397200EF891F /* TeacherAccountTabOneAddStudentTableViewCell.swift */; };
 		24BFE540211D397300EF891F /* TeacherAccountTabOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE527211D397200EF891F /* TeacherAccountTabOneViewController.swift */; };
@@ -43,7 +42,6 @@
 		24BFE54F211D397300EF891F /* StudentDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE538211D397200EF891F /* StudentDownloader.swift */; };
 		24BFE550211D397300EF891F /* Profiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE539211D397200EF891F /* Profiles.swift */; };
 		24BFE551211D397300EF891F /* ActionWenSing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE53A211D397200EF891F /* ActionWenSing.swift */; };
-		24BFE552211D397300EF891F /* ImageNotFound.png in Resources */ = {isa = PBXBuildFile; fileRef = 24BFE53B211D397200EF891F /* ImageNotFound.png */; };
 		930FC19D210ACB5A00C27FC1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930FC19C210ACB5A00C27FC1 /* LoginViewController.swift */; };
 		930FC19F210ACB7100C27FC1 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 930FC19E210ACB7100C27FC1 /* LoginStoryboard.storyboard */; };
 		931B49252112E7A100A8CCB9 /* ClassSelecttViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931B49242112E7A100A8CCB9 /* ClassSelecttViewController.swift */; };
@@ -99,6 +97,8 @@
 		C0AA28CF211941B6003121A7 /* TeacherSingleExamChartsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AA28CE211941B6003121A7 /* TeacherSingleExamChartsTableViewController.swift */; };
 		C0AA28D121195029003121A7 /* ChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AA28D021195029003121A7 /* ChartFormatter.swift */; };
 		EA3000B8211EC9AB00AA2EFB /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3000B7211EC9AB00AA2EFB /* ChatTableViewCell.swift */; };
+		EA4EEA4E211FE84300CE0606 /* OtherChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4EEA4D211FE84300CE0606 /* OtherChatTableViewCell.swift */; };
+		EA76BB95211ECF8B004C5930 /* TeacherAccountTabOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE524211D397200EF891F /* TeacherAccountTabOneTableViewCell.swift */; };
 		EADF634C211D45570078A429 /* CommonSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADF634B211D45570078A429 /* CommonSocket.swift */; };
 		EADF634E211D65500078A429 /* ChatStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADF634D211D65500078A429 /* ChatStoryboard.storyboard */; };
 		EADF6350211D659A0078A429 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADF634F211D659A0078A429 /* ChatViewController.swift */; };
@@ -207,6 +207,7 @@
 		C0AA28CE211941B6003121A7 /* TeacherSingleExamChartsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherSingleExamChartsTableViewController.swift; sourceTree = "<group>"; };
 		C0AA28D021195029003121A7 /* ChartFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartFormatter.swift; sourceTree = "<group>"; };
 		EA3000B7211EC9AB00AA2EFB /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		EA4EEA4D211FE84300CE0606 /* OtherChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherChatTableViewCell.swift; sourceTree = "<group>"; };
 		EADF634B211D45570078A429 /* CommonSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonSocket.swift; sourceTree = "<group>"; };
 		EADF634D211D65500078A429 /* ChatStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatStoryboard.storyboard; sourceTree = "<group>"; };
 		EADF634F211D659A0078A429 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -508,6 +509,7 @@
 				EADF6355211D72730078A429 /* ChatSelectTableViewController.swift */,
 				EADF634F211D659A0078A429 /* ChatViewController.swift */,
 				EADF634D211D65500078A429 /* ChatStoryboard.storyboard */,
+				EA4EEA4D211FE84300CE0606 /* OtherChatTableViewCell.swift */,
 				EA3000B7211EC9AB00AA2EFB /* ChatTableViewCell.swift */,
 			);
 			path = chat;
@@ -649,6 +651,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA76BB95211ECF8B004C5930 /* TeacherAccountTabOneTableViewCell.swift in Sources */,
 				C02F6EBA21192E9E00A0A2BA /* ClassCell.swift in Sources */,
 				930FC19D210ACB5A00C27FC1 /* LoginViewController.swift in Sources */,
 				C02F6EF521192EA400A0A2BA /* TeacherHomeworkTableViewController.swift in Sources */,
@@ -708,6 +711,7 @@
 				0C0EAE1D211AD6900059B51E /* StudentExamCell.swift in Sources */,
 				24BFE54B211D397300EF891F /* CommunicatorWenSing.swift in Sources */,
 				C02F6EF121192EA400A0A2BA /* HomeworkCheck.swift in Sources */,
+				EA4EEA4E211FE84300CE0606 /* OtherChatTableViewCell.swift in Sources */,
 				EADF6356211D72730078A429 /* ChatSelectTableViewController.swift in Sources */,
 				24BC57B320FD83DE00002DB0 /* AppDelegate.swift in Sources */,
 				C02F6EE721192EA400A0A2BA /* StudentHomeworkDetailTableViewController.swift in Sources */,

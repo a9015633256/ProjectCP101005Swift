@@ -15,6 +15,8 @@ class ChatSelectTableViewController: UITableViewController {
     let encoder = JSONEncoder()
     var chatList = [ReceiverList]()
     
+    var chataction: String?
+    
     
 
 
@@ -22,8 +24,9 @@ class ChatSelectTableViewController: UITableViewController {
         super.viewDidLoad()
 
         sender = UserDefaults.standard.string(forKey: "account")
+        chataction = UserDefaults.standard.string(forKey: "chatlistfound")
         
-        let action = findchat(action: "getchatlist", senderte: sender)
+        let action = findchat(action: chataction, senderte: sender)
         guard let uploadData = try? encoder.encode(action) else {
             assertionFailure("JSON encode Fail")
             return
@@ -73,6 +76,13 @@ class ChatSelectTableViewController: UITableViewController {
         // Configure the cell...
         let newItem = chatList[indexPath.row]
         cell.receiverName.text = newItem.receiver
+        if chataction == "getmotherlist" {
+            cell.receiverTitle.text = "老師："
+        }else {
+            cell.receiverTitle.text = "學生："
+        }
+        
+        
         return cell
     }
  

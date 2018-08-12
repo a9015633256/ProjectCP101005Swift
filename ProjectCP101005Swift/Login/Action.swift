@@ -51,3 +51,10 @@ struct Sendmessage: Codable {
     var receiver: String?
     
 }
+
+struct GetMessage: Codable {
+    var action: String?
+    var sender: String?
+    var receiver: String?
+    
+}
