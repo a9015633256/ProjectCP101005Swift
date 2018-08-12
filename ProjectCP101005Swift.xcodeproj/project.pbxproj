@@ -98,6 +98,7 @@
 		EA3000B8211EC9AB00AA2EFB /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3000B7211EC9AB00AA2EFB /* ChatTableViewCell.swift */; };
 		EA4EEA4E211FE84300CE0606 /* OtherChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4EEA4D211FE84300CE0606 /* OtherChatTableViewCell.swift */; };
 		EA54094A21203DB200FD4F7E /* TabTwoTeacherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE531211D397200EF891F /* TabTwoTeacherDetailViewController.swift */; };
+		EA54094C21203FF600FD4F7E /* StudentSingleExamChartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA54094B21203FF600FD4F7E /* StudentSingleExamChartTableViewController.swift */; };
 		EA76BB95211ECF8B004C5930 /* TeacherAccountTabOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE524211D397200EF891F /* TeacherAccountTabOneTableViewCell.swift */; };
 		EADF634C211D45570078A429 /* CommonSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADF634B211D45570078A429 /* CommonSocket.swift */; };
 		EADF634E211D65500078A429 /* ChatStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADF634D211D65500078A429 /* ChatStoryboard.storyboard */; };
@@ -208,6 +209,7 @@
 		C0AA28D021195029003121A7 /* ChartFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartFormatter.swift; sourceTree = "<group>"; };
 		EA3000B7211EC9AB00AA2EFB /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		EA4EEA4D211FE84300CE0606 /* OtherChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherChatTableViewCell.swift; sourceTree = "<group>"; };
+		EA54094B21203FF600FD4F7E /* StudentSingleExamChartTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentSingleExamChartTableViewController.swift; sourceTree = "<group>"; };
 		EADF634B211D45570078A429 /* CommonSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonSocket.swift; sourceTree = "<group>"; };
 		EADF634D211D65500078A429 /* ChatStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatStoryboard.storyboard; sourceTree = "<group>"; };
 		EADF634F211D659A0078A429 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -495,6 +497,7 @@
 		C0AA28CD21194189003121A7 /* Charts */ = {
 			isa = PBXGroup;
 			children = (
+				EA54094B21203FF600FD4F7E /* StudentSingleExamChartTableViewController.swift */,
 				C0AA28CE211941B6003121A7 /* TeacherSingleExamChartsTableViewController.swift */,
 				C0AA28D021195029003121A7 /* ChartFormatter.swift */,
 			);
@@ -731,6 +734,7 @@
 				C02F6EC321192E9E00A0A2BA /* FirstViewController.swift in Sources */,
 				0C0EAE1B211AD5970059B51E /* StudentExamQueryScore.swift in Sources */,
 				C02F6EC621192E9E00A0A2BA /* ExamSubjectTVC.swift in Sources */,
+				EA54094C21203FF600FD4F7E /* StudentSingleExamChartTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
