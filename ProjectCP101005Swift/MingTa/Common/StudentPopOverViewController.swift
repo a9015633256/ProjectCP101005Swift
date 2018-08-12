@@ -25,8 +25,21 @@ class StudentPopOverViewController: UIViewController {
   
     @IBAction func logOut(_ sender: UIButton) {
         
-        dismiss(animated: true, completion: nil)
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        let alert = UIAlertController(title: "登出", message: "確定要登出嗎?\n所有未儲存的資訊將會流失!", preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "登出", style: .default) { (_) in
+            
+            self.dismiss(animated: true, completion: nil)
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
+            
+        }
+        
+        let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        
+        present(alert, animated: true, completion: nil)
         
     }
     

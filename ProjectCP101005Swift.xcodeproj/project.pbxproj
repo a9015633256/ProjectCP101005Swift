@@ -328,10 +328,10 @@
 		C02F6ECD21192EA400A0A2BA /* MingTa */ = {
 			isa = PBXGroup;
 			children = (
+				C02F6ED921192EA400A0A2BA /* MingTaStoryboard.storyboard */,
 				C0AA28CD21194189003121A7 /* Charts */,
 				C02F6ECE21192EA400A0A2BA /* Student */,
 				C02F6ED321192EA400A0A2BA /* Common */,
-				C02F6ED921192EA400A0A2BA /* MingTaStoryboard.storyboard */,
 				C02F6EDA21192EA400A0A2BA /* DataSwift */,
 				C02F6EDF21192EA400A0A2BA /* Teacher */,
 			);

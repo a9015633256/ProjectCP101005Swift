@@ -158,8 +158,8 @@ class StudentInfoTableViewController: UITableViewController {
             do{
                 let student = try jsonDecoder.decode(Student.self, from: data)
                 
-                if let id = student.id {
-                    self.studentIDTextField.text = String(id)
+                if let studentNumber = student.studentNumber {
+                    self.studentIDTextField.text = String(studentNumber)
                 }
                 self.nameTextField.text = student.name
                 if student.gender == 1 {
@@ -184,7 +184,7 @@ class StudentInfoTableViewController: UITableViewController {
             }
         }
         
-        dictionary = ["action": "getImage", "id": 2, "imageSize": photoImageView.frame.height]
+        dictionary = ["action": "getImage", "id": 2, "imageSize": self.view.frame.width / 3]
         
         guard let photoData = try? JSONSerialization.data(withJSONObject: dictionary, options: []) else {
             assertionFailure()
@@ -203,9 +203,23 @@ class StudentInfoTableViewController: UITableViewController {
                 return
             }
             
-            self.photoImageView.image = image
+            print(self.view.frame.width / 3 )
             
-            self.photo = image
+            guard let resizedImage = image.resize(maxWidthHeight: self.view.frame.width / 3) else {
+                assertionFailure("Fail to resize image.")
+                return
+            }
+
+            self.photoImageView.frame.size = resizedImage.size
+            self.photoImageView.image = resizedImage
+            
+            self.photo = resizedImage
+            
+            if let width = self.tableView.tableHeaderView?.frame.width {
+                self.tableView.tableHeaderView?.frame = CGRect(origin: .zero, size: CGSize(width: width, height: resizedImage.size.height + 48))
+                
+                self.tableView.tableHeaderView = self.tableView.tableHeaderView //讓tableView重新計算高度
+            }
             
         }
         

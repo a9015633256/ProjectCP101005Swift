@@ -15,10 +15,13 @@ class StudentInfoEditTableViewController: UITableViewController {
     var communicator: CommunicatorMingTa?
     var student:Student?
     var photo:UIImage?
-    let datePicker = UIDatePicker()
     var jpgData: Data?
-
-
+    let dayOfBirthCellIndexPath = IndexPath(row: 4, section: 0)
+    var currentScrollPosition: CGFloat?
+    
+    @IBOutlet var keyboardTapGestureRecongnizer: UITapGestureRecognizer!
+    @IBOutlet weak var birthDayDatePicker: UIDatePicker!
+    @IBOutlet weak var takePhotoBtn: UIButton!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var studentIDTextField: UITextField!
     @IBOutlet weak var classNameTextField: UITextField!
@@ -29,100 +32,133 @@ class StudentInfoEditTableViewController: UITableViewController {
     @IBOutlet weak var addressTextView: UITextView!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configureView()
         
+        //observe keyboard status
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidAppear), name: .UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidDisappear), name: .UIKeyboardDidHide, object: nil)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    @IBAction func didDatePickerValueChanged(_ sender: Any) {
+        updateDayOfBirth()
+    }
+    
+    
     // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
-
+    
+    //    override func numberOfSections(in tableView: UITableView) -> Int {
+    //        // #warning Incomplete implementation, return the number of sections
+    //        return 0
+    //    }
+    //
+    //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    //        // #warning Incomplete implementation, return the number of rows
+    //        return 0
+    //    }
+    
     /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
+     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+     
+     // Configure the cell...
+     
+     return cell
+     }
+     */
+    
     /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
+     // Override to support conditional editing of the table view.
+     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+     // Return false if you do not want the specified item to be editable.
+     return true
+     }
+     */
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        if indexPath.row == 6 {
-            return 0
+        if indexPath.row == dayOfBirthCellIndexPath.row + 1 {
+            if birthDayDatePicker.isHidden{
+                return 0
+            }else {
+                return 216
+            }
+            
         }
         
         return super.tableView(tableView, heightForRowAt: indexPath)
     }
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if currentScrollPosition != nil {
+            tableView.setContentOffset(CGPoint(x: 0, y: currentScrollPosition!), animated: false)
+            currentScrollPosition = nil
+            
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath == dayOfBirthCellIndexPath {
+            birthDayDatePicker.isHidden = !birthDayDatePicker.isHidden
+            
+            self.currentScrollPosition = tableView.contentOffset.y
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }
     }
-    */
-
+    
+    
+    
     /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
+     // Override to support editing the table view.
+     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+     if editingStyle == .delete {
+     // Delete the row from the data source
+     tableView.deleteRows(at: [indexPath], with: .fade)
+     } else if editingStyle == .insert {
+     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+     }
+     }
+     */
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // Override to support rearranging the table view.
+     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+     
+     }
+     */
+    
+    /*
+     // Override to support conditional rearranging of the table view.
+     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+     // Return false if you do not want the item to be re-orderable.
+     return true
+     }
+     */
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
     @IBAction func takePhotoBtnPressed(_ sender: Any) {
         self.launchPicker(forType: .camera)
@@ -133,7 +169,6 @@ class StudentInfoEditTableViewController: UITableViewController {
     }
     
     @IBAction func doneBtnPressed(_ sender: Any) {
-        
         
         //upadate data in "student"
         if genderSegmentedControl.selectedSegmentIndex == 0 {
@@ -155,12 +190,12 @@ class StudentInfoEditTableViewController: UITableViewController {
         let dateFormatter2 = DateFormatter()
         dateFormatter2.dateFormat = "yyyy-MM-dd HH:mm:ss"
         jsonEncoder.dateEncodingStrategy = .formatted(dateFormatter2)
-
+        
         guard let student = try? jsonEncoder.encode(student) else {
             assertionFailure()
             return
         }
-
+        
         guard let studentString = String(data: student, encoding: .utf8) else {
             assertionFailure()
             return
@@ -177,14 +212,14 @@ class StudentInfoEditTableViewController: UITableViewController {
             assertionFailure()
             return
         }
-
+        
         guard let url = URL(string: PropertyKeysForConnection.urlStudentServlet) else {
             assertionFailure()
             return
         }
         
         communicator = CommunicatorMingTa(targetURL: url)
-
+        
         communicator?.download(from: data, doneHandler: { (error, data) in
             
             if let error = error {
@@ -227,22 +262,29 @@ class StudentInfoEditTableViewController: UITableViewController {
         view.endEditing(true)
     }
     
+    // MARK: - ConfigureView
+    
     func configureView(){
         
+        //UI function
+        birthDayDatePicker.isHidden = true
+        addressTextView.sizeToFit()
+        keyboardTapGestureRecongnizer.isEnabled = false
         
         //show info from previous page
         guard let student = student, let photo = photo else {
+            assertionFailure()
             return
         }
         
-        if let id = student.id {
-            self.studentIDTextField.text = String(id)
+        if let studentNumber = student.studentNumber {
+            self.studentIDTextField.text = String(studentNumber)
         }
         self.nameTextField.text = student.name
         if student.gender == 1 {
             self.genderSegmentedControl.selectedSegmentIndex = 0
         } else {
-          self.genderSegmentedControl.selectedSegmentIndex = 1
+            self.genderSegmentedControl.selectedSegmentIndex = 1
         }
         self.addressTextView.text = student.address
         self.classNameTextField.text = student.className
@@ -253,67 +295,47 @@ class StudentInfoEditTableViewController: UITableViewController {
             dateFormatter.dateFormat = "yyyy-MM-dd"
             self.dayOfBirthTextField.text = dateFormatter.string(from: dayOfBirth)
         }
-       
-        
-        photoImageView.image = photo
-        
-        //ui function
-        createDatePicker()
-        
-        addressTextView.sizeToFit()
-        
-    }
-    
-    func createDatePicker(){
-        
+        //set datePicker's date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
+        if let text = dayOfBirthTextField.text, let date = dateFormatter.date(from: text){
+            birthDayDatePicker.date = date
+        }
         
-        //set datePicker's mode and date
-        datePicker.datePickerMode = .date
-        if let text = dayOfBirthTextField.text, let date = dateFormatter.date(from: text) {
-        datePicker.date = date
+        photoImageView.frame.size = photo.size
+        photoImageView.image = photo
+        
+        if let width = self.tableView.tableHeaderView?.frame.width {
+            
+            let height = self.photoImageView.frame.height + takePhotoBtn.frame.height + 39
+            self.tableView.tableHeaderView?.frame = CGRect(origin: .zero, size: CGSize(width: width, height: height))
+            
+            self.tableView.tableHeaderView = self.tableView.tableHeaderView //讓tableView重新計算高度
+            
         }
         
         
-        //set bar for datePicker
-        let datePickerBar = UIToolbar()
-        datePickerBar.sizeToFit()
-        let doneBarItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(donePickingDate))
-         let cancelBarItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelPickingDate))
-        datePickerBar.setItems([doneBarItem, cancelBarItem], animated: true)
-       
-       //set inputView for textField
-        dayOfBirthTextField.inputAccessoryView = datePickerBar
-        
-        dayOfBirthTextField.inputView = datePicker
-        
-        
     }
     
-    @objc
-    func donePickingDate(){
+    func updateDayOfBirth(){
         
-        //set result on screen
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        dayOfBirthTextField.text = dateFormatter.string(from: datePicker.date)
         
-        view.endEditing(true)
-        
-        
+        dayOfBirthTextField.text = dateFormatter.string(from: birthDayDatePicker.date)
     }
     
     @objc
-    func cancelPickingDate(){
-      
-        view.endEditing(true)
+    func keyboardDidAppear(){
+        keyboardTapGestureRecongnizer.isEnabled = true
+    }
+    
+    @objc
+    func keyboardDidDisappear(){
+        keyboardTapGestureRecongnizer.isEnabled = false
         
     }
     
-  
-    
-
 }
 
 extension StudentInfoEditTableViewController: UITextFieldDelegate {
@@ -323,9 +345,9 @@ extension StudentInfoEditTableViewController: UITextFieldDelegate {
         return false
     }
     
-    
 }
 
+//camera and picker
 extension StudentInfoEditTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     func launchPicker(forType: UIImagePickerControllerSourceType){
@@ -354,14 +376,27 @@ extension StudentInfoEditTableViewController: UIImagePickerControllerDelegate, U
                 return
             }
             
-            guard let resizedImage = originalImage.resize(maxWidthHeight: photoImageView.frame.height) else {
+            guard let resizedImage = originalImage.resize(maxWidthHeight: self.view.frame.width / 3) else {
                 assertionFailure("Fail to resize image.")
                 return
             }
             
+            photoImageView.frame.size = resizedImage.size
             photoImageView.image = resizedImage
             
-            jpgData = UIImageJPEGRepresentation(resizedImage, 1)
+            if let width = self.tableView.tableHeaderView?.frame.width {
+                
+                let height = self.photoImageView.frame.height + takePhotoBtn.frame.height + 39
+                self.tableView.tableHeaderView?.frame = CGRect(origin: .zero, size: CGSize(width: width, height: height))
+                
+                self.tableView.tableHeaderView = self.tableView.tableHeaderView //讓tableView重新計算高度
+                
+            }
+            
+            if let uploadImage = originalImage.resize(maxWidthHeight: self.view.frame.height) {
+                jpgData = UIImageJPEGRepresentation(uploadImage, 1)
+                
+            }
             
         }
         picker.dismiss(animated: true, completion: nil)
@@ -369,5 +404,6 @@ extension StudentInfoEditTableViewController: UIImagePickerControllerDelegate, U
     }
     
 }
+
 
 

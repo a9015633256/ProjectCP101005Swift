@@ -276,9 +276,9 @@ class TeacherHomeworkCheckTableViewController: UITableViewController {
     // MARK: - Charts
     func setupChart(){
         
-//        pieChartView.legend.enabled = false
-//        pieChartView.animate(xAxisDuration: 1000)
-//        pieChartView.animate(yAxisDuration: 1000)
+        pieChartView.legend.enabled = false
+        pieChartView.animate(xAxisDuration: 1)
+        pieChartView.animate(yAxisDuration: 1)
         
         let pieEntries = getChartEntries()
         let pieChartDataSet = PieChartDataSet(values: pieEntries, label: "繳交情況")
@@ -287,8 +287,8 @@ class TeacherHomeworkCheckTableViewController: UITableViewController {
         let red = #colorLiteral(red: 0.8784313725, green: 0.1882352941, blue: 0.1882352941, alpha: 1)
         let green = #colorLiteral(red: 0.2705882353, green: 0.8784313725, blue: 0.07450980392, alpha: 1)
         var colors = [UIColor]()
-        colors.append(red)
         colors.append(green)
+        colors.append(red)
         pieChartDataSet.colors = colors
         
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
