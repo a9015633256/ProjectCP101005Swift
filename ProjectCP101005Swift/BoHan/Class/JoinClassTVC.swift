@@ -15,7 +15,7 @@ struct custom:Codable,CustomStringConvertible {
     var id:Int?
     var teacherid:Int?
     var name:String?
-     static let color = UIColor(red: 30.0/255.0, green: 144.0/255.0, blue: 245.0/255.0, alpha: 1.0)
+     static let color = UIColor(red: 135.0/255.0, green: 206.0/255.0, blue: 240.0/255.0, alpha: 1.0)
 }
 
 class JoinClassTVC: UITableViewController {
