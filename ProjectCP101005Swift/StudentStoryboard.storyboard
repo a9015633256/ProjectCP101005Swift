@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="viU-B8-5b1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="viU-B8-5b1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,6 +28,16 @@
             </objects>
             <point key="canvasLocation" x="67" y="-167"/>
         </scene>
+        <!--ChatStoryboard-->
+        <scene sceneID="jjO-6z-8xR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChatStoryboard" id="GL1-2w-eCN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="UkD-s8-cge"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Iv-y2-L8F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="66" y="81"/>
+        </scene>
         <!--StudentInfoTableViewController-->
         <scene sceneID="Pnb-7F-RH1">
             <objects>
@@ -39,35 +48,10 @@
             </objects>
             <point key="canvasLocation" x="313" y="1036"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="WgC-dY-xjl">
-            <objects>
-                <viewController id="QPO-8P-UgB" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="YXF-Qy-LQO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="請改連到聯絡導師頁面的NavigationController" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1di-yR-kIs">
-                                <rect key="frame" x="55" y="20" width="257" height="450"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="5LC-iW-XVd"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="cx3-y0-cua"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rbh-Jq-bfn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="360.80000000000001" y="503.29835082458777"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="W5N-sr-Wav">
             <objects>
-                <tabBarController id="viU-B8-5b1" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="studentstart" id="viU-B8-5b1" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uJt-ag-Nqe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -75,9 +59,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="kdz-dI-sEO" kind="relationship" relationship="viewControllers" id="1D3-y0-Cuj"/>
-                        <segue destination="QPO-8P-UgB" kind="relationship" relationship="viewControllers" id="4vy-UY-BLh"/>
                         <segue destination="LYl-ug-fFK" kind="relationship" relationship="viewControllers" id="c07-Jl-VOA"/>
                         <segue destination="0tO-5y-cHH" kind="relationship" relationship="viewControllers" id="yeM-Vj-UQb"/>
+                        <segue destination="GL1-2w-eCN" kind="relationship" relationship="viewControllers" id="31p-dV-sKM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g6U-tB-Tbs" userLabel="First Responder" sceneMemberID="firstResponder"/>

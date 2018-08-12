@@ -2,17 +2,21 @@ PODS:
   - Charts (3.1.1):
     - Charts/Core (= 3.1.1)
   - Charts/Core (3.1.1)
+  - Starscream (3.0.5)
 
 DEPENDENCIES:
   - Charts
+  - Starscream
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Charts
+    - Starscream
 
 SPEC CHECKSUMS:
   Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
+  Starscream: faf918b2f2eff7d5dd21180646bf015a669673bd
 
-PODFILE CHECKSUM: 1ffa52fc98166a50912c2eb5fbb65d79d95030e9
+PODFILE CHECKSUM: 89a8435e67e64d3f88ebb977503200a94ccad0e6
 
 COCOAPODS: 1.5.3

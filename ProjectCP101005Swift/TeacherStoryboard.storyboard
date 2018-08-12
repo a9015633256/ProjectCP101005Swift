@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BkI-KB-dsX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BkI-KB-dsX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -49,21 +49,15 @@
             </objects>
             <point key="canvasLocation" x="-2081" y="271"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="nOs-eF-tlQ">
+        <!--ChatStoryboard-->
+        <scene sceneID="3ec-NG-6uq">
             <objects>
-                <viewController id="BUE-bO-0PL" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jFn-BZ-l8d">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="rTE-nh-k3i"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="yjH-IO-l7i"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DHY-Dl-vq2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="ChatStoryboard" id="0RB-uh-2mi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="search.png" selectedImage="search.png" id="eWz-aL-dnZ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vn4-jR-gnv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1868" y="712"/>
+            <point key="canvasLocation" x="-2105" y="476"/>
         </scene>
         <!--TeacherHomeworkTableViewController-->
         <scene sceneID="LNH-RP-sHY">
@@ -95,10 +89,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="6Zu-fO-MIA" kind="relationship" relationship="viewControllers" id="g2T-ff-xZe"/>
-                        <segue destination="nlx-CB-nRW" kind="relationship" relationship="viewControllers" id="paH-cg-KgO"/>
-                        <segue destination="Ty3-do-E7x" kind="relationship" relationship="viewControllers" id="2GI-af-2f7"/>
-                        <segue destination="BUE-bO-0PL" kind="relationship" relationship="viewControllers" id="Wex-RW-AJr"/>
+                        <segue destination="pta-Sh-JyC" kind="relationship" relationship="viewControllers" id="8Vg-1G-RIA"/>
+                        <segue destination="nlx-CB-nRW" kind="relationship" relationship="viewControllers" id="Gpc-JP-zSY"/>
+                        <segue destination="Ty3-do-E7x" kind="relationship" relationship="viewControllers" id="m61-yj-MXb"/>
+                        <segue destination="0RB-uh-2mi" kind="relationship" relationship="viewControllers" id="zAA-3m-QSI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXs-6g-wCU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -106,4 +100,7 @@
             <point key="canvasLocation" x="-2946" y="-16"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="search.png" width="32" height="32"/>
+    </resources>
 </document>

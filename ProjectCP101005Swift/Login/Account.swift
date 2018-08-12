@@ -17,8 +17,19 @@ struct IsUserValid: Codable{
     var isUserValid = false
     var id = 0
     var subject = 0
+    var name :String
     
     
 }
+struct IsUserValidStudents: Codable {
+    var isUserValid = false
+    var id = ""
+    var classid = ""
+    var name: String
+}
 
-
+struct OldMessage: Codable {
+    var sender: String
+    var receiver: String
+    var message: String
+}
