@@ -35,29 +35,29 @@ class StudentExamTVC: UITableViewController {
         refreshControl.addTarget(self, action: #selector(refreshExam), for: UIControlEvents.valueChanged)
         self.refreshControl = refreshControl
         
-        guard let teacherAccountStr = UserDefaults.standard.value(forKey: "account")else{
+        guard let teacherAccountAny = UserDefaults.standard.value(forKey: "account")else{
             return
         }
-        guard let teacherAccount = teacherAccountStr as? String else{
+        guard let teacherAccount = teacherAccountAny as? String else{
             return
         }
-        guard let classNameStr = UserDefaults.standard.value(forKey: "className") else{
+        guard let classNameAny = UserDefaults.standard.value(forKey: "className") else{
             return
         }
         
-        guard let className = classNameStr as? String else{
+        guard let className = classNameAny as? String else{
             return
         }
-        guard let teacherIDInt = UserDefaults.standard.value(forKey: "teacherId")else{
+        guard let teacherIDAny = UserDefaults.standard.value(forKey: "teacherId")else{
             return
         }
-        guard let teacherID = teacherIDInt as? Int else{
+        guard let teacherID = teacherIDAny as? Int else{
             return
         }
-        guard let classIDInt = UserDefaults.standard.value(forKey: "classId")else{
+        guard let classIDAny = UserDefaults.standard.value(forKey: "classId")else{
             return
         }
-        guard let classID = classIDInt as? Int else{
+        guard let classID = classIDAny as? Int else{
             return
         }
         self.mainClass = ClassJoin(id: classID, classes: className, teacher: teacherAccount ,teacherID:teacherID)

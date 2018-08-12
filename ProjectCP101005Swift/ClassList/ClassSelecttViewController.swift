@@ -139,9 +139,12 @@ class ClassSelecttViewController: UIViewController,UIPopoverPresentationControll
                 assertionFailure("get output fail")
                 return
             }
-            self.classJoin = output
             
-            print("\(self.classJoin)")
+            self.classJoin = output
+            if let item = try? JSONEncoder().encode(self.classJoin){
+            UserDefaults.standard.set(item, forKey: "JoinList")
+            }
+            
             self.classTableview.reloadData()
         }
         

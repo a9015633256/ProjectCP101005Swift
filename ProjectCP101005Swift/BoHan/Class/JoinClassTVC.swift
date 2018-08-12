@@ -27,6 +27,9 @@ class JoinClassTVC: UITableViewController {
     
     var classID: Int?
     var teacherID: Int?
+    var JoinList = [ClassJoin]()
+    var totalID = [Int]()
+    var totalId:Int?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,14 +43,21 @@ class JoinClassTVC: UITableViewController {
         
         
        
-        guard let teacherIDInt = UserDefaults.standard.value(forKey: "teacherId")else{
+        guard let teacherIDAny = UserDefaults.standard.value(forKey: "teacherId")else{
             return
         }
-        guard let teacherID = teacherIDInt as? Int else{
+        guard let teacherID = teacherIDAny as? Int else{
             return
         }
+        guard let data = UserDefaults.standard.data(forKey: "JoinList") else {
+            return
+        }
+        guard let joinList = try? JSONDecoder().decode([ClassJoin].self, from: data) else{
+            return
+        }
+      
        self.teacherID = teacherID
-        
+       self.JoinList = joinList
         
     }
     
@@ -164,6 +174,7 @@ class JoinClassTVC: UITableViewController {
         
     }
     func joinClass() {
+        
         guard let url = URL(string: PropertyKeysForConnection.BoHanServlet) else {
             return
         }
@@ -173,22 +184,40 @@ class JoinClassTVC: UITableViewController {
         guard let classID = self.classID else {
             return
         }
-        let dictionary: [String:Any] = ["action":"Join","ClassId":classID,"TeacherId":teacherID]
-        guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: []) else {
-            assertionFailure()
-            return
-        }
-        let communicator = CommunicatorMingTa(targetURL: url)
-        communicator.download(from: data) { (error, data) in
-            if let error = error {
-                print("error: \(error)")
+
+        for JoinID in self.JoinList{
+            guard let id = JoinID.id else{
                 return
             }
-           
-            
-            
+            self.totalID.append(id)
         }
+      
+        
+     
+        if self.totalID.contains(classID){
+            let alert = UIAlertController(title: "錯誤", message: "重複加入此班級", preferredStyle: .alert)
+            let action = UIAlertAction(title: "確認", style: .default)
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+            self.serachTextField.text = ""
+        }
+        else{
+            let dictionary: [String:Any] = ["action":"Join","ClassId":classID,"TeacherId":teacherID]
+            guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: []) else {
+                assertionFailure()
+                return
+            }
+            let communicator = CommunicatorMingTa(targetURL: url)
+            communicator.download(from: data) { (error, data) in
+                if let error = error {
+                    print("error: \(error)")
+                    return
+                }
+            }
+
+
     }
+}
     
     
     @IBAction func addBtn(_ sender: UIButton) {
@@ -199,8 +228,6 @@ class JoinClassTVC: UITableViewController {
         }
         alert.addAction(action)
         present(alert, animated: true)
-        sender.isEnabled = false
-        
     }
 
 }

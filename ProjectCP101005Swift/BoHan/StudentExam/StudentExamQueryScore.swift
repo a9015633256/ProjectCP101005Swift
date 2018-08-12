@@ -29,7 +29,6 @@ class StudentExamQueryScore: UITableViewController {
         }
         self.mainSubject = item
         
-        print(subject)
         
     }
 

@@ -896,7 +896,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3v-Ri-hkG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5408.8000000000002" y="1147.3763118440781"/>
+            <point key="canvasLocation" x="4550" y="1347"/>
         </scene>
         <!--建立班級-->
         <scene sceneID="Nfe-9e-x9e">
