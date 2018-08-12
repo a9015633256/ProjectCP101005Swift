@@ -20,7 +20,7 @@ class DataList {
         
     }
 }
-class StudentExamTVC: UITableViewController {
+class StudentExamTVC: UITableViewController,UIPopoverPresentationControllerDelegate{
     
     
     var mainClass = ClassJoin()
@@ -64,9 +64,11 @@ class StudentExamTVC: UITableViewController {
         
         
         
-        
     }
     
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.none
+    }
     
     @objc
     func refreshExam(){
@@ -296,6 +298,10 @@ class StudentExamTVC: UITableViewController {
             }
             let contoller = segue.destination as? StudentExamQueryScore
             contoller?.subject = self.tableViewData[indexPath.section].sectionData[indexPath.row - 1]
+        }else if segue.identifier == "ShowPopOver"{
+            let controller = segue.destination
+            let delegate = self as UIPopoverPresentationControllerDelegate
+            controller.popoverPresentationController?.delegate = delegate
         }
     }
 

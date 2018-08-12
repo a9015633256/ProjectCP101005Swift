@@ -12,6 +12,7 @@
 		0C0EAE1B211AD5970059B51E /* StudentExamQueryScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0EAE1A211AD5970059B51E /* StudentExamQueryScore.swift */; };
 		0C0EAE1D211AD6900059B51E /* StudentExamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0EAE1C211AD6900059B51E /* StudentExamCell.swift */; };
 		0C8BA7A6211A8A2F006BC87E /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8BA7A5211A8A2F006BC87E /* PopOverViewController.swift */; };
+		0C9F213B212030AE0034DF05 /* StudentPopOverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9F213A212030AE0034DF05 /* StudentPopOverVC.swift */; };
 		0CC02E102119964000091EB9 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CC02E0F2119963F00091EB9 /* search.png */; };
 		0CF1D58E211A9E850055BF58 /* exam.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CF1D58D211A9E840055BF58 /* exam.png */; };
 		24BC57B320FD83DE00002DB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC57B220FD83DE00002DB0 /* AppDelegate.swift */; };
@@ -110,6 +111,7 @@
 		0C0EAE1C211AD6900059B51E /* StudentExamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentExamCell.swift; sourceTree = "<group>"; };
 		0C8BA7A5211A8A2F006BC87E /* PopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
 		0C8BA7A7211A92BA006BC87E /* popOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popOver.png; sourceTree = "<group>"; };
+		0C9F213A212030AE0034DF05 /* StudentPopOverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentPopOverVC.swift; sourceTree = "<group>"; };
 		0CC02E0F2119963F00091EB9 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		0CF1D58D211A9E840055BF58 /* exam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exam.png; sourceTree = "<group>"; };
 		24BC57AF20FD83DE00002DB0 /* ProjectCP101005Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectCP101005Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,6 +228,7 @@
 				0C0EAE1C211AD6900059B51E /* StudentExamCell.swift */,
 				0C0EAE18211AD5680059B51E /* StudentExamQuery.swift */,
 				0C0EAE1A211AD5970059B51E /* StudentExamQueryScore.swift */,
+				0C9F213A212030AE0034DF05 /* StudentPopOverVC.swift */,
 			);
 			path = StudentExam;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0E8779E21201D4400A0749B /* TabTwoTeacherDetailViewController.swift in Sources */,
+				0C9F213B212030AE0034DF05 /* StudentPopOverVC.swift in Sources */,
 				C02F6EBA21192E9E00A0A2BA /* ClassCell.swift in Sources */,
 				930FC19D210ACB5A00C27FC1 /* LoginViewController.swift in Sources */,
 				C02F6EF521192EA400A0A2BA /* TeacherHomeworkTableViewController.swift in Sources */,
