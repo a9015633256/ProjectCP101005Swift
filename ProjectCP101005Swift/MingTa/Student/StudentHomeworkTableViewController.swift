@@ -13,13 +13,14 @@ class StudentHomeworkTableViewController: UITableViewController {
     class sectionData {
         var isOpen = false
         var title = ""
+        var isWarned = false
         var cellDataList = [HomeworkIsDone]()
         
-        init(isOpen: Bool,title: String, cellDataList:[HomeworkIsDone] ) {
+        init(isOpen: Bool,title: String,isWarned: Bool, cellDataList:[HomeworkIsDone] ) {
             self.isOpen = isOpen
             self.title = title
+            self.isWarned = isWarned
             self.cellDataList = cellDataList
-            
         }
     }
     
@@ -103,6 +104,12 @@ class StudentHomeworkTableViewController: UITableViewController {
                 return UITableViewCell()
             }
             cell.dateLabel.text = sectionDataList[indexPath.section].title
+            
+            if sectionDataList[indexPath.section].isWarned{
+                cell.markImageView?.isHidden = false
+            } else {
+                cell.markImageView?.isHidden = true
+            }
             
             return cell
             
@@ -193,6 +200,12 @@ class StudentHomeworkTableViewController: UITableViewController {
                 controller.homework = sectionDataList[indexPath.section].cellDataList[indexPath.row-1]
             }
         }
+        
+        if segue.identifier == "ShowPopOver"{
+            let controller = segue.destination.popoverPresentationController
+            controller?.delegate = self
+        }
+        
     }
     
     func configureView() {
@@ -276,11 +289,21 @@ class StudentHomeworkTableViewController: UITableViewController {
                         }
                     })
                     
+                    if let isHomeworkDone = homeworkIsDone.isHomeworkDone, !isHomeworkDone{
+                      sectionData[0].isWarned = true
+                    }
+                    
                     sectionData[0].cellDataList.append(homeworkIsDone)
                     
                 } else {
                     titles.append(title)
-                    self.sectionDataList.append(sectionData(isOpen: false, title: title, cellDataList: [homeworkIsDone]))
+                    
+                    if let isHomeworkDone = homeworkIsDone.isHomeworkDone, isHomeworkDone{
+                        self.sectionDataList.append(sectionData(isOpen: false, title: title, isWarned: false, cellDataList: [homeworkIsDone]))
+                    } else {
+                        self.sectionDataList.append(sectionData(isOpen: false, title: title, isWarned: true, cellDataList: [homeworkIsDone]))
+                    }
+                    
                 }
                 
             }
@@ -295,7 +318,12 @@ class StudentHomeworkTableViewController: UITableViewController {
     
 }
 
-
+extension StudentHomeworkTableViewController: UIPopoverPresentationControllerDelegate{
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.none
+        
+    }
+}
 
 
 

@@ -17,6 +17,9 @@ struct Classes:Codable,CustomStringConvertible {
     var teacherid:Int = 0
     
     static let Gray = UIColor(red: 205.0/255.0, green: 201.0/255.0, blue: 201.0/255.0, alpha: 1.0)
+    
+    
+    
 }
 
 class ClassTVC: UITableViewController {

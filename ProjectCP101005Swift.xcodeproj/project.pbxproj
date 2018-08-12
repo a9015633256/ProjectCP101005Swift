@@ -34,7 +34,6 @@
 		24BFE546211D397300EF891F /* TeacherAccountSearchTeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE52E211D397200EF891F /* TeacherAccountSearchTeacherViewController.swift */; };
 		24BFE547211D397300EF891F /* TeacherAccountTabTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE52F211D397200EF891F /* TeacherAccountTabTwoTableViewCell.swift */; };
 		24BFE548211D397300EF891F /* TeacherAccountSearcheTeacherViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE530211D397200EF891F /* TeacherAccountSearcheTeacherViewControllerTableViewCell.swift */; };
-		24BFE549211D397300EF891F /* TabTwoTeacherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE531211D397200EF891F /* TabTwoTeacherDetailViewController.swift */; };
 		24BFE54A211D397300EF891F /* TeacherReplaceFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE532211D397200EF891F /* TeacherReplaceFileViewController.swift */; };
 		24BFE54B211D397300EF891F /* CommunicatorWenSing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE534211D397200EF891F /* CommunicatorWenSing.swift */; };
 		24BFE54C211D397300EF891F /* UIImageCropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE535211D397200EF891F /* UIImageCropper.swift */; };
@@ -98,6 +97,9 @@
 		C03381CB2118537A00D55EAE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C03381CA2118537A00D55EAE /* .gitignore */; };
 		C0AA28CF211941B6003121A7 /* TeacherSingleExamChartsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AA28CE211941B6003121A7 /* TeacherSingleExamChartsTableViewController.swift */; };
 		C0AA28D121195029003121A7 /* ChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AA28D021195029003121A7 /* ChartFormatter.swift */; };
+		C0D221C2211AC26D00046434 /* StudentSingleExamChartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D221C1211AC26D00046434 /* StudentSingleExamChartTableViewController.swift */; };
+		C0D221C4211AD6BB00046434 /* StudentPopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D221C3211AD6BB00046434 /* StudentPopOverViewController.swift */; };
+		C0E8779E21201D4400A0749B /* TabTwoTeacherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE531211D397200EF891F /* TabTwoTeacherDetailViewController.swift */; };
 		ED5777041903CCCB7BF8690B /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
@@ -200,6 +202,8 @@
 		C03381CA2118537A00D55EAE /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C0AA28CE211941B6003121A7 /* TeacherSingleExamChartsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherSingleExamChartsTableViewController.swift; sourceTree = "<group>"; };
 		C0AA28D021195029003121A7 /* ChartFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartFormatter.swift; sourceTree = "<group>"; };
+		C0D221C1211AC26D00046434 /* StudentSingleExamChartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSingleExamChartTableViewController.swift; sourceTree = "<group>"; };
+		C0D221C3211AD6BB00046434 /* StudentPopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentPopOverViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -422,10 +426,10 @@
 		C02F6ECD21192EA400A0A2BA /* MingTa */ = {
 			isa = PBXGroup;
 			children = (
+				C02F6ED921192EA400A0A2BA /* MingTaStoryboard.storyboard */,
 				C0AA28CD21194189003121A7 /* Charts */,
 				C02F6ECE21192EA400A0A2BA /* Student */,
 				C02F6ED321192EA400A0A2BA /* Common */,
-				C02F6ED921192EA400A0A2BA /* MingTaStoryboard.storyboard */,
 				C02F6EDA21192EA400A0A2BA /* DataSwift */,
 				C02F6EDF21192EA400A0A2BA /* Teacher */,
 			);
@@ -451,6 +455,7 @@
 				C02F6ED621192EA400A0A2BA /* MingTaCommunicator.swift */,
 				C02F6ED721192EA400A0A2BA /* HomeworkDetailTableViewCell.swift */,
 				C02F6ED821192EA400A0A2BA /* HomeworkCheckTableViewCell.swift */,
+				C0D221C3211AD6BB00046434 /* StudentPopOverViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -482,6 +487,7 @@
 			isa = PBXGroup;
 			children = (
 				C0AA28CE211941B6003121A7 /* TeacherSingleExamChartsTableViewController.swift */,
+				C0D221C1211AC26D00046434 /* StudentSingleExamChartTableViewController.swift */,
 				C0AA28D021195029003121A7 /* ChartFormatter.swift */,
 			);
 			path = Charts;
@@ -621,6 +627,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0E8779E21201D4400A0749B /* TabTwoTeacherDetailViewController.swift in Sources */,
 				C02F6EBA21192E9E00A0A2BA /* ClassCell.swift in Sources */,
 				930FC19D210ACB5A00C27FC1 /* LoginViewController.swift in Sources */,
 				C02F6EF521192EA400A0A2BA /* TeacherHomeworkTableViewController.swift in Sources */,
@@ -633,7 +640,7 @@
 				24BFE54E211D397300EF891F /* UIImage+FixOrientation.swift in Sources */,
 				C02F6EF721192EA400A0A2BA /* TeacherHomeworkInsertTableViewController.swift in Sources */,
 				C02F6EEB21192EA400A0A2BA /* MingTaCommunicator.swift in Sources */,
-				24BFE549211D397300EF891F /* TabTwoTeacherDetailViewController.swift in Sources */,
+				C0D221C2211AC26D00046434 /* StudentSingleExamChartTableViewController.swift in Sources */,
 				C02F6EE921192EA400A0A2BA /* MingTaCommon.swift in Sources */,
 				C02F6ECA21192E9E00A0A2BA /* JoinClassTVC.swift in Sources */,
 				24BC57CA20FD844600002DB0 /* UIImageView+Download.swift in Sources */,
@@ -641,6 +648,7 @@
 				24BC57B520FD83DE00002DB0 /* ViewController.swift in Sources */,
 				C02F6EF421192EA400A0A2BA /* TeacherHomeworkCheckTableViewController.swift in Sources */,
 				9334CBC22111566D00D7BE6F /* Action.swift in Sources */,
+				C0D221C4211AD6BB00046434 /* StudentPopOverViewController.swift in Sources */,
 				C02F6EF321192EA400A0A2BA /* TeacherHomeworkUpdateTableViewController.swift in Sources */,
 				C02F6EBC21192E9E00A0A2BA /* ClassTVC.swift in Sources */,
 				24BC57C720FD842400002DB0 /* Reachability.m in Sources */,
