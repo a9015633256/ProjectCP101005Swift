@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="muH-5R-R0B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="muH-5R-R0B">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -80,14 +80,15 @@
                             <outlet property="delegate" destination="c4E-wX-Y0D" id="nzV-h4-0zL"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="HOZ-3P-bcX">
-                        <barButtonItem key="rightBarButtonItem" image="popOver.png" id="7tG-hV-SWI">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back_arrow_blue_with_text" id="uTn-iQ-IzT">
                             <connections>
-                                <action selector="logoutPop:" destination="c4E-wX-Y0D" id="DYB-kl-gRx"/>
+                                <action selector="backBtn:" destination="c4E-wX-Y0D" id="l6P-mM-J9Y"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5O-ee-jhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,24 +102,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vNw-Vn-XlN">
-                                <rect key="frame" x="16" y="586" width="290" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cnl-v9-aZc">
-                                <rect key="frame" x="328" y="586" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="發送"/>
-                                <connections>
-                                    <action selector="sendMessageBtn:" destination="oDk-bi-g8c" eventType="touchUpInside" id="X3i-8c-1ze"/>
-                                </connections>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2xw-9w-h63">
-                                <rect key="frame" x="0.0" y="41" width="375" height="537"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERd-V3-Ei0">
+                                <rect key="frame" x="16" y="542" width="343" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vNw-Vn-XlN">
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="290" id="5DA-n3-ee8"/>
+                                            <constraint firstAttribute="height" constant="30" id="tfo-SJ-NLm"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cnl-v9-aZc">
+                                        <rect key="frame" x="290" y="0.0" width="53" height="30"/>
+                                        <state key="normal" title="發送"/>
+                                        <connections>
+                                            <action selector="sendMessageBtn:" destination="oDk-bi-g8c" eventType="touchUpInside" id="X3i-8c-1ze"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2xw-9w-h63">
+                                <rect key="frame" x="0.0" y="41" width="375" height="493"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="50" id="eqz-w7-zb0" customClass="ChatTableViewCell" customModule="ProjectCP101005Swift" customModuleProvider="target">
@@ -189,6 +196,15 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="k4B-RI-w4d" firstAttribute="trailing" secondItem="ERd-V3-Ei0" secondAttribute="trailing" constant="16" id="7xn-eD-Zcj"/>
+                            <constraint firstItem="k4B-RI-w4d" firstAttribute="bottom" secondItem="ERd-V3-Ei0" secondAttribute="bottom" constant="2" id="Ip0-E3-Naj"/>
+                            <constraint firstItem="2xw-9w-h63" firstAttribute="trailing" secondItem="k4B-RI-w4d" secondAttribute="trailing" id="dzb-Y9-WxZ"/>
+                            <constraint firstItem="2xw-9w-h63" firstAttribute="top" secondItem="20d-hA-AZJ" secondAttribute="top" constant="41" id="fd5-Ct-xnA"/>
+                            <constraint firstItem="ERd-V3-Ei0" firstAttribute="top" secondItem="2xw-9w-h63" secondAttribute="bottom" constant="8" id="gXQ-AG-QPL"/>
+                            <constraint firstItem="2xw-9w-h63" firstAttribute="leading" secondItem="k4B-RI-w4d" secondAttribute="leading" id="iTM-LZ-iyV"/>
+                            <constraint firstItem="ERd-V3-Ei0" firstAttribute="leading" secondItem="k4B-RI-w4d" secondAttribute="leading" constant="16" id="utv-lw-Rb9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="k4B-RI-w4d"/>
                     </view>
                     <navigationItem key="navigationItem" id="nuX-YA-J09"/>
@@ -223,7 +239,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back_arrow_blue_with_text" width="125" height="23"/>
         <image name="baseline_face_black_24dp" width="24" height="24"/>
-        <image name="popOver.png" width="5" height="29"/>
     </resources>
 </document>

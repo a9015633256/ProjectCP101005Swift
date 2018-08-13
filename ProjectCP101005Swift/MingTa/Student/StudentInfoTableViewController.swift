@@ -10,6 +10,7 @@ import UIKit
 
 class StudentInfoTableViewController: UITableViewController {
     
+    var studentID = 0
     var communicator: CommunicatorMingTa?
     var student: Student?
     var photo: UIImage?
@@ -26,6 +27,7 @@ class StudentInfoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getDataFromPref()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -131,7 +133,7 @@ class StudentInfoTableViewController: UITableViewController {
             return
         }
         
-        var dictionary: [String: Any] = ["action": "findStudentById", "studentId": 2]
+        var dictionary: [String: Any] = ["action": "findStudentById", "studentId": studentID]
         
         guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: []) else {
             assertionFailure()
@@ -220,6 +222,15 @@ class StudentInfoTableViewController: UITableViewController {
             }
             
         }
+        
+    }
+    
+    func getDataFromPref(){
+        
+        let userDefaults = UserDefaults.standard
+        
+        
+        studentID = userDefaults.integer(forKey: "studentID")
         
     }
     

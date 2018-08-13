@@ -12,12 +12,19 @@ import UIKit
 
 class TeacherHomeworkInsertTableViewController: UITableViewController {
     
+    var classID = 0
+    var subjectID = 0
+    var teacherID = 0
+    
+    
     @IBOutlet weak var subjectNavigationItem: UINavigationItem!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getDataFromPref()
         
         configureView()
         
@@ -49,7 +56,11 @@ class TeacherHomeworkInsertTableViewController: UITableViewController {
             return
         }
         
-        let homework = Homework(id: 0, subjectId: 10, teacherId: 2, classId: 1, subject: "", teacher: "", title: titleTextField.text, content: contentTextView.text, date: Date())
+        guard subjectID != 0, classID != 0, teacherID != 0 else{
+            assertionFailure()
+            return
+        }
+        let homework = Homework(id: 0, subjectId: subjectID, teacherId: teacherID, classId: classID, subject: "", teacher: "", title: titleTextField.text, content: contentTextView.text, date: Date())
         
         let jsonEncoder = JSONEncoder()
         let dateFormatter = DateFormatter()
@@ -191,5 +202,15 @@ class TeacherHomeworkInsertTableViewController: UITableViewController {
 //        contentTextView.text = homework?.content
     }
     
+    func getDataFromPref(){
+        
+        let userDefaults = UserDefaults.standard
+        
+        classID = userDefaults.integer(forKey: "classId")
+        teacherID = userDefaults.integer(forKey: "teacherId")
+        subjectID = userDefaults.integer(forKey: "subjectId")
+
+        
+    }
     
 }
