@@ -21,14 +21,10 @@ class StudentExamQueryScore: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard let userData = UserDefaults.standard.data(forKey: "mainSubject") else{
-            return
-        }
-        guard let item = try? JSONDecoder().decode([Exam].self, from: userData)else{
-            return
-        }
-        self.mainSubject = item
-        
+      
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshExamScore), for: UIControlEvents.valueChanged)
+        self.refreshControl = refreshControl
         
     }
 
@@ -37,6 +33,16 @@ class StudentExamQueryScore: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    
+    
+    @objc
+    func refreshExamScore() {
+        self.refreshControl?.beginRefreshing()
+        self.mainSubject.removeAll()
+        getScoreList()
+        self.refreshControl?.endRefreshing()
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
