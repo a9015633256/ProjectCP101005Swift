@@ -64,6 +64,7 @@ class TeacherAccountTabTwoViewController: UIViewController, UITableViewDelegate,
             if let indexPath = tableView.indexPathForSelectedRow {
                 let distinationController = segue.destination as! TabTwoTeacherDetailViewController
                 distinationController.teacherDetail = teacherList[indexPath.row]
+                
             }
         }
     }
@@ -87,9 +88,10 @@ class TeacherAccountTabTwoViewController: UIViewController, UITableViewDelegate,
     
     func findTeachers() {
         
-        let teacherClass = "CP101"
-//        let teacherClass = UserDefaults.standard.string(forKey: "className")
-        let action = GetTeacherList(action: ACTION_GET_TEACHER_LIST, Class_Name: teacherClass)
+        let teacherClass = UserDefaults.standard.string(forKey: "className")
+        
+        //仍須優化
+        let action = GetTeacherList(action: ACTION_GET_TEACHER_LIST, Class_Name: teacherClass!)
         let econder = JSONEncoder()
         econder.outputFormatting = .init()
         guard let uploadData = try? econder.encode(action) else {
@@ -117,6 +119,7 @@ class TeacherAccountTabTwoViewController: UIViewController, UITableViewDelegate,
             if self.teacherList.count != 0 {
                 for id in 0...(self.teacherList.count - 1) {
                     self.getFriendImage(teacherID: self.teacherList[id].id!)
+                    
                 }
                 
             }

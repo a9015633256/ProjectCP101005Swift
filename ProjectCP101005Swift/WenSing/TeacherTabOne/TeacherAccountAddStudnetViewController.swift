@@ -52,11 +52,8 @@ class TeacherAccountAddStudnetViewController: UIViewController {
                 assertionFailure("invalid input value")
                 return
         }
-        let classId = "5"//用userDefault 的classID
+        let classId = UserDefaults.standard.string(forKey: "classId")
         
-//        let studentAccount = AddStudent(Student_ID: account, Student_Password: password, Student_Name: name, Class_Name: classId)
-        
-//        let action = AddNewStudentAccount(action: ACTION_ADD_STUDENT, id: studentAccount)
         let action = AddNewStudentAccount(action: ACTION_ADD_STUDENT, Student_ID: account, Student_Password: password, Student_Name: name, Class_Name: classId )
         print("\(action)")
         let econder = JSONEncoder()
@@ -66,20 +63,19 @@ class TeacherAccountAddStudnetViewController: UIViewController {
         }
         
         communicator.doPost(url: STUDENT_ACCOUNT_SERVLET, data: uploadData) { (result) in
-            
+        
             guard let result = result,let jsonIn = (try? JSONSerialization.jsonObject(with: result, options: [] )) as? [String:Int] else {
                 return
             }
             
-            self.dismiss(animated: false, completion: nil)
-//            guard let dogId = jsonIn["dogId"] else {
-//                return
-//            }
-            
-//            UserDefaults.standard.set(dogId, forKey: "dogId")
+        
             
         }
         
+        //如果新增成功，顯示alert
+        
+        self.dismiss(animated: true, completion: nil)
+    
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {

@@ -61,4 +61,16 @@ struct AddNewStudentAccount: Codable {
     
 }
 
+struct FindTeacherFile: Codable {
+    var action: String?
+    var Teacher_Account: String
+    
+}
+
+struct JoinTeacherToClass: Codable {
+    var action: String?
+    var Class_Name: Int
+    var Class_SubjectTeacher: Int
+}
+
 
