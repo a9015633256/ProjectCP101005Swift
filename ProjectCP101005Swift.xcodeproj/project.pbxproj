@@ -31,7 +31,6 @@
 		24BFE545211D397300EF891F /* TeacherAccountSearchTeacherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE52D211D397200EF891F /* TeacherAccountSearchTeacherTableViewCell.swift */; };
 		24BFE546211D397300EF891F /* TeacherAccountSearchTeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE52E211D397200EF891F /* TeacherAccountSearchTeacherViewController.swift */; };
 		24BFE547211D397300EF891F /* TeacherAccountTabTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE52F211D397200EF891F /* TeacherAccountTabTwoTableViewCell.swift */; };
-		24BFE548211D397300EF891F /* TeacherAccountSearcheTeacherViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE530211D397200EF891F /* TeacherAccountSearcheTeacherViewControllerTableViewCell.swift */; };
 		24BFE54A211D397300EF891F /* TeacherReplaceFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE532211D397200EF891F /* TeacherReplaceFileViewController.swift */; };
 		24BFE54B211D397300EF891F /* CommunicatorWenSing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE534211D397200EF891F /* CommunicatorWenSing.swift */; };
 		24BFE54C211D397300EF891F /* UIImageCropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE535211D397200EF891F /* UIImageCropper.swift */; };
@@ -132,7 +131,6 @@
 		24BC57C920FD844600002DB0 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		24BFE524211D397200EF891F /* TeacherAccountTabOneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherAccountTabOneTableViewCell.swift; sourceTree = "<group>"; };
 		24BFE525211D397200EF891F /* TeacherAccountAddStudnetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherAccountAddStudnetViewController.swift; sourceTree = "<group>"; };
-		24BFE526211D397200EF891F /* TeacherAccountTabOneAddStudentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherAccountTabOneAddStudentTableViewCell.swift; sourceTree = "<group>"; };
 		24BFE527211D397200EF891F /* TeacherAccountTabOneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherAccountTabOneViewController.swift; sourceTree = "<group>"; };
 		24BFE528211D397200EF891F /* TabOneStudentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabOneStudentDetailViewController.swift; sourceTree = "<group>"; };
 		24BFE529211D397200EF891F /* TabSwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabSwitchViewController.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 		24BFE52D211D397200EF891F /* TeacherAccountSearchTeacherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherAccountSearchTeacherTableViewCell.swift; sourceTree = "<group>"; };
 		24BFE52E211D397200EF891F /* TeacherAccountSearchTeacherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherAccountSearchTeacherViewController.swift; sourceTree = "<group>"; };
 		24BFE52F211D397200EF891F /* TeacherAccountTabTwoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherAccountTabTwoTableViewCell.swift; sourceTree = "<group>"; };
-		24BFE530211D397200EF891F /* TeacherAccountSearcheTeacherViewControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherAccountSearcheTeacherViewControllerTableViewCell.swift; sourceTree = "<group>"; };
 		24BFE531211D397200EF891F /* TabTwoTeacherDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabTwoTeacherDetailViewController.swift; sourceTree = "<group>"; };
 		24BFE532211D397200EF891F /* TeacherReplaceFileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherReplaceFileViewController.swift; sourceTree = "<group>"; };
 		24BFE534211D397200EF891F /* CommunicatorWenSing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicatorWenSing.swift; sourceTree = "<group>"; };
@@ -326,7 +323,6 @@
 			children = (
 				24BFE524211D397200EF891F /* TeacherAccountTabOneTableViewCell.swift */,
 				24BFE525211D397200EF891F /* TeacherAccountAddStudnetViewController.swift */,
-				24BFE526211D397200EF891F /* TeacherAccountTabOneAddStudentTableViewCell.swift */,
 				24BFE527211D397200EF891F /* TeacherAccountTabOneViewController.swift */,
 				24BFE528211D397200EF891F /* TabOneStudentDetailViewController.swift */,
 			);
@@ -340,7 +336,6 @@
 				24BFE52D211D397200EF891F /* TeacherAccountSearchTeacherTableViewCell.swift */,
 				24BFE52E211D397200EF891F /* TeacherAccountSearchTeacherViewController.swift */,
 				24BFE52F211D397200EF891F /* TeacherAccountTabTwoTableViewCell.swift */,
-				24BFE530211D397200EF891F /* TeacherAccountSearcheTeacherViewControllerTableViewCell.swift */,
 				24BFE531211D397200EF891F /* TabTwoTeacherDetailViewController.swift */,
 			);
 			path = TeacherTabTwo;
@@ -735,7 +730,6 @@
 				C02F6EBF21192E9E00A0A2BA /* ClassJoin&Create.swift in Sources */,
 				931B49272112F59800A8CCB9 /* CoolCellTableViewCell.swift in Sources */,
 				0C0EAE17211AD5580059B51E /* StudentExamTVC.swift in Sources */,
-				24BFE548211D397300EF891F /* TeacherAccountSearcheTeacherViewControllerTableViewCell.swift in Sources */,
 				C02F6EBD21192E9E00A0A2BA /* CreateClassViewController.swift in Sources */,
 				C02F6EC321192E9E00A0A2BA /* FirstViewController.swift in Sources */,
 				0C0EAE1B211AD5970059B51E /* StudentExamQueryScore.swift in Sources */,
