@@ -1,3 +1,4 @@
+
 //
 //  Communicator.swift
 //  ProjectCP101005Swift

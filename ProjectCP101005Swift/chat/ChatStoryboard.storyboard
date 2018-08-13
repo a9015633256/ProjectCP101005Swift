@@ -80,7 +80,13 @@
                             <outlet property="delegate" destination="c4E-wX-Y0D" id="nzV-h4-0zL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="HOZ-3P-bcX"/>
+                    <navigationItem key="navigationItem" id="HOZ-3P-bcX">
+                        <barButtonItem key="rightBarButtonItem" image="popOver.png" id="7tG-hV-SWI">
+                            <connections>
+                                <action selector="logoutPop:" destination="c4E-wX-Y0D" id="DYB-kl-gRx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5O-ee-jhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -218,5 +224,6 @@
     </scenes>
     <resources>
         <image name="baseline_face_black_24dp" width="24" height="24"/>
+        <image name="popOver.png" width="5" height="29"/>
     </resources>
 </document>
