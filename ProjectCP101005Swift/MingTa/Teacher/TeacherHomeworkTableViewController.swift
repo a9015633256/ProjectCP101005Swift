@@ -10,6 +10,9 @@ import UIKit
 
 class TeacherHomeworkTableViewController: UITableViewController {
     
+    var classID = 0
+    var teacherID = 0
+    
         class sectionData {
             var isOpen = false
             var title = ""
@@ -27,6 +30,7 @@ class TeacherHomeworkTableViewController: UITableViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             
+            getDataFromPref()
        
             // Uncomment the following line to preserve selection between presentations
             // self.clearsSelectionOnViewWillAppear = false
@@ -185,13 +189,18 @@ class TeacherHomeworkTableViewController: UITableViewController {
         
         func configureView() {
             
+            guard classID != 0 , teacherID != 0 else{
+                assertionFailure()
+                return
+            }
+            
             //get data from DB
             guard let url = URL(string: PropertyKeysForConnection.urlHomeworkServlet) else {
                 assertionFailure()
                 return
             }
             
-            let dictionary: [String: Any] = ["action": "findHomeworkByClassIdAndTeacherId", "classId": 1, "teacherId": 2]
+            let dictionary: [String: Any] = ["action": "findHomeworkByClassIdAndTeacherId", "classId": classID, "teacherId": teacherID]
             guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: [])
                 else {
                     assertionFailure("fail to create JsonObject")
@@ -279,6 +288,15 @@ class TeacherHomeworkTableViewController: UITableViewController {
             
             
         }
+    
+    func getDataFromPref(){
         
+        let userDefaults = UserDefaults.standard
+        
+        classID = userDefaults.integer(forKey: "classId")
+        teacherID = userDefaults.integer(forKey: "teacherId")
+        
+        
+    }
         
 }
