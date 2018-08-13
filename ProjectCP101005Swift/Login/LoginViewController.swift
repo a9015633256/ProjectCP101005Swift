@@ -181,10 +181,18 @@ class LoginViewController: UIViewController {
             
         }
         
-        
-        
-        
 
+    }
+    
+    
+    @IBAction func studentShortcutBtnPressed(_ sender: Any) {
+        account.text = "student1"
+        password.text = "1"
+    }
+    
+    @IBAction func teacherShortcutBtnPressed(_ sender: Any) {
+        account.text = "cp102@hotmail.com"
+        password.text = "22222"
     }
     
 }

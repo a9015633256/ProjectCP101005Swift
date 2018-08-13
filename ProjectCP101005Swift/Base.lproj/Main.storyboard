@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HHE-3W-Fes">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HHE-3W-Fes">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -50,9 +50,17 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxJ-vs-Kgq">
                                 <rect key="frame" x="69" y="613" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="學生捷徑"/>
+                                <state key="normal" title="學生輸入"/>
                                 <connections>
-                                    <segue destination="JRx-6s-1PN" kind="presentation" id="5A4-yV-kEs"/>
+                                    <action selector="studentShortcutBtnPressed:" destination="Qh0-pb-f9v" eventType="touchUpInside" id="BFT-TZ-p9P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRm-yC-acM">
+                                <rect key="frame" x="252" y="613" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="老師輸入"/>
+                                <connections>
+                                    <action selector="teacherShortcutBtnPressed:" destination="Qh0-pb-f9v" eventType="touchUpInside" id="SI2-kh-iWa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -234,22 +242,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m5U-gE-Af9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="77.599999999999994" y="3.1484257871064472"/>
-        </scene>
-        <!--StudentStoryboard-->
-        <scene sceneID="u9D-tz-8oY">
-            <objects>
-                <viewControllerPlaceholder storyboardName="StudentStoryboard" id="JRx-6s-1PN" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="m6f-cu-5ok" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="681" y="559"/>
-        </scene>
-        <!--TeacherStoryboard-->
-        <scene sceneID="s3e-AX-scl">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oW1-Wc-Enj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewControllerPlaceholder storyboardName="TeacherStoryboard" id="xyR-yr-4pK" sceneMemberID="viewController"/>
-            </objects>
-            <point key="canvasLocation" x="1380" y="559"/>
         </scene>
     </scenes>
 </document>

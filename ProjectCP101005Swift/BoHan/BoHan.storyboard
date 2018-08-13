@@ -1513,7 +1513,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsH-k2-Hkv">
-                                            <rect key="frame" x="308" y="13" width="51" height="34"/>
+                                            <rect key="frame" x="308" y="12" width="51" height="34"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="51" id="62R-PP-mav"/>
                                                 <constraint firstAttribute="height" constant="34" id="MGr-Sq-4fF"/>
@@ -1528,10 +1528,10 @@
                                         <constraint firstItem="EmF-jk-x7P" firstAttribute="centerY" secondItem="U0S-WO-aXe" secondAttribute="centerY" id="KhH-Dz-JnY"/>
                                         <constraint firstItem="Czd-f7-xjT" firstAttribute="leading" secondItem="EmF-jk-x7P" secondAttribute="trailing" id="P2d-kt-iDw"/>
                                         <constraint firstItem="Czd-f7-xjT" firstAttribute="centerY" secondItem="U0S-WO-aXe" secondAttribute="centerY" id="SCo-Fr-ATE"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="JsH-k2-Hkv" secondAttribute="trailing" id="Six-a6-Q2E"/>
                                         <constraint firstItem="Czd-f7-xjT" firstAttribute="top" secondItem="U0S-WO-aXe" secondAttribute="topMargin" constant="2" id="cCa-VJ-MLl"/>
-                                        <constraint firstItem="JsH-k2-Hkv" firstAttribute="top" secondItem="U0S-WO-aXe" secondAttribute="topMargin" constant="2" id="cg3-tj-JBc"/>
                                         <constraint firstItem="Czd-f7-xjT" firstAttribute="centerX" secondItem="U0S-WO-aXe" secondAttribute="centerX" id="ivi-XH-hfQ"/>
+                                        <constraint firstItem="JsH-k2-Hkv" firstAttribute="centerY" secondItem="U0S-WO-aXe" secondAttribute="centerY" id="lb3-Xd-7ot"/>
+                                        <constraint firstItem="JsH-k2-Hkv" firstAttribute="trailing" secondItem="U0S-WO-aXe" secondAttribute="trailingMargin" id="vQb-ox-b0z"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.94780110259999995" green="0.97003095660000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
