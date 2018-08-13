@@ -10,6 +10,7 @@ target 'ProjectCP101005Swift' do
   # Pods for ProjectCP101005Swift
   
   pod 'Charts'
+  pod 'Starscream'
   
 
 end

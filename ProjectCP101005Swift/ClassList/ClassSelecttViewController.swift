@@ -29,7 +29,7 @@ class ClassSelecttViewController: UIViewController,UIPopoverPresentationControll
             if segue.identifier == "ShowPopOver"{
                 let controller = segue.destination
                 let delegate = self as UIPopoverPresentationControllerDelegate
-                controller.popoverPresentationController?.delegate = delegate
+//                controller.popoverPresentationController?.delegate = delegate
             }
             func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle{
                 return UIModalPresentationStyle.none
