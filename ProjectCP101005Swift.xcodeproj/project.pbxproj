@@ -11,6 +11,8 @@
 		0C0EAE19211AD5680059B51E /* StudentExamQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0EAE18211AD5680059B51E /* StudentExamQuery.swift */; };
 		0C0EAE1B211AD5970059B51E /* StudentExamQueryScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0EAE1A211AD5970059B51E /* StudentExamQueryScore.swift */; };
 		0C0EAE1D211AD6900059B51E /* StudentExamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0EAE1C211AD6900059B51E /* StudentExamCell.swift */; };
+		0C8BA52A21212D6B00CC0A85 /* TabTwoTeacherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8BA52921212D6B00CC0A85 /* TabTwoTeacherDetailViewController.swift */; };
+		0C8BA52D21212DD200CC0A85 /* TeacherAccountTabOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE524211D397200EF891F /* TeacherAccountTabOneTableViewCell.swift */; };
 		0C8BA7A6211A8A2F006BC87E /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8BA7A5211A8A2F006BC87E /* PopOverViewController.swift */; };
 		0C9F213B212030AE0034DF05 /* StudentPopOverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9F213A212030AE0034DF05 /* StudentPopOverVC.swift */; };
 		0CC02E102119964000091EB9 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CC02E0F2119963F00091EB9 /* search.png */; };
@@ -98,9 +100,7 @@
 		C0AA28D121195029003121A7 /* ChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AA28D021195029003121A7 /* ChartFormatter.swift */; };
 		EA3000B8211EC9AB00AA2EFB /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3000B7211EC9AB00AA2EFB /* ChatTableViewCell.swift */; };
 		EA4EEA4E211FE84300CE0606 /* OtherChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4EEA4D211FE84300CE0606 /* OtherChatTableViewCell.swift */; };
-		EA54094A21203DB200FD4F7E /* TabTwoTeacherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE531211D397200EF891F /* TabTwoTeacherDetailViewController.swift */; };
 		EA54094C21203FF600FD4F7E /* StudentSingleExamChartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA54094B21203FF600FD4F7E /* StudentSingleExamChartTableViewController.swift */; };
-		EA76BB95211ECF8B004C5930 /* TeacherAccountTabOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE524211D397200EF891F /* TeacherAccountTabOneTableViewCell.swift */; };
 		EADF634C211D45570078A429 /* CommonSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADF634B211D45570078A429 /* CommonSocket.swift */; };
 		EADF634E211D65500078A429 /* ChatStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADF634D211D65500078A429 /* ChatStoryboard.storyboard */; };
 		EADF6350211D659A0078A429 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADF634F211D659A0078A429 /* ChatViewController.swift */; };
@@ -114,6 +114,7 @@
 		0C0EAE18211AD5680059B51E /* StudentExamQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentExamQuery.swift; sourceTree = "<group>"; };
 		0C0EAE1A211AD5970059B51E /* StudentExamQueryScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentExamQueryScore.swift; sourceTree = "<group>"; };
 		0C0EAE1C211AD6900059B51E /* StudentExamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentExamCell.swift; sourceTree = "<group>"; };
+		0C8BA52921212D6B00CC0A85 /* TabTwoTeacherDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabTwoTeacherDetailViewController.swift; sourceTree = "<group>"; };
 		0C8BA7A5211A8A2F006BC87E /* PopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
 		0C8BA7A7211A92BA006BC87E /* popOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popOver.png; sourceTree = "<group>"; };
 		0C9F213A212030AE0034DF05 /* StudentPopOverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentPopOverVC.swift; sourceTree = "<group>"; };
@@ -340,6 +341,7 @@
 				24BFE52E211D397200EF891F /* TeacherAccountSearchTeacherViewController.swift */,
 				24BFE52F211D397200EF891F /* TeacherAccountTabTwoTableViewCell.swift */,
 				24BFE530211D397200EF891F /* TeacherAccountSearcheTeacherViewControllerTableViewCell.swift */,
+				0C8BA52921212D6B00CC0A85 /* TabTwoTeacherDetailViewController.swift */,
 				24BFE531211D397200EF891F /* TabTwoTeacherDetailViewController.swift */,
 			);
 			path = TeacherTabTwo;
@@ -657,7 +659,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0E8779E21201D4400A0749B /* TabTwoTeacherDetailViewController.swift in Sources */,
+				0C8BA52A21212D6B00CC0A85 /* TabTwoTeacherDetailViewController.swift in Sources */,
+				0C8BA52D21212DD200CC0A85 /* TeacherAccountTabOneTableViewCell.swift in Sources */,
 				0C9F213B212030AE0034DF05 /* StudentPopOverVC.swift in Sources */,
 				C02F6EBA21192E9E00A0A2BA /* ClassCell.swift in Sources */,
 				930FC19D210ACB5A00C27FC1 /* LoginViewController.swift in Sources */,

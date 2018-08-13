@@ -95,6 +95,7 @@ class LoginViewController: UIViewController {
                     let teacherID = output.id
                     let subjectID = output.subject
                     let teacherName = output.name
+                
                     self.userDefault.set(account, forKey: "account")
                     self.userDefault.set(teacherID, forKey: "teacherId")
                     self.userDefault.set(subjectID, forKey: "subjectId")
@@ -146,7 +147,6 @@ class LoginViewController: UIViewController {
                     //                    return
                     //                }
                     self.present(loginsb, animated: true)
-                    
                     let studentID = output.id
                     let classID = output.classid
                     let studentName = output.name

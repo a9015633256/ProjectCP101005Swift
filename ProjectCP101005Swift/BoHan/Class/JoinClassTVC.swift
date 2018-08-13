@@ -27,9 +27,13 @@ class JoinClassTVC: UITableViewController {
     
     var classID: Int?
     var teacherID: Int?
-    var JoinList = [ClassJoin]()
     var totalID = [Int]()
-    var totalId:Int?
+    var teacherName:String?
+    let communicator = Communicator()
+    var classJoin = [ClassJoin]()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,25 +44,20 @@ class JoinClassTVC: UITableViewController {
         self.joinBtn.tintColor = UIColor.red
         self.joinBtn.frame.size.height = cell.frame.size.height
         self.joinBtn.frame.size.width = 100
+        guard let teacherName = UserDefaults.standard.string(forKey: "account") else{
+            return
+        }
         
-        
-       
         guard let teacherIDAny = UserDefaults.standard.value(forKey: "teacherId")else{
             return
         }
         guard let teacherID = teacherIDAny as? Int else{
             return
         }
-        guard let data = UserDefaults.standard.data(forKey: "JoinList") else {
-            return
-        }
-        guard let joinList = try? JSONDecoder().decode([ClassJoin].self, from: data) else{
-            return
-        }
-      
+       
        self.teacherID = teacherID
-       self.JoinList = joinList
-        
+       self.teacherName = teacherName
+       getJoinClass()
     }
     
     
@@ -66,6 +65,31 @@ class JoinClassTVC: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    func getJoinClass() {
+        let action = GetClass(action: "getJoin", name: teacherName)
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .init()
+        guard let uploadData = try? encoder.encode(action) else {
+            assertionFailure("JSON encode Fail")
+            return
+        }
+        communicator.dopost(url: LOGIN_URL, data: uploadData) { (error, result) in
+            guard let result = result else {
+                assertionFailure("get data fail")
+                return
+            }
+            guard let output = try? JSONDecoder().decode([ClassJoin].self, from: result) else {
+                assertionFailure("get output fail")
+                return
+            }
+            
+            self.classJoin = output
+        }
+        
     }
 
     // MARK: - Table view data source
@@ -184,11 +208,13 @@ class JoinClassTVC: UITableViewController {
         guard let classID = self.classID else {
             return
         }
-
-        for JoinID in self.JoinList{
+        
+        for JoinID in self.classJoin{
+            print(JoinID.id)
             guard let id = JoinID.id else{
                 return
             }
+            print(id)
             self.totalID.append(id)
         }
       
@@ -200,6 +226,7 @@ class JoinClassTVC: UITableViewController {
             alert.addAction(action)
             present(alert, animated: true, completion: nil)
             self.serachTextField.text = ""
+            return
         }
         else{
             let dictionary: [String:Any] = ["action":"Join","ClassId":classID,"TeacherId":teacherID]
