@@ -46,6 +46,7 @@ struct TeachersFile: Codable{
     var Teacher_TakeOfficeDate: String?
 //    var Teacher_Subject: String?
     var Class_Name: String?
+    
     enum CodingKeys: String, CodingKey{
         case id = "id"
         case Teacher_Account = "Teacher_Account"
@@ -56,6 +57,7 @@ struct TeachersFile: Codable{
         case Teacher_TakeOfficeDate = "Teacher_TakeOfficeDate"
 //        case Teacher_Subject = "Teacher_Subject"
         case Class_Name = "Class_Name"
+        
     }
     
 }
@@ -72,4 +74,32 @@ struct AddStudent: Codable {
         case Class_Name = "Class_Name"
     }
 }
+
+//"id":2,"Teacher_Account":"cp102@hotmail.com","Teacher_Password":"22222","Teacher_Email":"Bob","Teacher_Gender":1,"Teacher_Phone":"0987654322","Teacher_TakeOfficeDate":"2018-04-02"}]
+struct TeachersFile2: Codable{
+    var id: Int?
+    var Teacher_Account: String?
+    var Teacher_Password: String?
+    var Teacher_Email: String?
+    var Teacher_Gender: Int?
+    var Teacher_Phone: String?
+    var Teacher_TakeOfficeDate: String?
+    //    var Teacher_Subject: String?
+//    var Class_Name: String?
+    
+    enum CodingKeys: String, CodingKey{
+        case id = "id"//0
+        case Teacher_Account = "Teacher_Account"//1
+        case Teacher_Password = "Teacher_Password"//2
+        case Teacher_Email = "Teacher_Email"//3
+        case Teacher_Gender = "Teacher_Gender"//4
+        case Teacher_Phone = "Teacher_Phone"//5
+        case Teacher_TakeOfficeDate = "Teacher_TakeOfficeDate"//6
+        //        case Teacher_Subject = "Teacher_Subject"
+//        case Class_Name = "Class_Name"
+        
+    }
+    
+}
+
 

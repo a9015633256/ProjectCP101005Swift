@@ -16,7 +16,7 @@ class TabOneStudentDetailViewController: UIViewController {
     
     var studentList : StudentsFile = StudentsFile()
     
-    var studentImageDictionary = [Int: UIImage]()
+    var studentImageDictionary = UIImage()
     
     @IBOutlet weak var studnetImage: UIImageView!
     @IBOutlet weak var studentAccountLable: UILabel!
@@ -30,9 +30,8 @@ class TabOneStudentDetailViewController: UIViewController {
         super.viewDidLoad()
         
         let studentId = studentDetail.id
-//        print("\(studentId)")
-        
         findStudentsById(studentId: studentId!)
+        
         getFriendImage(studentID: studentId!)
 //        studentClassLable.text = studentDetail.Student_Class 好像不需要顯示
         studentClassLable.text = UserDefaults.standard.string(forKey: "className") ?? "nil"
@@ -85,16 +84,14 @@ class TabOneStudentDetailViewController: UIViewController {
             
             //明天再來問怎麼下載圖片
             let getImageID = self.studentDetail.id
+//            print("\(getImageID)")
             self.getFriendImage(studentID: getImageID!)
-//            let image =
-            self.studnetImage.image = self.studentImageDictionary[getImageID!]
             
         }
         
         
     }
     
-    //擷取圖片尚未完成
     func getFriendImage(studentID: Int){
         
         let action = GetImageAction(action: ACTION_GET_IMAGE, id: studentID, imageSize: 150)
@@ -117,11 +114,11 @@ class TabOneStudentDetailViewController: UIViewController {
             guard let image = UIImage.init(data: result) else {
                 return
             }
-        
-            //Thread 1: Fatal error: Index out of range
-            self.studentImageDictionary[studentID] = image
+            
+            self.studentImageDictionary = image
             print("圖片\(result)")
-//            self.studnetImage.image =
+            self.studnetImage.image = image//得到的圖片直接指定顯示
+            
         }
         
     }

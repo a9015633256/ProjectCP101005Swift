@@ -19,6 +19,8 @@ let ACTION_GET_TEACHER_LIST = "findTeachers"
 let ACTION_GET_STUDENT_LIST = "findStudents"
 let ACTION_FIND_STUDENT_BY_ID = "findById"
 let ACTION_ADD_STUDENT = "insert"
+let ACTION_GET_TEACHER_FILE = "findById"
+let ACTION_JOIN_TEACHER_TO_CLASS = "SubjectTeacherInsert"
 
 let ACTION_GET_ALL = "getAll"
 let ACTION_GET_IMAGE = "getImage"

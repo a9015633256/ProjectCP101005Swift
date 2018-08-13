@@ -7,12 +7,27 @@
 //
 
 import UIKit
+import Photos
+import MobileCoreServices
 
 class TeacherReplaceFileViewController: UIViewController{
    
-    @IBOutlet weak var tableView: UITableView!
+    let communicator = CommunicatorWenSing()
+    
+    var teacherFile = [TeachersFile2]()
+    
+    var jpgData: Data?
+    
+    var datePicker : UIDatePicker!
+    
+    var pickerLabel : UILabel!
     
     @IBOutlet weak var teacherImageView: UIImageView!
+    @IBOutlet weak var accountInputText: UITextField!
+    @IBOutlet weak var nameInputText: UITextField!
+    @IBOutlet weak var genderInputText: UISegmentedControl!
+    @IBOutlet weak var birthInputText: UITextField!
+    @IBOutlet weak var phoneNumberInputText: UITextField!
     
     //學號，班級，姓名，性別，生日，電話
     //"UPDATE Teachers SET Teacher_Account = ?,Teacher_Email= ?,Teacher_Gender = ? ,Teacher_Phone = ?,Teacher_TakeOfficeDate = ?, Teacher_Photo = ? WHERE id = ?;";
@@ -22,8 +37,10 @@ class TeacherReplaceFileViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self as? UITableViewDelegate
-        tableView.dataSource = self as? UITableViewDataSource
+        
+        //假資料
+        let teacherId = UserDefaults.standard.string(forKey: "account")
+        getTeacherFile(teacherId: teacherId!)
         
     }
 
@@ -31,6 +48,12 @@ class TeacherReplaceFileViewController: UIViewController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //選擇生日
+    @IBAction func birthdayPicker(_ sender: UITextField) {
+        dataPicker()
+    }
+    
     
     //拍照按鈕
     @IBAction func takePhotoShotBtn(_ sender: Any) {
@@ -42,9 +65,134 @@ class TeacherReplaceFileViewController: UIViewController{
         pickPhotoWithFileHolder()
     }
     
-    //確認更改
+    //確認更改按鈕
     @IBAction func replaceConformBtn(_ sender: Any) {
         conformToReplaceFile()
+    }
+    
+    func takePhotoWithCamara() {
+        self.launchPicker(forType: .camera)
+    }
+    
+    func pickPhotoWithFileHolder() {
+        self.launchPicker(forType: .photoLibrary)
+    }
+    
+    //更改檔案內容
+    func conformToReplaceFile() {
+        
+    }
+    
+    
+    //output[{"id":2,"Teacher_Account":"cp102@hotmail.com","Teacher_Password":"22222","Teacher_Email":"Bob","Teacher_Gender":1,"Teacher_Phone":"0987654322","Teacher_TakeOfficeDate":"2018-04-02"}]
+
+    func getTeacherFile(teacherId: String){
+        let action = FindTeacherFile(action: ACTION_GET_TEACHER_FILE, Teacher_Account: teacherId)
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .init()
+        guard let uploadData = try? encoder.encode(action) else {
+            assertionFailure("JSON encode fail")
+            return
+        }
+        communicator.doPost(url: TEACHER_LIST_SERVLET, data: uploadData) { (result) in
+            guard let result = result else {
+                assertionFailure("get data fail")
+                return
+            }
+            
+            //等待求救，無法output
+            guard let output = try? JSONDecoder().decode([TeachersFile2].self, from: result) else {
+                assertionFailure("get output fail")
+                return
+            }
+            
+            self.teacherFile = output
+            print("JSON: \(self.teacherFile)")
+            
+            //將文字匯入edittext
+            self.accountInputText.text = self.teacherFile[0].Teacher_Account
+            self.birthInputText.text = self.teacherFile[0].Teacher_TakeOfficeDate
+            self.phoneNumberInputText.text = self.teacherFile[0].Teacher_Phone
+            self.nameInputText.text = self.teacherFile[0].Teacher_Email
+            switch self.teacherFile[0].Teacher_Gender {
+            case 1:
+                self.genderInputText.selectedSegmentIndex = 0
+            case 2:
+                self.genderInputText.selectedSegmentIndex = 1
+            default:
+                self.genderInputText.selectedSegmentIndex = 0
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    @IBAction func backBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+extension TeacherReplaceFileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
+    func launchPicker(forType: UIImagePickerControllerSourceType){
+        guard UIImagePickerController.isSourceTypeAvailable(forType) else {
+            print("\(#function)-Picker type \(forType) not available")
+            return
+        }
+        
+        let picker = UIImagePickerController()
+        picker.mediaTypes = [kUTTypeImage as String]
+        picker.sourceType = forType
+        picker.delegate = self
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        guard let type = info[UIImagePickerControllerMediaType] as? String else {
+            assertionFailure("Invalid type.")
+            return
+        }
+        
+        if type == kUTTypeImage as String {
+            guard let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+                assertionFailure("Can't fetch originalImage")
+                return
+            }
+            
+            guard let resizedImage = originalImage.resize(maxWidthHeight: teacherImageView.frame.height) else {
+                assertionFailure("Fail to resize image.")
+                return
+            }
+            
+            teacherImageView.image = resizedImage
+            
+            jpgData = UIImageJPEGRepresentation(resizedImage, 1)
+            
+        }
+        picker.dismiss(animated: true, completion: nil)
+        
+    }
+    
+//    var datePicker : UIDatePicker!
+//    var pickerLabel : UILabel!
+    func dataPicker() {
+        datePicker.datePickerMode = .date
+        datePicker.date = NSDate() as Date
+        datePicker.addTarget(self, action: #selector(show(datePicker:)), for: .valueChanged)
+        birthInputText.inputView = datePicker
+        
+        
+    }
+    
+    @objc
+    func show(datePicker:UIDatePicker){
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "yyyy-MM-dd"
+        birthInputText.text = dateFormater.string(from: datePicker.date)
     }
     
     // MARK: - Navigation
@@ -53,110 +201,8 @@ class TeacherReplaceFileViewController: UIViewController{
         
     }
     
-    func takePhotoWithCamara() {
-        
-    }
-    
-    func pickPhotoWithFileHolder() {
-        
-    }
-    
-    func conformToReplaceFile() {
-//        let ownerId = UserDefaults.standard.integer(forKey: "ownerId")
-//
-//        guard let name = nameInputText.text,
-//            let gender = genderInputText.text,
-//            let birthday = birthdayInputText.text,
-//            let variety = varietyInputText.text,
-//            let ageText = ageInputText.text,
-//            let age = Int(ageText) else {
-//                return
-//        }
-//
-//        let dog = Dog(ownerId: ownerId, dogId: nil, name: name, gender: gender, variety: variety, birthday: birthday, age: age)
-//
-//        guard let uploadData = try? JSONEncoder().encode(dog) else {
-//            return
-//        }
-//
-//        communicator.doPost(url: DogServlet, data: uploadData, status: ADD_DOG, kind: "dog") { (result) in
-//
-//            guard let result = result,let jsonIn = (try? JSONSerialization.jsonObject(with: result, options: [] )) as? [String:Int] else {
-//                return
-//            }
-//
-//            guard let dogId = jsonIn["dogId"] else {
-//                return
-//            }
-//
-//            UserDefaults.standard.set(dogId, forKey: "dogId")
-//            self.sendImage(dogId: dogId)
-//        }
-
-//    }
-    
-//    func sendImage(dogId:Int){
-//        guard let image = postImage, let imageData = UIImagePNGRepresentation(image) else {
-//            print("image cast to data fail")
-//            return
-//        }
-//        let base64String = imageData.base64EncodedString()
-//
-//        var data = [String:Any]()
-//        data["status"] = SET_PROFILE_PHOTO
-//        data["dogId"] = dogId
-//        data["media"] = base64String
-//        data["type"] = 1
-//        communicator.doPost(url: MediaServlet, data: data) { (result) in
-//            guard let result = result else {
-//                return
-//            }
-//            print("status: \(result)")
-//        }
-//    }
-    
 }
 
-//extension TeacherReplaceFileViewController : UIImageCropperProtocol,UIPickerViewDelegate,UIPickerViewDataSource {
-//
-//    func didCropImage(originalImage: UIImage?, croppedImage: UIImage?) {
-//        print("hello")
-//        postImage = croppedImage
-//        profileImageView.image = croppedImage
-//    }
-//
-//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-//        return 1
-//    }
-//
-//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        if whichInput == "gender" {
-//            return gender.count
-//        } else {
-//            return variety.count
-//        }
-//
-//    }
-//
-//    func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        if whichInput == "gender" {
-//            return gender[row]
-//        } else {
-//            return variety[row]
-//        }
-//    }
-//
-//    func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        if whichInput == "gender" {
-//            genderInputText.text = gender[row]
-//        } else {
-//            varietyInputText.text = variety[row]
-//        }
-//
-//    }
-    
-    @IBAction func backBtnPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-}
+
+
+

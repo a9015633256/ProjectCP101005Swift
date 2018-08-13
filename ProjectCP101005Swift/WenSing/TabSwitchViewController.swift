@@ -17,12 +17,13 @@ class TabSwitchViewController: UIViewController {
     let studentViewController = UIStoryboard(name: "TeacherAccountClassDetail", bundle: nil).instantiateViewController(withIdentifier: "studentList")
     let teacherViewController = UIStoryboard(name: "TeacherAccountClassDetail", bundle: nil).instantiateViewController(withIdentifier: "teacherList")
     let teacherReplaceFileController = UIStoryboard(name: "TeacherAccountClassDetail", bundle: nil).instantiateViewController(withIdentifier: "profileReplacePage")
+    let transToLoginPage = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainLoginStoryboard")
 
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "AVCC"
+        self.title = "班級學生資料"
         classViewContainer.addSubview(studentViewController.view)
         
         switchViewSegment.selectedSegmentIndex = 0
@@ -50,10 +51,10 @@ class TabSwitchViewController: UIViewController {
         switch switchViewSegment.selectedSegmentIndex{
         case 0:
             classViewContainer.addSubview(studentViewController.view)
-            self.title = "AVCC"
+            self.title = "班級學生資料"
         case 1:
             classViewContainer.addSubview(teacherViewController.view)
-            self.title = "AVCD"
+            self.title = "科任老師資料"
         default:
             classViewContainer.addSubview(studentViewController.view)
 //            classViewContainer.addSubview(navController.view)
@@ -76,7 +77,16 @@ class TabSwitchViewController: UIViewController {
         optionMenu.addAction(actionCancel)
         
         let actionLogoutHandler = {(action: UIAlertAction!) -> Void in
-            
+            let alartLogoutMenu = UIAlertController(title: "確定要登出嗎？", message: nil, preferredStyle: .alert)
+            let logoutCancelAction = UIAlertAction(title: "取消", style: .destructive, handler: nil)
+            alartLogoutMenu.addAction(logoutCancelAction)
+            let logoutHandler = {(action: UIAlertAction!) -> Void in
+                
+                self.present(self.transToLoginPage, animated: true, completion: nil)
+            }
+            let logout = UIAlertAction(title: "確定", style: .default, handler: logoutHandler)
+            alartLogoutMenu.addAction(logout)
+            self.present(alartLogoutMenu, animated: true, completion: nil)
         }
         let actionLogout = UIAlertAction(title: "登出", style: .default, handler: actionLogoutHandler)
         optionMenu.addAction(actionLogout)
