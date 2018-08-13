@@ -152,6 +152,8 @@ class StudentSingleExamChartTableViewController: UITableViewController {
         barChart.rightAxis.drawGridLinesEnabled = false //右邊不用格子框線
         barChart.isUserInteractionEnabled = false //不能互動
         barChart.chartDescription?.enabled = false //關閉右下描述
+        barChart.animate(xAxisDuration: 0.5)
+        barChart.animate(yAxisDuration: 2.5, easingOption: .easeOutBack)
         
         let xAxisValueFormatter = ScoreAxisValueFormatter()
         barChart.xAxis.valueFormatter = xAxisValueFormatter //設定x軸label
