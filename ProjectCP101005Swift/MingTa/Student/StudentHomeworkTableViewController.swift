@@ -50,6 +50,8 @@ class StudentHomeworkTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tabBarController?.tabBar.items![3].title = "聯絡導師"
+        
         //接收通知
         //        NotificationCenter.default.addObserver(self, selector: #selector(updateHomework(noti:)), name: Notification.Name.updateHomework, object: nil)
         
@@ -324,6 +326,7 @@ extension StudentHomeworkTableViewController: UIPopoverPresentationControllerDel
         
     }
 }
+
 
 
 

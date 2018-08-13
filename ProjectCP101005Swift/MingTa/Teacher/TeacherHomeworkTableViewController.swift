@@ -27,6 +27,8 @@ class TeacherHomeworkTableViewController: UITableViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             
+            tabBarController?.tabBar.items![2].title = "聯絡家長"
+            
             // Uncomment the following line to preserve selection between presentations
             // self.clearsSelectionOnViewWillAppear = false
             

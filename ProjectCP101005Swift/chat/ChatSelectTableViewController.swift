@@ -16,15 +16,15 @@ class ChatSelectTableViewController: UITableViewController {
     var chatList = [ReceiverList]()
     
     var chataction: String?
-    
-    
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         sender = UserDefaults.standard.string(forKey: "account")
         chataction = UserDefaults.standard.string(forKey: "chatlistfound")
+        
+      
+        
         
         let action = findchat(action: chataction, senderte: sender)
         guard let uploadData = try? encoder.encode(action) else {
