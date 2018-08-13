@@ -25,6 +25,7 @@
 		24BC57C720FD842400002DB0 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BC57C520FD842400002DB0 /* Reachability.m */; };
 		24BC57CA20FD844600002DB0 /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC57C820FD844600002DB0 /* UIImageView+Download.swift */; };
 		24BC57CB20FD844600002DB0 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC57C920FD844600002DB0 /* UIImage+Resize.swift */; };
+		24BF2F5E2121EFA20065B0FA /* baseline_assessment_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 24BF2F5D2121EFA10065B0FA /* baseline_assessment_black_24dp.png */; };
 		24BFE53E211D397200EF891F /* TeacherAccountAddStudnetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE525211D397200EF891F /* TeacherAccountAddStudnetViewController.swift */; };
 		24BFE540211D397300EF891F /* TeacherAccountTabOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE527211D397200EF891F /* TeacherAccountTabOneViewController.swift */; };
 		24BFE541211D397300EF891F /* TabOneStudentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BFE528211D397200EF891F /* TabOneStudentDetailViewController.swift */; };
@@ -132,6 +133,7 @@
 		24BC57C620FD842400002DB0 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		24BC57C820FD844600002DB0 /* UIImageView+Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
 		24BC57C920FD844600002DB0 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
+		24BF2F5D2121EFA10065B0FA /* baseline_assessment_black_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baseline_assessment_black_24dp.png; sourceTree = "<group>"; };
 		24BFE524211D397200EF891F /* TeacherAccountTabOneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherAccountTabOneTableViewCell.swift; sourceTree = "<group>"; };
 		24BFE525211D397200EF891F /* TeacherAccountAddStudnetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherAccountAddStudnetViewController.swift; sourceTree = "<group>"; };
 		24BFE527211D397200EF891F /* TeacherAccountTabOneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherAccountTabOneViewController.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				EA230E3C2121361800E212B5 /* SetTitleTeacherTabBarViewController.swift */,
 				C02F6EA221192E8E00A0A2BA /* TeacherStoryboard.storyboard */,
 				24BC57B920FD83E100002DB0 /* Assets.xcassets */,
+				24BF2F5D2121EFA10065B0FA /* baseline_assessment_black_24dp.png */,
 				0C8BA7A7211A92BA006BC87E /* popOver.png */,
 				24BC57BB20FD83E100002DB0 /* LaunchScreen.storyboard */,
 				24BC57BE20FD83E100002DB0 /* Info.plist */,
@@ -340,7 +343,6 @@
 				24BFE52D211D397200EF891F /* TeacherAccountSearchTeacherTableViewCell.swift */,
 				24BFE52E211D397200EF891F /* TeacherAccountSearchTeacherViewController.swift */,
 				24BFE52F211D397200EF891F /* TeacherAccountTabTwoTableViewCell.swift */,
-				24BFE530211D397200EF891F /* TeacherAccountSearcheTeacherViewControllerTableViewCell.swift */,
 				0C8BA52921212D6B00CC0A85 /* TabTwoTeacherDetailViewController.swift */,
 				24BFE531211D397200EF891F /* TabTwoTeacherDetailViewController.swift */,
 			);
@@ -351,12 +353,12 @@
 			isa = PBXGroup;
 			children = (
 				24BFE534211D397200EF891F /* CommunicatorWenSing.swift */,
-				24BFE535211D397200EF891F /* UIImageCropper.swift */,
 				24BFE536211D397200EF891F /* CommonURL.swift */,
-				24BFE537211D397200EF891F /* UIImage+FixOrientation.swift */,
-				24BFE538211D397200EF891F /* StudentDownloader.swift */,
 				24BFE539211D397200EF891F /* Profiles.swift */,
 				24BFE53A211D397200EF891F /* ActionWenSing.swift */,
+				24BFE535211D397200EF891F /* UIImageCropper.swift */,
+				24BFE537211D397200EF891F /* UIImage+FixOrientation.swift */,
+				24BFE538211D397200EF891F /* StudentDownloader.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -602,6 +604,7 @@
 				C02F6EBB21192E9E00A0A2BA /* add1.png in Resources */,
 				C02F6EEE21192EA400A0A2BA /* MingTaStoryboard.storyboard in Resources */,
 				24BFE543211D397300EF891F /* TeacherAccountClassDetail.storyboard in Resources */,
+				24BF2F5E2121EFA20065B0FA /* baseline_assessment_black_24dp.png in Resources */,
 				C02F6EC721192E9E00A0A2BA /* analysis.png in Resources */,
 				C02F6ECC21192E9E00A0A2BA /* ic_mode_edit_white_24dp.png in Resources */,
 				0CC02E102119964000091EB9 /* search.png in Resources */,

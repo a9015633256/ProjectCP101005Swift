@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -99,11 +100,18 @@
                                 <action selector="backBtnPressed:" destination="XQJ-Iz-iRx" id="CWE-dZ-QaR"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Q7d-6I-9O3">
-                            <connections>
-                                <segue destination="FoI-66-aXb" kind="show" id="UEX-pU-oKU"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="popOver" id="VNg-j3-4Na">
+                                <connections>
+                                    <action selector="setObjects:" destination="XQJ-Iz-iRx" id="iRc-fe-rwg"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="Q7d-6I-9O3">
+                                <connections>
+                                    <segue destination="FoI-66-aXb" kind="show" id="UEX-pU-oKU"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
@@ -1629,6 +1637,7 @@
         <image name="back_arrow_blue_with_text" width="125" height="23"/>
         <image name="exam.png" width="24" height="24"/>
         <image name="ic_mode_edit_white_24dp.png" width="48" height="48"/>
+        <image name="popOver" width="2" height="14"/>
         <image name="popOver.png" width="5" height="29"/>
         <image name="search.png" width="32" height="32"/>
     </resources>

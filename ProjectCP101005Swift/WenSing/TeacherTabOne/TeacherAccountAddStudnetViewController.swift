@@ -78,11 +78,7 @@ class TeacherAccountAddStudnetViewController: UIViewController {
         successhandler.addAction(actionConform)
         
         self.present(successhandler, animated: true, completion: nil)
-        
-        //如果新增成功，顯示alert
-        
-//        self.dismiss(animated: true, completion: nil)
-    
+            
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
