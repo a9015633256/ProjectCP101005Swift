@@ -203,8 +203,6 @@ class StudentInfoTableViewController: UITableViewController {
                 return
             }
             
-            print(self.view.frame.width / 3 )
-            
             guard let resizedImage = image.resize(maxWidthHeight: self.view.frame.width / 3) else {
                 assertionFailure("Fail to resize image.")
                 return

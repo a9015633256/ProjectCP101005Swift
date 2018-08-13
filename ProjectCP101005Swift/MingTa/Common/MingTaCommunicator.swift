@@ -58,6 +58,7 @@ class CommunicatorMingTa{
             }
             guard (200...299).contains(response.statusCode) else {
                 let error = NSError(domain: "server response error: \(response.statusCode)", code: 0, userInfo: [:])
+                print(error.domain)
                 DispatchQueue.main.async {
                     doneHandler(error, nil)
                 }
@@ -68,8 +69,6 @@ class CommunicatorMingTa{
                 assertionFailure("\(#function)- data is nil")
                 return
             }
-            
-            print("server response: \(data)")
             
             DispatchQueue.main.async {
                 doneHandler(nil, data)
