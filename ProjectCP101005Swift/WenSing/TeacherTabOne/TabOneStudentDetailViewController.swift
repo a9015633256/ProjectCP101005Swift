@@ -33,11 +33,11 @@ class TabOneStudentDetailViewController: UIViewController {
         findStudentsById(studentId: studentId!)
         
         getFriendImage(studentID: studentId!)
-        
-        //尚未取得名稱
+//        studentClassLable.text = studentDetail.Student_Class 好像不需要顯示
         studentClassLable.text = UserDefaults.standard.string(forKey: "className") ?? "nil"
         
         
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

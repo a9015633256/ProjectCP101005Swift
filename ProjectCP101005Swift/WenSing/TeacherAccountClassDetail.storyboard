@@ -1077,5 +1077,6 @@
     <resources>
         <image name="ImageNotFound.png" width="231" height="210"/>
         <image name="back_arrow_blue" width="13" height="21"/>
+        <image name="back_arrow_blue_with_text" width="125" height="23"/>
     </resources>
 </document>
