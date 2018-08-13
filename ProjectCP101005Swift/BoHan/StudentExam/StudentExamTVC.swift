@@ -60,6 +60,12 @@ class StudentExamTVC: UITableViewController,UIPopoverPresentationControllerDeleg
         guard let classID = classIDAny as? Int else{
             return
         }
+//        guard let studentIDAny = UserDefaults.standard.value(forKey: "StudentID") else {
+//            return
+//        }
+//        guard let studentID = studentIDAny as? Int else {
+//            return
+//        }
         self.mainClass = ClassJoin(id: classID, classes: className, teacher: teacherAccount ,teacherID:teacherID)
         
         
