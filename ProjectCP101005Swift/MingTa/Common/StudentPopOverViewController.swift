@@ -31,6 +31,7 @@ class StudentPopOverViewController: UIViewController {
             
             self.dismiss(animated: true, completion: nil)
             self.presentingViewController?.dismiss(animated: true, completion: nil)
+             loginsocket?.stopWebSocket()
             
         }
         

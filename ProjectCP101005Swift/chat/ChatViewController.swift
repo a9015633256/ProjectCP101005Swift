@@ -8,6 +8,9 @@
 
 import UIKit
 
+
+var oldmessage = [OldMessage]()
+
 class ChatViewController: UIViewController {
 
     @IBOutlet weak var chatInput: UITextField!
@@ -20,7 +23,7 @@ class ChatViewController: UIViewController {
     var messageself = [String]()
     let communicator = Communicator()
     
-    var oldmessage = [OldMessage]()
+    
     var newMessage = Sendmessage()
     
     
@@ -54,7 +57,7 @@ class ChatViewController: UIViewController {
                 assertionFailure("get output fail")
                 return
             }
-            self.oldmessage = output
+            oldmessage = output
         
             self.chatTableView.reloadData()
             self.chatTableView.scrollTOBottom()
@@ -141,8 +144,8 @@ class ChatViewController: UIViewController {
             return
         }
         loginsocket?.sendmessagetext(text: jsonString )
-        print("jsonString:\(jsonString)")
         
+        chatInput.text = ""
         
         
     }
@@ -186,9 +189,15 @@ extension ChatViewController: UITableViewDelegate{
 extension UITableView {
     //跑到最下面～～～～～
     func scrollTOBottom() {
-        DispatchQueue.main.async {
-            let indexPath = IndexPath(row: self.numberOfRows(inSection: self.numberOfSections - 1) - 1, section: self.numberOfSections - 1)
-            self.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        
+        if !(oldmessage .isEmpty){
+            DispatchQueue.main.async {
+                let indexPath = IndexPath(row: self.numberOfRows(inSection: self.numberOfSections - 1) - 1, section: self.numberOfSections - 1)
+                self.scrollToRow(at: indexPath, at: .bottom, animated: true)
+            }
+            
         }
+        
+        
     }
 }
