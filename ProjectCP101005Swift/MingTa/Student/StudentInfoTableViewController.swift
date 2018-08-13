@@ -221,7 +221,6 @@ class StudentInfoTableViewController: UITableViewController {
             
         }
         
-        
     }
     
 }

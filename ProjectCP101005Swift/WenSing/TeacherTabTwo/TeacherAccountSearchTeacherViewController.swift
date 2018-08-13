@@ -41,12 +41,15 @@ class TeacherAccountSearchTeacherViewController: UIViewController, UITableViewDa
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as? TeacherAccountSearchTeacherTableViewCell else {
             return UITableViewCell()
         }
-        
-        cell.teacherNameLabel.text = teacherList[indexPath.row].Teacher_Email
+        let teacherId = teacherList[indexPath.row].id
+        let teacherName = teacherList[indexPath.row].Teacher_Email
+        cell.teacherNameLabel.text = teacherName
         cell.teacherPhoneLabel.text = teacherList[indexPath.row].Teacher_Phone
+        UserDefaults.standard.set(teacherId, forKey: "teacher\(indexPath.row)")
         
         //抓不太到圖片，之後再抓bug
-        let image = teacherImageDictionary[indexPath.row]
+        let imageId = UserDefaults.standard.integer(forKey: "teacher\(indexPath.row)")
+        let image = teacherImageDictionary[imageId]
         cell.teacherImageView.image = image
         
         return cell
@@ -126,7 +129,7 @@ class TeacherAccountSearchTeacherViewController: UIViewController, UITableViewDa
             }
             
             self.teacherList = output
-            self.tableView.reloadData()
+//            self.tableView.reloadData()
             if self.teacherList.count != 0 {
                 for id in 0...(self.teacherList.count - 1) {
                     self.getFriendImage(teacherId: self.teacherList[id].id!)

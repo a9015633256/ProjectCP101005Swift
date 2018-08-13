@@ -130,8 +130,6 @@ class StudentSingleExamChartTableViewController: UITableViewController {
         let userDefaults = UserDefaults.standard
         studentID = userDefaults.integer(forKey: "studentId")
         
-        //fake
-        studentID = 2
         
     }
     
@@ -351,9 +349,10 @@ class StudentSingleExamChartTableViewController: UITableViewController {
                 
                 self.updateCharts()
             
-            
         }
         
     
     }
+    
+   
 }
