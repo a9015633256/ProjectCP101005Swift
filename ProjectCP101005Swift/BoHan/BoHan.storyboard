@@ -867,7 +867,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="登入成績" id="qXp-DY-6BD">
-                        <barButtonItem key="rightBarButtonItem" title="新增" id="SPG-Jh-T2g">
+                        <barButtonItem key="rightBarButtonItem" title="送出" id="SPG-Jh-T2g">
                             <connections>
                                 <action selector="updateScore:" destination="Kdb-Uu-yXX" id="2ap-AL-PZD"/>
                             </connections>
