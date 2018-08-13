@@ -35,3 +35,26 @@ struct deleteClass: Codable{
     var teachername: String?
     
 }
+
+struct findchat: Codable {
+    var action: String?
+    var senderte: String?
+}
+struct ReceiverList: Codable {
+    var receiver: String
+}
+
+struct Sendmessage: Codable {
+    var type: String?
+    var message: String?
+    var sender: String?
+    var receiver: String?
+    
+}
+
+struct GetMessage: Codable {
+    var action: String?
+    var sender: String?
+    var receiver: String?
+    
+}

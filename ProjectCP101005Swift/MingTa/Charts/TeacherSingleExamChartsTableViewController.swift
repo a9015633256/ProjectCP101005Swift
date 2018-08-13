@@ -11,13 +11,14 @@ import Charts
 
 class TeacherSingleExamChartsTableViewController: UITableViewController {
     
-    var scoreList = [59,60,70,80,55,56,100]
+    var scoreList = [Int]()
     var scoreAPlusList = [Int]()
     var scoreAList = [Int]()
     var scoreBList = [Int]()
     var scoreCList = [Int]()
     var scoreDList = [Int]()
     var scoreEList = [Int]()
+    var examID = 0
     
     @IBOutlet weak var examNameLabel: UILabel!
     @IBOutlet weak var barChart: BarChartView!
@@ -119,54 +120,11 @@ class TeacherSingleExamChartsTableViewController: UITableViewController {
     
     // MARK: - ConfigureView
     func configureView(){
-        var highestScore = 0
-        var lowestScore = 100
-        var totalScore = 0
         
-        scoreAPlusList.removeAll()
-        scoreAList.removeAll()
-        scoreBList.removeAll()
-        scoreCList.removeAll()
-        scoreDList.removeAll()
-        scoreEList.removeAll()
+        //取得分數資料
+        getDataFromDB()
         
-        for score in scoreList {
-            totalScore += score
-            if score > highestScore {
-                highestScore = score
-            }
-            if score < lowestScore {
-                lowestScore = score
-            }
-            
-            if score == 100 {
-                scoreAPlusList.append(score)
-            } else if score >= 90 {
-                scoreAList.append(score)
-            } else if score >= 80 {
-                scoreBList.append(score)
-            } else if score >= 70 {
-                scoreCList.append(score)
-            } else if score >= 60 {
-                scoreDList.append(score)
-            } else {
-                scoreEList.append(score)
-            }
-            
-        }
         
-        aPlusCountLabel.text = String(scoreAPlusList.count) + "人"
-        aCountLabel.text = String(scoreAList.count) + "人"
-        bCountLabel.text = String(scoreBList.count) + "人"
-        cCountLabel.text = String(scoreCList.count) + "人"
-        dCountLabel.text = String(scoreDList.count) + "人"
-        eCountLabel.text = String(scoreEList.count) + "人"
-        let average = Double(totalScore) / Double(scoreList.count)
-        averageScoreLabel.text = String(format: "%.2f", average) + "分"
-        highestScoreLabel.text = String(highestScore) + "分"
-        lowestScoreLabel.text = String(lowestScore) + "分"
-        
-        updateCharts()
     }
     
     // MARK: - Charts
@@ -217,7 +175,104 @@ class TeacherSingleExamChartsTableViewController: UITableViewController {
         
     }
     
-    
+    func getDataFromDB(){
+        
+        guard examID != 0 else{
+            assertionFailure("examID not found")
+            return
+        }
+        
+        //get data from DB
+        guard let url = URL(string: PropertyKeysForConnection.urlExamServlet) else {
+            assertionFailure()
+            return
+        }
+        
+        let dictionary: [String: Any] = ["action": "findAchievementByExamId", "examId": examID]
+        guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: [])
+            else {
+                assertionFailure("fail to create JsonObject")
+                return
+        }
+        
+        let communicator = CommunicatorMingTa(targetURL: url)
+        communicator.download(from: data) { (error, data) in
+            
+            if let error = error {
+                print("\(#function) error: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                assertionFailure()
+                return
+            }
+            
+            let jsonDeconder = JSONDecoder()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            jsonDeconder.dateDecodingStrategy = .formatted(dateFormatter)
+            
+            do{
+                try self.scoreList = jsonDeconder.decode([Int].self, from: data)
+                
+                var highestScore = 0
+                var lowestScore = 100
+                var totalScore = 0
+                
+                self.scoreAPlusList.removeAll()
+                self.scoreAList.removeAll()
+                self.scoreBList.removeAll()
+                self.scoreCList.removeAll()
+                self.scoreDList.removeAll()
+                self.scoreEList.removeAll()
+                
+                for score in self.scoreList {
+                    totalScore += score
+                    if score > highestScore {
+                        highestScore = score
+                    }
+                    if score < lowestScore {
+                        lowestScore = score
+                    }
+                    
+                    if score == 100 {
+                        self.scoreAPlusList.append(score)
+                    } else if score >= 90 {
+                       self.scoreAList.append(score)
+                    } else if score >= 80 {
+                        self.scoreBList.append(score)
+                    } else if score >= 70 {
+                        self.scoreCList.append(score)
+                    } else if score >= 60 {
+                        self.scoreDList.append(score)
+                    } else {
+                        self.scoreEList.append(score)
+                    }
+                    
+                }
+                
+                self.aPlusCountLabel.text = String(self.scoreAPlusList.count) + "人"
+                self.aCountLabel.text = String(self.scoreAList.count) + "人"
+                self.bCountLabel.text = String(self.scoreBList.count) + "人"
+                self.cCountLabel.text = String(self.scoreCList.count) + "人"
+                self.dCountLabel.text = String(self.scoreDList.count) + "人"
+                self.eCountLabel.text = String(self.scoreEList.count) + "人"
+                let average = Double(totalScore) / Double(self.scoreList.count)
+                self.averageScoreLabel.text = String(format: "%.2f", average) + "分"
+                self.highestScoreLabel.text = String(highestScore) + "分"
+                self.lowestScoreLabel.text = String(lowestScore) + "分"
+                
+                self.updateCharts()
+
+            } catch {
+                assertionFailure("json parse fail: \(error)")
+                return
+            }
+            
+        }
+        
+    }
     
 
 }

@@ -49,6 +49,11 @@
                         <viewLayoutGuide key="safeArea" id="Ldv-aD-Z3e"/>
                     </view>
                     <navigationItem key="navigationItem" id="gtd-Rd-4L6">
+                        <barButtonItem key="leftBarButtonItem" image="back_arrow_blue_with_text" id="eCi-hz-1D8">
+                            <connections>
+                                <action selector="backBtnPressed:" destination="LK1-A4-xq7" id="LeW-gG-JpE"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="mUA-Jz-qha">
                             <connections>
                                 <action selector="setObjects:" destination="LK1-A4-xq7" id="KCo-WG-h8y"/>

@@ -48,27 +48,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxJ-vs-Kgq">
-                                <rect key="frame" x="77" y="613" width="46" height="30"/>
+                                <rect key="frame" x="69" y="613" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="學生捷徑"/>
                                 <connections>
                                     <segue destination="JRx-6s-1PN" kind="presentation" id="5A4-yV-kEs"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2AQ-HX-hI9">
-                                <rect key="frame" x="264" y="613" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="xyR-yr-4pK" kind="presentation" id="ICz-Na-scc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZL-Ez-AkL">
-                                <rect key="frame" x="164" y="626" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="LQk-Ml-oYT" kind="presentation" id="Sfc-4G-cMD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -251,14 +235,6 @@
             </objects>
             <point key="canvasLocation" x="77.599999999999994" y="3.1484257871064472"/>
         </scene>
-        <!--TeacherSingleExamChartsTableViewController-->
-        <scene sceneID="X3H-Ke-ChW">
-            <objects>
-                <viewControllerPlaceholder storyboardName="MingTaStoryboard" referencedIdentifier="TeacherSingleExamChartsTableViewController" id="LQk-Ml-oYT" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qZw-uR-F8I" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1009" y="478"/>
-        </scene>
         <!--StudentStoryboard-->
         <scene sceneID="u9D-tz-8oY">
             <objects>
@@ -270,8 +246,8 @@
         <!--TeacherStoryboard-->
         <scene sceneID="s3e-AX-scl">
             <objects>
-                <viewControllerPlaceholder storyboardName="TeacherStoryboard" id="xyR-yr-4pK" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oW1-Wc-Enj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="TeacherStoryboard" id="xyR-yr-4pK" sceneMemberID="viewController"/>
             </objects>
             <point key="canvasLocation" x="1380" y="559"/>
         </scene>
