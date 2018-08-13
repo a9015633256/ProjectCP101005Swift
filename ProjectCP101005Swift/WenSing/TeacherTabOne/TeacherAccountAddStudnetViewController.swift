@@ -68,13 +68,20 @@ class TeacherAccountAddStudnetViewController: UIViewController {
                 return
             }
             
-        
-            
         }
+        
+        let successhandler = UIAlertController(title: "新增成功！", message: nil, preferredStyle: .alert)
+        let actionConformHandler = {(action: UIAlertAction) -> Void in
+            self.dismiss(animated: true, completion: nil)
+        }
+        let actionConform = UIAlertAction(title: "確定", style: .cancel, handler: actionConformHandler)
+        successhandler.addAction(actionConform)
+        
+        self.present(successhandler, animated: true, completion: nil)
         
         //如果新增成功，顯示alert
         
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
     
     }
     

@@ -114,7 +114,7 @@ class TeacherAccountTabOneViewController: UIViewController,UITableViewDelegate,U
 //            self.tableView.reloadData()
             if self.studentList.count != 0 {
                 for id in 0...(self.studentList.count - 1) {
-                    self.getFriendImage(studentID: self.studentList[id].id!)
+                    self.getFriendImage(studentID: self.studentList[id].id!)//這行導致沒有照片會閃退，找時間修改
                 }
             }
 //            self.tableView.reloadData()

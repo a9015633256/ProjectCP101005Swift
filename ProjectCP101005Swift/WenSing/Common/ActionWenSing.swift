@@ -73,4 +73,10 @@ struct JoinTeacherToClass: Codable {
     var Class_SubjectTeacher: Int
 }
 
+struct UpdateTeacherProfile: Codable {
+    var action: String?
+    var teacherList: TeachersFile
+    var Teacher_Photo: Data?
+}
+
 

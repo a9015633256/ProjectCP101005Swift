@@ -223,7 +223,6 @@ class StudentInfoTableViewController: UITableViewController {
             
         }
         
-        
     }
     
     func getDataFromPref(){
