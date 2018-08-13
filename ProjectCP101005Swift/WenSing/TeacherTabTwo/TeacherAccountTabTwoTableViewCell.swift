@@ -9,8 +9,8 @@
 import UIKit
 
 class TeacherAccountTabTwoTableViewCell: UITableViewCell {
-    @IBOutlet weak var tabTwoTeacherImage: UIImageView!
     
+    @IBOutlet weak var tabTwoTeacherImage: UIImageView!
     @IBOutlet weak var tabTwoTeacherNameLabel: UILabel!
     @IBOutlet weak var tabTwoTeacherPhoneLable: UILabel!
     override func awakeFromNib() {

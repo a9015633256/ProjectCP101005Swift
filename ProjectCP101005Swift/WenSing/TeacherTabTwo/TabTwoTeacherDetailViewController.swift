@@ -10,11 +10,13 @@ import UIKit
 
 class TabTwoTeacherDetailViewController: UIViewController {
     
-//    let communicator = Communicator()
+    let communicator = CommunicatorWenSing()
     
     var teacherDetail = TeachersFile()
     
     let teacherList : TeachersFile = TeachersFile()
+    
+    var teacherImageDictionary = UIImage()
     
 //    var teacherImageDictionary = [Int:UIImage]()
 
@@ -29,7 +31,6 @@ class TabTwoTeacherDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //缺圖大頭照
         teacherAccountLabel.text = teacherDetail.Teacher_Account
         teacherNameLable.text = teacherDetail.Teacher_Email
         let gender = teacherDetail.Teacher_Gender
@@ -40,9 +41,11 @@ class TabTwoTeacherDetailViewController: UIViewController {
         }
         teacherBirthLabel.text = teacherDetail.Teacher_TakeOfficeDate
         teacherPhoneLabel.text = teacherDetail.Teacher_Phone
-//        teacherImage.image = teacherDetail
+
+        let teacherId = teacherDetail.id
+        //還需要修飾
+        getFriendImage(teacherId: teacherId!)
         
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,6 +63,37 @@ class TabTwoTeacherDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func getFriendImage(teacherId: Int){
+        
+        let action = GetImageAction(action: ACTION_GET_IMAGE, id: teacherId, imageSize: 150)
+        // 準備將資料轉為JSON
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .init()
+        // 轉為JSON
+        guard let uploadData = try? encoder.encode(action) else {
+            assertionFailure("JSON encode Fail")
+            return
+        }
+        // 送資料 and 解析回傳的JSON資料
+        communicator.doPost(url: TEACHER_LIST_SERVLET, data: uploadData) { (result) in
+            
+            guard let result = result else {
+                assertionFailure("get data fail")
+                return
+            }
+            
+            guard let image = UIImage.init(data: result) else {
+                return
+            }
+            
+            self.teacherImageDictionary = image
+            print("圖片\(result)")
+            self.teacherImage.image = image//得到的圖片直接指定顯示
+            
+        }
+        
+    }
     
     //簡易的返回上一頁
     @IBAction func backBtnPressed(_ sender: Any) {

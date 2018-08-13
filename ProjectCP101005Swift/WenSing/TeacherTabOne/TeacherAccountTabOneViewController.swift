@@ -188,6 +188,8 @@ class TeacherAccountTabOneViewController: UIViewController,UITableViewDelegate,U
             
         }
         
+        //刪除學生成功之後，顯示alert
+        
     }
     
 }
