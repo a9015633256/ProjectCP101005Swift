@@ -46,7 +46,7 @@ class StudentSingleExamChartTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        getDataFromPreference() //先用假資料
+        getDataFromPreference()
         
         configureView()
     }
@@ -128,9 +128,7 @@ class StudentSingleExamChartTableViewController: UITableViewController {
     // MARK: - ConfigureView
     func getDataFromPreference(){
         let userDefaults = UserDefaults.standard
-        studentID = userDefaults.integer(forKey: "studentId")
-        
-        
+        studentID = userDefaults.integer(forKey: "studentID")
     }
     
     func configureView(){

@@ -552,9 +552,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="birthdayPicker:" destination="y2g-GB-bdb" eventType="editingDidEnd" id="CsE-8r-hVT"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2vf-mY-jqN">
                                 <rect key="frame" x="16" y="344" width="343" height="30"/>

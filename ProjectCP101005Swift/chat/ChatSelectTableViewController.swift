@@ -52,15 +52,30 @@ class ChatSelectTableViewController: UITableViewController {
     }
     
     
-    @IBAction func logoutPop(_ sender: Any) {
-       
-            let vc = UIStoryboard(name: "MingTaStoryboard", bundle: nil).instantiateViewController(withIdentifier: "studentPOP")
-            vc.modalTransitionStyle = .crossDissolve
-            vc.modalPresentationStyle = .overCurrentContext
-            self.present(vc,animated: true,completion: nil)
-
+//    @IBAction func logoutPop(_ sender: Any) {
+//       
+//            let vc = UIStoryboard(name: "MingTaStoryboard", bundle: nil).instantiateViewController(withIdentifier: "studentPOP")
+//            vc.modalTransitionStyle = .crossDissolve
+//            vc.modalPresentationStyle = .overCurrentContext
+//            self.present(vc,animated: true,completion: nil)
+//
+//        
+//    }
+    
+    
+    @IBAction func backBtn(_ sender: Any) {
+        
+        let transition: CATransition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.type = kCATransitionReveal
+        transition.subtype = kCATransitionFromLeft
+        self.view.window!.layer.add(transition, forKey: nil)
+        
+        dismiss(animated: false, completion: nil)
         
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
