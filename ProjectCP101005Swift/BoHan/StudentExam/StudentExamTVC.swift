@@ -20,10 +20,22 @@ class DataList {
         
     }
 }
+class MainClass {
+    var account:String?
+    var className:String?
+    var classID:Int?
+    init(account:String,className:String,classID:Int){
+        self.account = account
+        self.className = className
+        self.classID = classID
+    }
+}
+
+
 class StudentExamTVC: UITableViewController,UIPopoverPresentationControllerDelegate{
     
     
-    var mainClass = ClassJoin()
+    var mainClass: MainClass?
     var tableViewData = [DataList]()
 
     override func viewDidLoad() {
@@ -48,19 +60,14 @@ class StudentExamTVC: UITableViewController,UIPopoverPresentationControllerDeleg
         guard let className = classNameAny as? String else{
             return
         }
-        guard let teacherIDAny = UserDefaults.standard.value(forKey: "teacherId")else{
+       
+        guard let classIDStr = UserDefaults.standard.string(forKey: "classID")else{
             return
         }
-        guard let teacherID = teacherIDAny as? Int else{
+        guard let classID = Int(classIDStr) else{
             return
         }
-        guard let classIDAny = UserDefaults.standard.value(forKey: "classId")else{
-            return
-        }
-        guard let classID = classIDAny as? Int else{
-            return
-        }
-        self.mainClass = ClassJoin(id: classID, classes: className, teacher: teacherAccount ,teacherID:teacherID)
+        self.mainClass = MainClass(account: teacherAccount, className: className, classID: classID)
         
         
         
@@ -94,7 +101,7 @@ class StudentExamTVC: UITableViewController,UIPopoverPresentationControllerDeleg
             assertionFailure()
             return
         }
-        guard let classID = self.mainClass.id else{
+        guard let classID = self.mainClass?.classID else{
             return
         }
         let dictionary: [String:Any] = ["action":"Exam","id": classID]

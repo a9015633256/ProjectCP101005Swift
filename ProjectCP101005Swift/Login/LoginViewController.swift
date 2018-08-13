@@ -156,6 +156,7 @@ class LoginViewController: UIViewController {
                     self.userDefault.set(classID, forKey: "classID")
                     self.userDefault.set(studentName, forKey: "name")
                     self.userDefault.set("getmotherlist", forKey: "chatlistfound")
+                    print(classID)
                     
                     
                     
