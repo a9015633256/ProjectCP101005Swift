@@ -139,9 +139,10 @@ class ClassSelecttViewController: UIViewController,UIPopoverPresentationControll
                 assertionFailure("get output fail")
                 return
             }
-            self.classJoin = output
             
-            print("\(self.classJoin)")
+            self.classJoin = output
+           
+            
             self.classTableview.reloadData()
         }
         

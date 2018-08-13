@@ -69,6 +69,9 @@ class LoginViewController: UIViewController {
                 assertionFailure("JSON encode Fail")
                 return
             }
+            
+            print(LOGIN_URL)
+            
             communicator.dopost(url: LOGIN_URL, data: uploadData) { (error, result) in
                 guard let result = result else {
                     assertionFailure("get data fail")
@@ -78,23 +81,17 @@ class LoginViewController: UIViewController {
                 
                 
                 guard let output = try? JSONDecoder().decode(IsUserValid.self, from: result) else {
-                    assertionFailure("get output fail")
+//                    assertionFailure("get output fail")
+                    showSimpleAlert(title: "登入失敗", "確定", sender: self, completion: nil)
+                    
                     return
                 }
                 
                 if output.isUserValid {
-                    let loginsb = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(withIdentifier: "classList")
-                    
-                    
-                    //                guard let controller = loginsb.instantiateViewController() else {
-                    //                    assertionFailure("aaaaa")
-                    //                    return
-                    //                }
-                    self.present(loginsb, animated: true)
-                    
                     let teacherID = output.id
                     let subjectID = output.subject
                     let teacherName = output.name
+                    
                     self.userDefault.set(account, forKey: "account")
                     self.userDefault.set(teacherID, forKey: "teacherId")
                     self.userDefault.set(subjectID, forKey: "subjectId")
@@ -104,6 +101,18 @@ class LoginViewController: UIViewController {
                     
                     loginsocket = CommonWebSocketClient(url: "http://127.0.0.1:8080/PleaseLogin/TwoChatServer/" + "\(teacherName)")
                     loginsocket?.startWebSocket()
+                    
+                    
+                    let loginsb = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(withIdentifier: "classList")
+                    
+                    
+                    //                guard let controller = loginsb.instantiateViewController() else {
+                    //                    assertionFailure("aaaaa")
+                    //                    return
+                    //                }
+                    self.present(loginsb, animated: true)
+                    
+                    
                     
                 }else{
                     let alert = UIAlertController(title: "錯誤", message: "錯誤", preferredStyle: .alert)
@@ -133,11 +142,25 @@ class LoginViewController: UIViewController {
                 
                 
                 guard let output = try? JSONDecoder().decode(IsUserValidStudents.self, from: result) else {
-                    assertionFailure("get output fail")
+//                    assertionFailure("get output fail")
+                     showSimpleAlert(title: "登入失敗", "確定", sender: self, completion: nil)
                     return
                 }
                 
                 if output.isUserValid {
+                    
+                    let studentID = output.id
+                    let classID = output.classid
+                    let studentName = output.name
+                    
+                    self.userDefault.set(account, forKey: "account")
+                    self.userDefault.set(studentID, forKey: "studentID")
+                    self.userDefault.set(classID, forKey: "classID")
+                    self.userDefault.set(studentName, forKey: "name")
+                    self.userDefault.set("getmotherlist", forKey: "chatlistfound")
+      
+                    loginsocket = CommonWebSocketClient(url: "http://127.0.0.1:8080/PleaseLogin/TwoChatServer/" + "\(studentName)")
+                    loginsocket?.startWebSocket()
                     let loginsb = UIStoryboard(name: "StudentStoryboard", bundle: nil).instantiateViewController(withIdentifier: "studentstart")
                     
                     
@@ -147,20 +170,6 @@ class LoginViewController: UIViewController {
                     //                }
                     self.present(loginsb, animated: true)
                     
-                    let studentID = output.id
-                    let classID = output.classid
-                    let studentName = output.name
-                    print("studentName: \(studentName)")
-                    self.userDefault.set(account, forKey: "account")
-                    self.userDefault.set(studentID, forKey: "studentID")
-                    self.userDefault.set(classID, forKey: "classID")
-                    self.userDefault.set(studentName, forKey: "name")
-                    self.userDefault.set("getmotherlist", forKey: "chatlistfound")
-                    
-                    
-                    
-                    loginsocket = CommonWebSocketClient(url: "http://127.0.0.1:8080/PleaseLogin/TwoChatServer/" + "\(studentName)")
-                    loginsocket?.startWebSocket()
           
                 }else{
                     let alert = UIAlertController(title: "錯誤", message: "錯誤", preferredStyle: .alert)
@@ -172,10 +181,18 @@ class LoginViewController: UIViewController {
             
         }
         
-        
-        
-        
 
+    }
+    
+    
+    @IBAction func studentShortcutBtnPressed(_ sender: Any) {
+        account.text = "student1"
+        password.text = "1"
+    }
+    
+    @IBAction func teacherShortcutBtnPressed(_ sender: Any) {
+        account.text = "cp102@hotmail.com"
+        password.text = "22222"
     }
     
 }

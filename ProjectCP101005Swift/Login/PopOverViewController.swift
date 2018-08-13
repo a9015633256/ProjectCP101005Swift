@@ -40,6 +40,7 @@ class PopOverViewController: UIViewController {
         let yes = UIAlertAction(title: "登出", style: .default) { (pop) in
             self.presentingViewController?.dismiss(animated: true, completion: nil)
             self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+            loginsocket?.stopWebSocket()
         }
         let no = UIAlertAction(title: "取消", style: .cancel) { (pop) in
             self.presentingViewController?.dismiss(animated: true, completion: nil)

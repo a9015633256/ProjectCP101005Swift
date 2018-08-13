@@ -79,17 +79,17 @@
             </objects>
             <point key="canvasLocation" x="-2032" y="-304"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Set Title Teacher Tab Bar View Controller-->
         <scene sceneID="BdO-ca-2a0">
             <objects>
-                <tabBarController id="BkI-KB-dsX" sceneMemberID="viewController">
+                <tabBarController id="BkI-KB-dsX" customClass="SetTitleTeacherTabBarViewController" customModule="ProjectCP101005Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lt6-OO-Iax">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="6Zu-fO-MIA" kind="relationship" relationship="viewControllers" id="Hp8-Kc-M2n"/>
+                        <segue destination="6Zu-fO-MIA" kind="relationship" relationship="viewControllers" id="YeI-wV-gmZ"/>
                         <segue destination="nlx-CB-nRW" kind="relationship" relationship="viewControllers" id="Gpc-JP-zSY"/>
                         <segue destination="Ty3-do-E7x" kind="relationship" relationship="viewControllers" id="m61-yj-MXb"/>
                         <segue destination="0RB-uh-2mi" kind="relationship" relationship="viewControllers" id="zAA-3m-QSI"/>

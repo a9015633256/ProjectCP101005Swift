@@ -20,10 +20,22 @@ class DataList {
         
     }
 }
-class StudentExamTVC: UITableViewController {
+class MainClass {
+    var account:String?
+    var className:String?
+    var classID:Int?
+    init(account:String,className:String,classID:Int){
+        self.account = account
+        self.className = className
+        self.classID = classID
+    }
+}
+
+
+class StudentExamTVC: UITableViewController,UIPopoverPresentationControllerDelegate{
     
     
-    var mainClass = ClassJoin()
+    var mainClass: MainClass?
     var tableViewData = [DataList]()
 
     override func viewDidLoad() {
@@ -35,38 +47,35 @@ class StudentExamTVC: UITableViewController {
         refreshControl.addTarget(self, action: #selector(refreshExam), for: UIControlEvents.valueChanged)
         self.refreshControl = refreshControl
         
-        guard let teacherAccountStr = UserDefaults.standard.value(forKey: "account")else{
+        guard let teacherAccountAny = UserDefaults.standard.value(forKey: "account")else{
             return
         }
-        guard let teacherAccount = teacherAccountStr as? String else{
+        guard let teacherAccount = teacherAccountAny as? String else{
             return
         }
-        guard let classNameStr = UserDefaults.standard.value(forKey: "className") else{
+        guard let classNameAny = UserDefaults.standard.value(forKey: "className") else{
             return
         }
         
-        guard let className = classNameStr as? String else{
+        guard let className = classNameAny as? String else{
             return
         }
-        guard let teacherIDInt = UserDefaults.standard.value(forKey: "teacherId")else{
+       
+        guard let classIDStr = UserDefaults.standard.string(forKey: "classID")else{
             return
         }
-        guard let teacherID = teacherIDInt as? Int else{
+        guard let classID = Int(classIDStr) else{
             return
         }
-        guard let classIDInt = UserDefaults.standard.value(forKey: "classId")else{
-            return
-        }
-        guard let classID = classIDInt as? Int else{
-            return
-        }
-        self.mainClass = ClassJoin(id: classID, classes: className, teacher: teacherAccount ,teacherID:teacherID)
-        
+        self.mainClass = MainClass(account: teacherAccount, className: className, classID: classID)
         
         
         
     }
     
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.none
+    }
     
     @objc
     func refreshExam(){
@@ -92,7 +101,7 @@ class StudentExamTVC: UITableViewController {
             assertionFailure()
             return
         }
-        guard let classID = self.mainClass.id else{
+        guard let classID = self.mainClass?.classID else{
             return
         }
         let dictionary: [String:Any] = ["action":"Exam","id": classID]
@@ -296,6 +305,10 @@ class StudentExamTVC: UITableViewController {
             }
             let contoller = segue.destination as? StudentExamQueryScore
             contoller?.subject = self.tableViewData[indexPath.section].sectionData[indexPath.row - 1]
+        }else if segue.identifier == "ShowPopOver"{
+            let controller = segue.destination
+            let delegate = self as UIPopoverPresentationControllerDelegate
+            controller.popoverPresentationController?.delegate = delegate
         }
     }
 

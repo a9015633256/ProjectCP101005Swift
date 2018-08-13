@@ -2055,7 +2055,7 @@
         <!--Student Pop Over View Controller-->
         <scene sceneID="dIx-z8-N47">
             <objects>
-                <viewController id="Qme-An-m1K" customClass="StudentPopOverViewController" customModule="ProjectCP101005Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="studentPOP" id="Qme-An-m1K" customClass="StudentPopOverViewController" customModule="ProjectCP101005Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oP6-xk-EUx">
                         <rect key="frame" x="0.0" y="0.0" width="90" height="50"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2067,7 +2067,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="31" height="30"/>
                                         <state key="normal" title="登出"/>
                                         <connections>
-                                            <action selector="logOut:" destination="Qme-An-m1K" eventType="touchUpInside" id="6ds-Rj-umq"/>
+                                            <action selector="logOut:" destination="Qme-An-m1K" eventType="touchUpInside" id="f5y-I3-eM9"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2098,6 +2098,6 @@
         <image name="popOver.png" width="5" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="c3j-qH-KzA"/>
+        <segue reference="MDJ-UM-4UA"/>
     </inferredMetricsTieBreakers>
 </document>

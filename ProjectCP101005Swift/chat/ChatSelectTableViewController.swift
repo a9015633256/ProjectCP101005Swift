@@ -16,15 +16,15 @@ class ChatSelectTableViewController: UITableViewController {
     var chatList = [ReceiverList]()
     
     var chataction: String?
-    
-    
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         sender = UserDefaults.standard.string(forKey: "account")
         chataction = UserDefaults.standard.string(forKey: "chatlistfound")
+        
+      
+        
         
         let action = findchat(action: chataction, senderte: sender)
         guard let uploadData = try? encoder.encode(action) else {
@@ -50,7 +50,18 @@ class ChatSelectTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    
+    @IBAction func logoutPop(_ sender: Any) {
+       
+            let vc = UIStoryboard(name: "MingTaStoryboard", bundle: nil).instantiateViewController(withIdentifier: "studentPOP")
+            vc.modalTransitionStyle = .crossDissolve
+            vc.modalPresentationStyle = .overCurrentContext
+            self.present(vc,animated: true,completion: nil)
 
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -139,4 +150,11 @@ class ChatSelectTableViewController: UITableViewController {
     }
     
 
+}
+
+extension ChatSelectTableViewController: UIPopoverPresentationControllerDelegate{
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.none
+        
+    }
 }

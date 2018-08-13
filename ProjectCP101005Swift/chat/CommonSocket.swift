@@ -41,6 +41,7 @@ class CommonWebSocketClient: WebSocketDelegate {
     
     func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
         print("socket斷線惹")
+        socket.delegate = nil
     }
     
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
