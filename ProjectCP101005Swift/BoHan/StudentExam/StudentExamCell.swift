@@ -13,7 +13,6 @@ class StudentExamCell: UITableViewCell {
     var indexPath:IndexPath?
     @IBOutlet weak var scoreBtn: UIButton!
     @IBOutlet weak var subjectLabel: UILabel!
-   
     @IBOutlet weak var cellView: UIView!
     
     @IBOutlet weak var studentName: UILabel!

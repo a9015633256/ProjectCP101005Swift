@@ -23,6 +23,9 @@ class TabSwitchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tabBarController?.tabBar.items![3].title = "聯絡家長"
+        
         self.title = "班級學生資料"
         classViewContainer.addSubview(studentViewController.view)
         

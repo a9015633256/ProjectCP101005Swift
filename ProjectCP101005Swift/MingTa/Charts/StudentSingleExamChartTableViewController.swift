@@ -307,6 +307,9 @@ class StudentSingleExamChartTableViewController: UITableViewController {
                     }
                     if score > studentScore {
                         ranking += 1
+                       
+
+                        
                     }
                     if score < studentScore {
                         prCount += 1
