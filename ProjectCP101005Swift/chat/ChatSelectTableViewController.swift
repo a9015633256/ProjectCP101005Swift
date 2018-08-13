@@ -89,6 +89,21 @@ class ChatSelectTableViewController: UITableViewController {
         optionMenu.addAction(actionLogout)
         
         present(optionMenu, animated: true, completion: nil)
+//
+//        
+    }
+    
+    
+    @IBAction func backBtn(_ sender: Any) {
+        
+        let transition: CATransition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.type = kCATransitionReveal
+        transition.subtype = kCATransitionFromLeft
+        self.view.window!.layer.add(transition, forKey: nil)
+        
+        dismiss(animated: false, completion: nil)
         
     }
     

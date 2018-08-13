@@ -291,13 +291,6 @@ class TeacherHomeworkTableViewController: UITableViewController {
             
             
         }
-    
-    func getDataFromPref(){
-        
-        let userDefaults = UserDefaults.standard
-        
-        classID = userDefaults.integer(forKey: "classId")
-        teacherID = userDefaults.integer(forKey: "teacherId")
         
     @IBAction func setObjects(_ sender: Any) {
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -330,4 +323,14 @@ class TeacherHomeworkTableViewController: UITableViewController {
         present(optionMenu, animated: true, completion: nil)
     }
     
+    func getDataFromPref(){
+        
+        let userDefaults = UserDefaults.standard
+        
+        classID = userDefaults.integer(forKey: "classId")
+        teacherID = userDefaults.integer(forKey: "teacherId")
+        
+        
+    }
+        
 }
