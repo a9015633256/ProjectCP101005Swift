@@ -221,7 +221,6 @@ class StudentHomeworkTableViewController: UITableViewController {
             assertionFailure()
             return
         }
-        
         let dictionary: [String: Any] = ["action": "findHomeworkIsDoneByStudentId", "studentId": studentID]
         guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: [])
             else {

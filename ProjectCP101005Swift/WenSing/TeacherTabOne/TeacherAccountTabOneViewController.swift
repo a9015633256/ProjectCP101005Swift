@@ -22,7 +22,6 @@ class TeacherAccountTabOneViewController: UIViewController,UITableViewDelegate,U
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
         findStudents()
     
     }

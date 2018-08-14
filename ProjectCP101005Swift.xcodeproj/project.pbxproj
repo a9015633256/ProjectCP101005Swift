@@ -328,9 +328,9 @@
 		24BFE523211D397200EF891F /* TeacherTabOne */ = {
 			isa = PBXGroup;
 			children = (
+				24BFE527211D397200EF891F /* TeacherAccountTabOneViewController.swift */,
 				24BFE524211D397200EF891F /* TeacherAccountTabOneTableViewCell.swift */,
 				24BFE525211D397200EF891F /* TeacherAccountAddStudnetViewController.swift */,
-				24BFE527211D397200EF891F /* TeacherAccountTabOneViewController.swift */,
 				24BFE528211D397200EF891F /* TabOneStudentDetailViewController.swift */,
 			);
 			path = TeacherTabOne;
