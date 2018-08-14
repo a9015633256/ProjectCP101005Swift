@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hK2-TS-3cr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hK2-TS-3cr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -92,7 +92,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RYW-wV-PLO">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="477"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="c8763" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TeacherCell" rowHeight="86" id="Wm3-sF-e7X" customClass="TeacherAccountTabTwoTableViewCell" customModule="ProjectCP101005Swift" customModuleProvider="target">
@@ -172,7 +172,7 @@
                             <constraint firstItem="RYW-wV-PLO" firstAttribute="trailing" secondItem="Bux-ka-I2N" secondAttribute="trailing" id="Ofb-JX-Lth"/>
                             <constraint firstItem="RYW-wV-PLO" firstAttribute="top" secondItem="Bux-ka-I2N" secondAttribute="top" id="TXD-Wz-HOw"/>
                             <constraint firstItem="RYW-wV-PLO" firstAttribute="leading" secondItem="Bux-ka-I2N" secondAttribute="leading" id="h4p-fo-JT9"/>
-                            <constraint firstItem="RYW-wV-PLO" firstAttribute="bottom" secondItem="Bux-ka-I2N" secondAttribute="bottom" id="xgy-Y8-hi0"/>
+                            <constraint firstItem="RYW-wV-PLO" firstAttribute="bottom" secondItem="Bux-ka-I2N" secondAttribute="bottom" constant="-170" id="xgy-Y8-hi0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bux-ka-I2N"/>
                     </view>
@@ -183,7 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5PV-6R-NBq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7297" y="593"/>
+            <point key="canvasLocation" x="7296.8000000000002" y="592.35382308845578"/>
         </scene>
         <!--Tab Two Teacher Detail View Controller-->
         <scene sceneID="Mi5-3q-Y3v">
@@ -961,7 +961,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rkr-Xa-Jxh">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="c8764" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="studentCell" rowHeight="86" id="XVO-zb-gxc" customClass="TeacherAccountTabOneTableViewCell" customModule="ProjectCP101005Swift" customModuleProvider="target">
@@ -1040,7 +1040,7 @@
                         <constraints>
                             <constraint firstItem="Rkr-Xa-Jxh" firstAttribute="trailing" secondItem="ziA-S3-fJB" secondAttribute="trailing" id="12A-Zd-bCV"/>
                             <constraint firstItem="Rkr-Xa-Jxh" firstAttribute="leading" secondItem="ziA-S3-fJB" secondAttribute="leading" id="3wI-2A-THb"/>
-                            <constraint firstItem="Rkr-Xa-Jxh" firstAttribute="bottom" secondItem="ziA-S3-fJB" secondAttribute="bottom" id="MLD-be-ZFc"/>
+                            <constraint firstItem="Rkr-Xa-Jxh" firstAttribute="bottom" secondItem="ziA-S3-fJB" secondAttribute="bottom" constant="-88" id="MLD-be-ZFc"/>
                             <constraint firstItem="Rkr-Xa-Jxh" firstAttribute="top" secondItem="ziA-S3-fJB" secondAttribute="top" id="ekq-zh-TK3"/>
                             <constraint firstItem="Rkr-Xa-Jxh" firstAttribute="centerX" secondItem="GjU-9I-epm" secondAttribute="centerX" id="nHT-3y-bPa"/>
                         </constraints>
