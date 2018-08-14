@@ -87,7 +87,7 @@ class ExamSubjectTVC: UITableViewController {
         guard let teacherID = self.mainClass.teacherID else {
             return
             }
-        let dictionary: [String:Any] = ["action":"Exam","id": classID,"teacherid": teacherID]
+        let dictionary: [String:Any] = ["action":"TeacherExam","id": classID,"teacherid": teacherID]
             
             
             guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: []) else {
