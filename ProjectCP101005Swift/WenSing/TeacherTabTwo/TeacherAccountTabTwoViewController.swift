@@ -90,7 +90,6 @@ class TeacherAccountTabTwoViewController: UIViewController, UITableViewDelegate,
         
         let teacherClass = UserDefaults.standard.string(forKey: "className")
         
-        //仍須優化
         let action = GetTeacherList(action: ACTION_GET_TEACHER_LIST, Class_Name: teacherClass!)
         let econder = JSONEncoder()
         econder.outputFormatting = .init()
