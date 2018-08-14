@@ -25,8 +25,8 @@ class TabSwitchViewController: UIViewController {
         super.viewDidLoad()
         
         tabBarController?.tabBar.items![3].title = "聯絡家長"
-        
         self.title = "班級學生資料"
+        tabBarController?.tabBar.items![0].image = UIImage(named: "baseline_assessment_black_24dp.png")
         classViewContainer.addSubview(studentViewController.view)
         
         switchViewSegment.selectedSegmentIndex = 0

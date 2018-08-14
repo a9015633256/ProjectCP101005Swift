@@ -73,7 +73,7 @@
         <scene sceneID="KWI-HA-FrF">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="mainSwitchView" storyboardName="TeacherAccountClassDetail" id="6Zu-fO-MIA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="1" title="ClassManagment" id="YsT-TC-fWP"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="班級學生資料" image="baseline_assessment_black_24dp.png" id="YsT-TC-fWP"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KRv-If-PwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,6 +101,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="baseline_assessment_black_24dp.png" width="24" height="24"/>
         <image name="search.png" width="32" height="32"/>
     </resources>
 </document>

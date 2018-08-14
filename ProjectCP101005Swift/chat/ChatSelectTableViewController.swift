@@ -16,6 +16,9 @@ class ChatSelectTableViewController: UITableViewController {
     var chatList = [ReceiverList]()
     
     var chataction: String?
+    
+    let teacherReplaceFileController = UIStoryboard(name: "TeacherAccountClassDetail", bundle: nil).instantiateViewController(withIdentifier: "profileReplacePage")
+    let transToLoginPage = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainLoginStoryboard")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,15 +55,43 @@ class ChatSelectTableViewController: UITableViewController {
     }
     
     
-//    @IBAction func logoutPop(_ sender: Any) {
-//       
+    @IBAction func logoutPop(_ sender: Any) {
+       
 //            let vc = UIStoryboard(name: "MingTaStoryboard", bundle: nil).instantiateViewController(withIdentifier: "studentPOP")
 //            vc.modalTransitionStyle = .crossDissolve
 //            vc.modalPresentationStyle = .overCurrentContext
 //            self.present(vc,animated: true,completion: nil)
+        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let actionProfileReplaceHandler = {(action: UIAlertAction!) -> Void in
+            //            self.classViewContainer.addSubview(self.teacherReplaceFileController.view)
+            self.present(self.teacherReplaceFileController, animated: true, completion: nil)
+        }
+        let actionProfileReplace = UIAlertAction(title: "修改個人檔案", style: .default, handler: actionProfileReplaceHandler)
+        optionMenu.addAction(actionProfileReplace)
+        
+        let actionCancel = UIAlertAction(title: "取消", style: .destructive, handler: nil)
+        optionMenu.addAction(actionCancel)
+        
+        let actionLogoutHandler = {(action: UIAlertAction!) -> Void in
+            let alartLogoutMenu = UIAlertController(title: "確定要登出嗎？", message: nil, preferredStyle: .alert)
+            let logoutCancelAction = UIAlertAction(title: "取消", style: .destructive, handler: nil)
+            alartLogoutMenu.addAction(logoutCancelAction)
+            let logoutHandler = {(action: UIAlertAction!) -> Void in
+                
+                self.present(self.transToLoginPage, animated: true, completion: nil)
+            }
+            let logout = UIAlertAction(title: "確定", style: .default, handler: logoutHandler)
+            alartLogoutMenu.addAction(logout)
+            self.present(alartLogoutMenu, animated: true, completion: nil)
+        }
+        let actionLogout = UIAlertAction(title: "登出", style: .default, handler: actionLogoutHandler)
+        optionMenu.addAction(actionLogout)
+        
+        present(optionMenu, animated: true, completion: nil)
 //
 //        
-//    }
+    }
     
     
     @IBAction func backBtn(_ sender: Any) {
