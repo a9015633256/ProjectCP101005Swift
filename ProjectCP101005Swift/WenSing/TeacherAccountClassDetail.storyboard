@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -54,11 +55,18 @@
                                 <action selector="backBtnPressed:" destination="LK1-A4-xq7" id="LeW-gG-JpE"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="popOver" id="mUA-Jz-qha">
-                            <connections>
-                                <action selector="setObjects:" destination="LK1-A4-xq7" id="KCo-WG-h8y"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="popOver" id="mUA-Jz-qha">
+                                <connections>
+                                    <action selector="setObjects:" destination="LK1-A4-xq7" id="KCo-WG-h8y"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="zML-fZ-xFv">
+                                <connections>
+                                    <action selector="addMemberBtn:" destination="LK1-A4-xq7" id="1rl-RB-zfU"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="classViewContainer" destination="FfS-FS-1ZX" id="SHS-bG-qhz"/>
@@ -152,32 +160,10 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INl-BK-XvX">
-                                <rect key="frame" x="314" y="557" width="45" height="45"/>
-                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="FJb-tB-b9p"/>
-                                    <constraint firstAttribute="width" constant="45" id="t6o-U5-211"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="+">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="EVF-nJ-KrD" kind="show" identifier="addTeacherSegue" id="0xn-de-DDv"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Bux-ka-I2N" firstAttribute="trailing" secondItem="INl-BK-XvX" secondAttribute="trailing" constant="16" id="KRL-lN-KIo"/>
                             <constraint firstItem="RYW-wV-PLO" firstAttribute="trailing" secondItem="Bux-ka-I2N" secondAttribute="trailing" id="Ofb-JX-Lth"/>
-                            <constraint firstItem="INl-BK-XvX" firstAttribute="top" secondItem="Bux-ka-I2N" secondAttribute="top" constant="537" id="SXv-lZ-KZ6"/>
                             <constraint firstItem="RYW-wV-PLO" firstAttribute="top" secondItem="Bux-ka-I2N" secondAttribute="top" id="TXD-Wz-HOw"/>
                             <constraint firstItem="RYW-wV-PLO" firstAttribute="leading" secondItem="Bux-ka-I2N" secondAttribute="leading" id="h4p-fo-JT9"/>
                             <constraint firstItem="RYW-wV-PLO" firstAttribute="bottom" secondItem="Bux-ka-I2N" secondAttribute="bottom" id="xgy-Y8-hi0"/>
@@ -344,7 +330,7 @@
         <!--Teacher Account Add Studnet View Controller-->
         <scene sceneID="nVg-Me-Y8w">
             <objects>
-                <viewController id="d8S-as-KSS" customClass="TeacherAccountAddStudnetViewController" customModule="ProjectCP101005Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addStudentViewController" id="d8S-as-KSS" customClass="TeacherAccountAddStudnetViewController" customModule="ProjectCP101005Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P5l-ql-1qv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -647,7 +633,7 @@
         <!--Teacher Account Search Teacher View Controller-->
         <scene sceneID="zjm-0a-aCJ">
             <objects>
-                <viewController id="EVF-nJ-KrD" customClass="TeacherAccountSearchTeacherViewController" customModule="ProjectCP101005Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addTeacherViewController" id="EVF-nJ-KrD" customClass="TeacherAccountSearchTeacherViewController" customModule="ProjectCP101005Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A0F-zw-r5n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1011,31 +997,9 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5S-pe-w1I">
-                                <rect key="frame" x="314" y="557" width="45" height="45"/>
-                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="3Z8-ps-0G8"/>
-                                    <constraint firstAttribute="height" constant="45" id="Djf-e5-wA3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="+">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="d8S-as-KSS" kind="show" identifier="addStudentSegue" id="9py-7a-eMj"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="J5S-pe-w1I" firstAttribute="top" secondItem="ziA-S3-fJB" secondAttribute="top" constant="537" id="03K-aJ-Y2o"/>
-                            <constraint firstItem="ziA-S3-fJB" firstAttribute="trailing" secondItem="J5S-pe-w1I" secondAttribute="trailing" constant="16" id="KCU-gf-lqB"/>
                             <constraint firstItem="Rkr-Xa-Jxh" firstAttribute="trailing" secondItem="ziA-S3-fJB" secondAttribute="trailing" id="MyT-5T-uhP"/>
                             <constraint firstItem="Rkr-Xa-Jxh" firstAttribute="top" secondItem="ziA-S3-fJB" secondAttribute="top" id="r9N-Z7-w9m"/>
                             <constraint firstItem="Rkr-Xa-Jxh" firstAttribute="bottom" secondItem="ziA-S3-fJB" secondAttribute="bottom" id="wGQ-vu-OoD"/>

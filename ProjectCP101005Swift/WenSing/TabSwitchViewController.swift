@@ -18,6 +18,8 @@ class TabSwitchViewController: UIViewController {
     let teacherViewController = UIStoryboard(name: "TeacherAccountClassDetail", bundle: nil).instantiateViewController(withIdentifier: "teacherList")
     let teacherReplaceFileController = UIStoryboard(name: "TeacherAccountClassDetail", bundle: nil).instantiateViewController(withIdentifier: "profileReplacePage")
     let transToLoginPage = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainLoginStoryboard")
+    let addStudentMemberViewController = UIStoryboard(name: "TeacherAccountClassDetail", bundle: nil).instantiateViewController(withIdentifier: "addStudentViewController")
+    let addTeacherMemberViewController = UIStoryboard(name: "TeacherAccountClassDetail", bundle: nil).instantiateViewController(withIdentifier: "addTeacherViewController")
 
 
     
@@ -98,6 +100,26 @@ class TabSwitchViewController: UIViewController {
         
     }
     
+    @IBAction func addMemberBtn(_ sender: Any) {
+        let memberMenu = UIAlertController(title: "新增成員", message: nil, preferredStyle: .actionSheet)
+        let addStudentHandler = {(action: UIAlertAction) -> Void in//跳轉頁面
+            self.present(self.addStudentMemberViewController, animated: true, completion: nil)
+        }
+        let actionAddStudent = UIAlertAction(title: "新增班級學生", style: .default, handler: addStudentHandler)
+        memberMenu.addAction(actionAddStudent)
+        let addTeacherHandler = {(action: UIAlertAction) -> Void in//跳轉頁面
+            self.present(self.addTeacherMemberViewController, animated: true, completion: nil)
+        }
+        let actionAddTeacher = UIAlertAction(title: "新增科任老師", style: .default, handler: addTeacherHandler)
+        memberMenu.addAction(actionAddTeacher)
+        
+        let cancelAction = UIAlertAction(title: "取消", style: .destructive, handler: nil)
+        memberMenu.addAction(cancelAction)
+        
+        present(memberMenu, animated: true, completion: nil)
+        
+    }
+    
     @IBAction func backBtnPressed(_ sender: UIBarButtonItem) {
         let transition: CATransition = CATransition()
         transition.duration = 0.5
@@ -107,6 +129,7 @@ class TabSwitchViewController: UIViewController {
         self.view.window!.layer.add(transition, forKey: nil)
         
         dismiss(animated: false, completion: nil)
+        
     }
     
 }
