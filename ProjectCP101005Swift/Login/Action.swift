@@ -39,6 +39,7 @@ struct deleteClass: Codable{
 struct findchat: Codable {
     var action: String?
     var senderte: String?
+    var id: String?
 }
 struct ReceiverList: Codable {
     var receiver: String
