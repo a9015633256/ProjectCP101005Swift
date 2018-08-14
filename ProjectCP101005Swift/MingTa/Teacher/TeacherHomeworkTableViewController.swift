@@ -13,7 +13,8 @@ class TeacherHomeworkTableViewController: UITableViewController {
     var classID = 0
     var teacherID = 0
     
-        class sectionData {
+    
+    class sectionData {
             var isOpen = false
             var title = ""
             var cellDataList = [HomeworkIsDone]()
@@ -32,6 +33,9 @@ class TeacherHomeworkTableViewController: UITableViewController {
         
         override func viewDidLoad() {
             super.viewDidLoad()
+            
+            
+           
             
             getDataFromPref()
        
