@@ -223,8 +223,8 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Svi-aA-VFo">
-                                    <rect key="frame" x="107" y="24" width="161" height="252"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_user_photo" translatesAutoresizingMaskIntoConstraints="NO" id="Svi-aA-VFo">
+                                    <rect key="frame" x="102" y="64.5" width="171" height="171"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.93725490199999995" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -867,10 +867,10 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="BV5-0A-gCl">
-                                    <rect key="frame" x="69" y="260" width="236" height="30"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="BV5-0A-gCl">
+                                    <rect key="frame" x="69" y="200" width="236" height="30"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSU-tZ-iFe">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSU-tZ-iFe">
                                             <rect key="frame" x="0.0" y="0.0" width="93" height="30"/>
                                             <color key="backgroundColor" red="0.83921568627450982" green="0.84313725490196079" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" title="拍照">
@@ -880,7 +880,7 @@
                                                 <action selector="takePhotoBtnPressed:" destination="AD1-MP-7ER" eventType="touchUpInside" id="oTc-Bm-EMZ"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1f-3C-Btm">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1f-3C-Btm">
                                             <rect key="frame" x="143" y="0.0" width="93" height="30"/>
                                             <color key="backgroundColor" red="0.83921568627450982" green="0.84313725490196079" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
@@ -899,8 +899,8 @@
                                         <constraint firstItem="hSU-tZ-iFe" firstAttribute="width" secondItem="v1f-3C-Btm" secondAttribute="width" id="oE5-jR-b63"/>
                                     </constraints>
                                 </stackView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NyJ-FV-PbC">
-                                    <rect key="frame" x="85" y="24" width="204" height="231"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_user_photo" translatesAutoresizingMaskIntoConstraints="NO" id="NyJ-FV-PbC">
+                                    <rect key="frame" x="101.5" y="24" width="171" height="171"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" red="0.59999999999999998" green="0.93725490199999995" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2100,12 +2100,13 @@
         <image name="baseline_assignment_black_24dp" width="24" height="24"/>
         <image name="baseline_face_black_24dp" width="24" height="24"/>
         <image name="cross_red" width="18" height="19"/>
+        <image name="default_user_photo" width="171" height="171"/>
         <image name="exclamation_mark" width="24" height="27"/>
         <image name="ic_mode_edit_white_24dp" width="32" height="32"/>
         <image name="popOver" width="2" height="14"/>
         <image name="popOver.png" width="5" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MDJ-UM-4UA"/>
+        <segue reference="c3j-qH-KzA"/>
     </inferredMetricsTieBreakers>
 </document>
