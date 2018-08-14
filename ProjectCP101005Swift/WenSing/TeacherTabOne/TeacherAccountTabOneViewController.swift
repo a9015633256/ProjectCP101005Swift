@@ -28,6 +28,7 @@ class TeacherAccountTabOneViewController: UIViewController,UITableViewDelegate,U
         tableView.delegate = self
         tableView.dataSource = self
         findStudents()
+        
     
     }
     override func viewDidAppear(_ animated: Bool) {//新增導師或學生後reloadData

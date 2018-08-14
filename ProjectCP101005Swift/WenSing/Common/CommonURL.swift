@@ -28,4 +28,4 @@ let ACTION_GET_ALL = "getAll"
 let ACTION_GET_IMAGE = "getImage"
 
 let ACTION_DELETE_STUDENT = "studentsDeleteid"
-let ACTION_DELETE_TEACHER = "delete"
+let ACTION_DELETE_TEACHER = "teacherListDeleteid"
