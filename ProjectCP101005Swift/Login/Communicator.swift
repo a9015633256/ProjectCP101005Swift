@@ -24,13 +24,22 @@ class Communicator{
         let task = URLSession.shared.uploadTask(with: request, from: data) { (output, response, error) in
             
             if let error = error {
-                assertionFailure("error :\(error)")
+//                assertionFailure("error :\(error)")
+                DispatchQueue.main.async {
+                    datahandler(error,nil)
+                    
+                }
                 return
             }
             
             
             guard let response = response as? HTTPURLResponse,(200...299).contains(response.statusCode) else {
-                assertionFailure("server error")
+//                assertionFailure("server error")
+                DispatchQueue.main.async {
+                    datahandler(nil,nil)
+
+                }
+
                 return
             }
             DispatchQueue.main.async {

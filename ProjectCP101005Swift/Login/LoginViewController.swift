@@ -153,7 +153,8 @@ class LoginViewController: UIViewController {
             }
             communicator.dopost(url: LOGIN_URL, data: uploadData) { (error, result) in
                 guard let result = result else {
-                    assertionFailure("get data fail")
+                    //                    assertionFailure("get output fail")
+                    showSimpleAlert(title: "登入失敗", "確定", sender: self, completion: nil)
                     return
                 }
                 
