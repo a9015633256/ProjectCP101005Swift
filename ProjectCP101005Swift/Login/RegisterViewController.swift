@@ -18,7 +18,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var account: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var password2: UITextField!
-    let subjects = ["國文","英文","數學"]
+    let subjects = ["JAVA","Android_Studio","Math","English","Chinese"]
     
     let communicator = Communicator()
     

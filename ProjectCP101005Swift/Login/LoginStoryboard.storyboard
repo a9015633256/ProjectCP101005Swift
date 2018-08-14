@@ -152,7 +152,7 @@
                     <navigationItem key="navigationItem" id="VaD-rX-4rm">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="CgU-hX-2P0">
-                            <rect key="frame" x="133" y="7.5" width="109" height="29"/>
+                            <rect key="frame" x="20" y="7.5" width="317" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="導師班"/>
