@@ -87,7 +87,7 @@ class ChatViewController: UIViewController {
         newMessage = result
         
         guard let sender = result.sender, let receiver = result.receiver, let message = result.message else {
-            assertionFailure("失敗")
+//            assertionFailure("失敗")
 
             return
         }
