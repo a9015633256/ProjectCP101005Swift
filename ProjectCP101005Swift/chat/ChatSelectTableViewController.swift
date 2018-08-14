@@ -15,6 +15,7 @@ class ChatSelectTableViewController: UITableViewController {
     let encoder = JSONEncoder()
     var chatList = [ReceiverList]()
     var chataction: String?
+    var id: String?
     
     @IBOutlet weak var backBtn: UIBarButtonItem!
     
@@ -30,8 +31,11 @@ class ChatSelectTableViewController: UITableViewController {
         
         sender = UserDefaults.standard.string(forKey: "account")
         chataction = UserDefaults.standard.string(forKey: "chatlistfound")
+        id = UserDefaults.standard.string(forKey: "classId")
 
-        let action = findchat(action: chataction, senderte: sender)
+        print("classid ===== \(id)")
+        
+        let action = findchat(action: chataction, senderte: sender,id: id)
         guard let uploadData = try? encoder.encode(action) else {
             assertionFailure("JSON encode Fail")
             return
