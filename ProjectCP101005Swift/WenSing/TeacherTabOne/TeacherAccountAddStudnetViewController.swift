@@ -78,7 +78,10 @@ class TeacherAccountAddStudnetViewController: UIViewController {
         successhandler.addAction(actionConform)
         
         self.present(successhandler, animated: true, completion: nil)
-            
+        
+        self.enterNameLabel.text = ""
+        self.enterAccountLable.text = ""
+        self.enterPasswordLabel.text = ""
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
