@@ -15,6 +15,8 @@ class TeacherAccountAddStudnetViewController: UIViewController {
     @IBOutlet weak var enterAccountLable: UITextField!
     @IBOutlet weak var enterNameLabel: UITextField!
     @IBOutlet weak var enterPasswordLabel: UITextField!
+    var controller:TeacherAccountTabOneViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -72,6 +74,8 @@ class TeacherAccountAddStudnetViewController: UIViewController {
         
         let successhandler = UIAlertController(title: "新增成功！", message: nil, preferredStyle: .alert)
         let actionConformHandler = {(action: UIAlertAction) -> Void in
+            self.controller?.findStudents()
+            self.controller?.tableView.reloadData()
             self.dismiss(animated: true, completion: nil)
         }
         let actionConform = UIAlertAction(title: "確定", style: .cancel, handler: actionConformHandler)
