@@ -192,8 +192,7 @@ class TeacherAccountTabOneViewController: UIViewController,UITableViewDelegate,U
             print(output)
             //            self.studentList = output
             //            print("\(self.studentList)")
-            self.tableView.reloadData()
-            
+            self.findStudents()
         }
         
         //刪除學生成功之後，顯示alert
