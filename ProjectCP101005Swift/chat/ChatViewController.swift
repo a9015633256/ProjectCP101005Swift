@@ -63,6 +63,9 @@ class ChatViewController: UIViewController {
             self.chatTableView.scrollTOBottom()
         }
         
+        
+        navigationItem.title = receiver
+        
         // Do any additional setup after loading the view.\
         
     }
