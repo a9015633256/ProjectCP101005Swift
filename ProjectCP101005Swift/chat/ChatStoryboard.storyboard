@@ -87,6 +87,13 @@
                                 <action selector="backBtn:" destination="c4E-wX-Y0D" id="l6P-mM-J9Y"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="popOver" id="63r-4H-mzN">
+                            <connections>
+                                <segue destination="x11-GP-Dh7" kind="popoverPresentation" identifier="ShowPopOver" popoverAnchorBarButtonItem="63r-4H-mzN" id="t14-hB-zXy">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
@@ -237,9 +244,45 @@
             </objects>
             <point key="canvasLocation" x="-746.39999999999998" y="-166.8665667166417"/>
         </scene>
+        <!--Student Pop Over View Controller-->
+        <scene sceneID="dbm-AV-6BV">
+            <objects>
+                <viewController storyboardIdentifier="studentPOP" id="x11-GP-Dh7" customClass="StudentPopOverViewController" customModule="ProjectCP101005Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WrE-IR-aYS">
+                        <rect key="frame" x="0.0" y="0.0" width="90" height="50"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Udu-1T-s33">
+                                <rect key="frame" x="29.5" y="10" width="31" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAh-nR-qtu">
+                                        <rect key="frame" x="0.0" y="0.0" width="31" height="30"/>
+                                        <state key="normal" title="登出"/>
+                                        <connections>
+                                            <action selector="logOut:" destination="x11-GP-Dh7" eventType="touchUpInside" id="jSh-In-4SE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Udu-1T-s33" firstAttribute="centerX" secondItem="WrE-IR-aYS" secondAttribute="centerX" id="8uZ-nr-A7c"/>
+                            <constraint firstItem="Udu-1T-s33" firstAttribute="centerY" secondItem="WrE-IR-aYS" secondAttribute="centerY" id="RQb-kI-hF2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eKY-BL-TXJ"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="90" height="50"/>
+                    <size key="freeformSize" width="90" height="50"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fgC-Vm-9V7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="466" y="-640"/>
+        </scene>
     </scenes>
     <resources>
         <image name="back_arrow_blue_with_text" width="125" height="23"/>
         <image name="baseline_face_black_24dp" width="24" height="24"/>
+        <image name="popOver" width="2" height="14"/>
     </resources>
 </document>
