@@ -69,6 +69,21 @@ class ChatViewController: UIViewController {
         // Do any additional setup after loading the view.\
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = false
+
+    }
+    
+    
     @objc
     func decodeJson(_ notification: Notification) {
         guard let json = notification.userInfo?["JsonString"] as? String else {
