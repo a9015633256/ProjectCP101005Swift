@@ -27,6 +27,21 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let userDefault = UserDefaults.standard
+        
+        userDefault.set(nil, forKey: "account")
+        userDefault.set(nil, forKey: "teacherId")
+        userDefault.set(nil, forKey: "subjectId")
+        userDefault.set(nil, forKey: "studentID")
+        userDefault.set(nil, forKey: "classID")
+        userDefault.set(nil, forKey: "name")
+        userDefault.set(nil, forKey: "chatlistfound")
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

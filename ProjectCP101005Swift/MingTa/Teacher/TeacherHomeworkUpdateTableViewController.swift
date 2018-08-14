@@ -36,7 +36,17 @@ class TeacherHomeworkUpdateTableViewController: UITableViewController {
     
     @objc
     public func trashBtnPressed(){
-        deleteHomework()
+        
+        let alert = UIAlertController(title: "刪除作業", message: "確定要刪除嗎? 此動作無法恢復!", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "刪除", style: .default) { (_) in
+            self.deleteHomework()
+        }
+        let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
+        
+        
     }
     
     @IBAction public func doneBtnPressed(_ sender: Any) {

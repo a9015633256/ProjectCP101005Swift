@@ -277,6 +277,7 @@ class TeacherHomeworkCheckTableViewController: UITableViewController {
     func setupChart(){
         
         pieChartView.legend.enabled = false
+        pieChartView.chartDescription?.enabled = false
         pieChartView.animate(xAxisDuration: 1)
         pieChartView.animate(yAxisDuration: 1)
         

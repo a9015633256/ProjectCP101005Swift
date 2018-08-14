@@ -25,7 +25,11 @@ class TeacherAccountTabTwoViewController: UIViewController, UITableViewDelegate,
         
         findTeachers()
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        findTeachers()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

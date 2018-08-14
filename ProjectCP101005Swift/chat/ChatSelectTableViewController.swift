@@ -188,17 +188,84 @@ class ChatSelectTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let controller = segue.destination as! ChatViewController
-        guard let index = tableView.indexPathForSelectedRow else {
-            return
+        if let controller = segue.destination as? ChatViewController{
+            guard let index = tableView.indexPathForSelectedRow else {
+                return
+            }
+            controller.receiver = chatList[index.row].receiver
+            
         }
-        controller.receiver = chatList[index.row].receiver
+       
+        if segue.identifier == "ShowPopOver"{
+            let controller = segue.destination.popoverPresentationController
+            controller?.delegate = self
+        }
+       
         
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        if identifier == "ShowPopOver"{
+            
+            let userDefaults = UserDefaults.standard
+            if userDefaults.integer(forKey: "teacherId") != 0 {
+                
+                callUpTeacherMenu(self)
+                
+                return false
+                
+            }
+            
+        }
+        
+        return true
+        
+    }
+    
+    func callUpTeacherMenu(_ sender: Any) {
+        
+        let userDefaults = UserDefaults.standard
+        guard userDefaults.integer(forKey: "teacherId") != 0  else {
+            
+            return
+        }
+        
 
+        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let actionProfileReplaceHandler = {(action: UIAlertAction!) -> Void in
+            //            self.classViewContainer.addSubview(self.teacherReplaceFileController.view)
+            self.present(self.teacherReplaceFileController, animated: true, completion: nil)
+        }
+        let actionProfileReplace = UIAlertAction(title: "修改個人檔案", style: .default, handler: actionProfileReplaceHandler)
+        optionMenu.addAction(actionProfileReplace)
+        
+        let actionCancel = UIAlertAction(title: "取消", style: .destructive, handler: nil)
+        optionMenu.addAction(actionCancel)
+        
+        let actionLogoutHandler = {(action: UIAlertAction!) -> Void in
+            let alartLogoutMenu = UIAlertController(title: "確定要登出嗎？", message: nil, preferredStyle: .alert)
+            let logoutCancelAction = UIAlertAction(title: "取消", style: .destructive, handler: nil)
+            alartLogoutMenu.addAction(logoutCancelAction)
+            let logoutHandler = {(action: UIAlertAction!) -> Void in
+                
+                self.present(self.transToLoginPage, animated: true, completion: nil)
+            }
+            let logout = UIAlertAction(title: "確定", style: .default, handler: logoutHandler)
+            alartLogoutMenu.addAction(logout)
+            self.present(alartLogoutMenu, animated: true, completion: nil)
+        }
+        let actionLogout = UIAlertAction(title: "登出", style: .default, handler: actionLogoutHandler)
+        optionMenu.addAction(actionLogout)
+        
+        present(optionMenu, animated: true, completion: nil)
+    }
+    
+    
+    
 }
 
 extension ChatSelectTableViewController: UIPopoverPresentationControllerDelegate{
