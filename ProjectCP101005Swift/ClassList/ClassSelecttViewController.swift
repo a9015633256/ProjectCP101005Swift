@@ -50,6 +50,8 @@ class ClassSelecttViewController: UIViewController,UIPopoverPresentationControll
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         getMainClass()
+        classSelectSG.selectedSegmentIndex = 0
+        
     }
 
     /*

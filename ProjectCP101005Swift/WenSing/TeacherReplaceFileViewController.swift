@@ -339,7 +339,12 @@ extension TeacherReplaceFileViewController: UIImagePickerControllerDelegate, UIN
             
             teacherImageView.image = resizedImage
             
-            jpgData = UIImageJPEGRepresentation(resizedImage, 1)
+            guard let uploadImage = originalImage.resize(maxWidthHeight: self.view.frame.height) else {
+                assertionFailure("Fail to resize image.")
+                return
+            }
+            
+            jpgData = UIImageJPEGRepresentation(uploadImage, 1)
             
         }
         picker.dismiss(animated: true, completion: nil)
