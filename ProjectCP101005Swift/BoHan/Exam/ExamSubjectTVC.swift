@@ -28,6 +28,7 @@ class ExamSubjectTVC: UITableViewController {
     
     var subject = [Subject]()
     var mainClass = ClassJoin()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -83,7 +84,10 @@ class ExamSubjectTVC: UITableViewController {
             guard let classID = self.mainClass.id else{
                 return
             }
-            let dictionary: [String:Any] = ["action":"Exam","id": classID]
+        guard let teacherID = self.mainClass.teacherID else {
+            return
+            }
+        let dictionary: [String:Any] = ["action":"Exam","id": classID,"teacherid": teacherID]
             
             
             guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: []) else {
