@@ -14,22 +14,28 @@ class ChatSelectTableViewController: UITableViewController {
     let communicator = Communicator()
     let encoder = JSONEncoder()
     var chatList = [ReceiverList]()
-    
     var chataction: String?
+    var id: String?
+    
+    @IBOutlet weak var backBtn: UIBarButtonItem!
     
     let teacherReplaceFileController = UIStoryboard(name: "TeacherAccountClassDetail", bundle: nil).instantiateViewController(withIdentifier: "profileReplacePage")
     let transToLoginPage = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainLoginStoryboard")
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
+        
 
+        
         sender = UserDefaults.standard.string(forKey: "account")
         chataction = UserDefaults.standard.string(forKey: "chatlistfound")
+        id = UserDefaults.standard.string(forKey: "classId")
+
+        print("classid ===== \(id)")
         
-      
-        
-        
-        let action = findchat(action: chataction, senderte: sender)
+        let action = findchat(action: chataction, senderte: sender,id: id)
         guard let uploadData = try? encoder.encode(action) else {
             assertionFailure("JSON encode Fail")
             return
@@ -47,20 +53,18 @@ class ChatSelectTableViewController: UITableViewController {
             print(self.chatList)
             self.tableView.reloadData()
         }
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        if chataction == "getmotherlist" {
+            navigationItem.leftBarButtonItems = nil
+        }
+        
+     
     }
     
     
     @IBAction func logoutPop(_ sender: Any) {
        
-//            let vc = UIStoryboard(name: "MingTaStoryboard", bundle: nil).instantiateViewController(withIdentifier: "studentPOP")
-//            vc.modalTransitionStyle = .crossDissolve
-//            vc.modalPresentationStyle = .overCurrentContext
-//            self.present(vc,animated: true,completion: nil)
+
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let actionProfileReplaceHandler = {(action: UIAlertAction!) -> Void in
@@ -92,6 +96,9 @@ class ChatSelectTableViewController: UITableViewController {
 //
 //        
     }
+    
+    
+    
     
     
     @IBAction func backBtn(_ sender: Any) {
