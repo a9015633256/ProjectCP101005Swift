@@ -18,13 +18,20 @@ class TeacherAccountTabOneViewController: UIViewController,UITableViewDelegate,U
 
     @IBOutlet weak var tableView: UITableView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
         findStudents()
     
+    }
+    override func viewDidAppear(_ animated: Bool) {//新增導師或學生後reloadData
+        findStudents()
     }
 
     override func didReceiveMemoryWarning() {

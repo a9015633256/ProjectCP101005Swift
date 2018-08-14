@@ -63,6 +63,9 @@ class ChatViewController: UIViewController {
             self.chatTableView.scrollTOBottom()
         }
         
+        
+        navigationItem.title = receiver
+        
         // Do any additional setup after loading the view.\
         
     }
@@ -85,6 +88,7 @@ class ChatViewController: UIViewController {
         
         guard let sender = result.sender, let receiver = result.receiver, let message = result.message else {
             assertionFailure("失敗")
+
             return
         }
         
