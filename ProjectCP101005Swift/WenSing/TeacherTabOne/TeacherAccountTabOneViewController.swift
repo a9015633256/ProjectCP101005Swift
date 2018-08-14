@@ -20,7 +20,7 @@ class TeacherAccountTabOneViewController: UIViewController,UITableViewDelegate,U
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        tableView.reloadData()
+        
     }
     
     override func viewDidLoad() {
@@ -33,7 +33,11 @@ class TeacherAccountTabOneViewController: UIViewController,UITableViewDelegate,U
     }
     override func viewDidAppear(_ animated: Bool) {//新增導師或學生後reloadData
         findStudents()
+        tableView.reloadData()
+
+        
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -55,7 +59,7 @@ class TeacherAccountTabOneViewController: UIViewController,UITableViewDelegate,U
         let studentPhoneNumber = studentList[indexPath.row].Student_Phone
         let studentId = studentList[indexPath.row].id
         cell.tabOneStudentNameLabel.text = studentList[indexPath.row].Student_Name
-        cell.tabOneStudentPhoneLabel.text = "\(studentPhoneNumber ?? 0)"
+        cell.tabOneStudentPhoneLabel.text = "0\(studentPhoneNumber ?? 0)"
         
         //將資料存取到UserDefaults，studentList有幾列numberOfRowsInSection就會跑幾次
         UserDefaults.standard.set(studentId, forKey: "studentId\(indexPath.row)")
@@ -77,6 +81,13 @@ class TeacherAccountTabOneViewController: UIViewController,UITableViewDelegate,U
                 distinationController.studentDetail = studentList[indexPath.row]
             }
         }
+        
+        if let controller = segue.destination as? TeacherAccountAddStudnetViewController {
+            
+            controller.controller = self
+            
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -119,14 +130,15 @@ class TeacherAccountTabOneViewController: UIViewController,UITableViewDelegate,U
             
             self.studentList = output
             print("JSON: \(self.studentList)")
-//            self.tableView.reloadData()
+            self.tableView.reloadData()
             if self.studentList.count != 0 {
                 for id in 0...(self.studentList.count - 1) {
                     self.getFriendImage(studentID: self.studentList[id].id!)//這行導致沒有照片會閃退，找時間修改
                 }
+//            }else {
+//                self.tableView.reloadData()
             }
-//            self.tableView.reloadData()
-
+//
         }
         
     }
