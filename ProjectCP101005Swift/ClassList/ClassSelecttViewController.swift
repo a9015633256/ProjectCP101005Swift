@@ -104,6 +104,7 @@ class ClassSelecttViewController: UIViewController,UIPopoverPresentationControll
             self.classJoin = output
             
             print("\(self.classJoin)")
+            
             self.classTableview.reloadData()
         }
         
@@ -164,6 +165,7 @@ extension ClassSelecttViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return classJoin.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CoolCellTableViewCell

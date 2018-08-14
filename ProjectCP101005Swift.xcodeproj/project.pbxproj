@@ -17,6 +17,8 @@
 		0C9F213B212030AE0034DF05 /* StudentPopOverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9F213A212030AE0034DF05 /* StudentPopOverVC.swift */; };
 		0CC02E102119964000091EB9 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CC02E0F2119963F00091EB9 /* search.png */; };
 		0CF1D58E211A9E850055BF58 /* exam.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CF1D58D211A9E840055BF58 /* exam.png */; };
+		2420687A2122C5C2007717AD /* music_background1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 242068782122C5C0007717AD /* music_background1.jpg */; };
+		2420687B2122C5C2007717AD /* music_background2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 242068792122C5C1007717AD /* music_background2.jpg */; };
 		24BC57B320FD83DE00002DB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC57B220FD83DE00002DB0 /* AppDelegate.swift */; };
 		24BC57B520FD83DE00002DB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC57B420FD83DE00002DB0 /* ViewController.swift */; };
 		24BC57B820FD83DE00002DB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24BC57B620FD83DE00002DB0 /* Main.storyboard */; };
@@ -121,6 +123,8 @@
 		0C9F213A212030AE0034DF05 /* StudentPopOverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentPopOverVC.swift; sourceTree = "<group>"; };
 		0CC02E0F2119963F00091EB9 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		0CF1D58D211A9E840055BF58 /* exam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exam.png; sourceTree = "<group>"; };
+		242068782122C5C0007717AD /* music_background1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = music_background1.jpg; sourceTree = "<group>"; };
+		242068792122C5C1007717AD /* music_background2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = music_background2.jpg; sourceTree = "<group>"; };
 		24BC57AF20FD83DE00002DB0 /* ProjectCP101005Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectCP101005Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24BC57B220FD83DE00002DB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24BC57B420FD83DE00002DB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -285,6 +289,8 @@
 				EA230E3C2121361800E212B5 /* SetTitleTeacherTabBarViewController.swift */,
 				C02F6EA221192E8E00A0A2BA /* TeacherStoryboard.storyboard */,
 				24BC57B920FD83E100002DB0 /* Assets.xcassets */,
+				242068782122C5C0007717AD /* music_background1.jpg */,
+				242068792122C5C1007717AD /* music_background2.jpg */,
 				24BF2F5D2121EFA10065B0FA /* baseline_assessment_black_24dp.png */,
 				0C8BA7A7211A92BA006BC87E /* popOver.png */,
 				24BC57BB20FD83E100002DB0 /* LaunchScreen.storyboard */,
@@ -600,6 +606,7 @@
 				24BC57BA20FD83E100002DB0 /* Assets.xcassets in Resources */,
 				C02F6EA121192E8200A0A2BA /* StudentStoryboard.storyboard in Resources */,
 				EADF634E211D65500078A429 /* ChatStoryboard.storyboard in Resources */,
+				2420687A2122C5C2007717AD /* music_background1.jpg in Resources */,
 				24BC57B820FD83DE00002DB0 /* Main.storyboard in Resources */,
 				C02F6EBB21192E9E00A0A2BA /* add1.png in Resources */,
 				C02F6EEE21192EA400A0A2BA /* MingTaStoryboard.storyboard in Resources */,
@@ -610,6 +617,7 @@
 				0CC02E102119964000091EB9 /* search.png in Resources */,
 				0CF1D58E211A9E850055BF58 /* exam.png in Resources */,
 				930FC19F210ACB7100C27FC1 /* LoginStoryboard.storyboard in Resources */,
+				2420687B2122C5C2007717AD /* music_background2.jpg in Resources */,
 				C03381CB2118537A00D55EAE /* .gitignore in Resources */,
 				C02F6EC121192E9E00A0A2BA /* BoHan.storyboard in Resources */,
 			);
