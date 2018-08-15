@@ -224,7 +224,7 @@ class StudentExamTVC: UITableViewController,UIPopoverPresentationControllerDeleg
             cell.scoreBtn.tag = indexPath.row
             cell.indexPath = indexPath
             tableView.separatorInset = UIEdgeInsetsMake(0.0, cell.bounds.size.width, 0.0, 0.0)
-            cell.subjectLabel.text = "考試科目: " + exam.examtitle
+            cell.subjectLabel.text = "考試: " + exam.examtitle
             return cell
         }
       

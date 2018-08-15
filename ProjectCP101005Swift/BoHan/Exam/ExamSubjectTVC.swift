@@ -154,7 +154,7 @@ class ExamSubjectTVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! Cell
         let examSubject = subject[indexPath.row]
         let title = examSubject.examtitle
-        cell.subjectLabel.text = "考試科目: " + title
+        cell.subjectLabel.text = "考試: " + title
         cell.scoreBtn.backgroundColor = Color.LightSlateBlue
         cell.scoreBtn.layer.cornerRadius = 10
         cell.cellView.layer.cornerRadius = 10
